@@ -70,9 +70,6 @@ Public Class FrmTrans
             Txt.CommDataBits = SysSettings.data_bits
             Txt.CommStopBits = SysSettings.stop_bits
             Txt.ConnectionType = SysSettings.DeviceConnectionType.ToString()
-            Txt.DiscardOutBuffer = False
-            Txt.DataLength = 8
-            Txt.EndCharacter = "\n"
             Txt.IPAddress = SysSettings.IPAddress
             Txt.IPPort = SysSettings.IPPort
             Txt.IPReadTimeOut = 3000
