@@ -144,6 +144,11 @@
     <Compile Include="CLS_DB.vb" />
     <Compile Include="CLS_DBVIEWER.vb" />
     <Compile Include="CLS_SERVERPROC.vb" />
+    <Compile Include="DAL\Entities\TransRecord.vb" />
+    <Compile Include="DAL\Entities\Vehicle.vb" />
+    <Compile Include="DAL\Factories\DBContextFactory.vb" />
+    <Compile Include="DAL\Services\ReportingService.vb" />
+    <Compile Include="DAL\Services\VehicleService.vb" />
     <Compile Include="ds.vb">
       <DependentUpon>ds.xsd</DependentUpon>
     </Compile>
@@ -556,8 +561,8 @@
   <ItemGroup>
     <Folder Include="DAL\Controllers\" />
     <Folder Include="DAL\Helpers\" />
-    <Folder Include="DAL\Models\" />
     <Folder Include="DAL\ViewModels\" />
+    <Folder Include="Utils\Factories\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\utils\WeightDev\WeightDev\WeightDev.csproj">

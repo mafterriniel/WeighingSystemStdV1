@@ -82,11 +82,13 @@ Partial Class MDIMAIN
         Me.StatusStrip_main.BackColor = System.Drawing.Color.White
         Me.StatusStrip_main.BackgroundImage = Global.WeighingSystemV1_1.My.Resources.Resources.WhiteHeader3
         Me.StatusStrip_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.StatusStrip_main.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip_main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.LblUserId, Me.ToolStripStatusLabel2, Me.LblName, Me.LblServer, Me.LblTimer})
-        Me.StatusStrip_main.Location = New System.Drawing.Point(0, 702)
+        Me.StatusStrip_main.Location = New System.Drawing.Point(0, 869)
         Me.StatusStrip_main.Name = "StatusStrip_main"
+        Me.StatusStrip_main.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
         Me.StatusStrip_main.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.StatusStrip_main.Size = New System.Drawing.Size(1008, 28)
+        Me.StatusStrip_main.Size = New System.Drawing.Size(1344, 29)
         Me.StatusStrip_main.SizingGrip = False
         Me.StatusStrip_main.TabIndex = 15
         Me.StatusStrip_main.Text = "StatusStrip"
@@ -97,7 +99,7 @@ Partial Class MDIMAIN
         Me.ToolStripStatusLabel1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(49, 23)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(66, 23)
         Me.ToolStripStatusLabel1.Text = "User Id:"
         '
         'LblUserId
@@ -106,7 +108,7 @@ Partial Class MDIMAIN
         Me.LblUserId.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblUserId.Name = "LblUserId"
         Me.LblUserId.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.LblUserId.Size = New System.Drawing.Size(64, 23)
+        Me.LblUserId.Size = New System.Drawing.Size(90, 23)
         Me.LblUserId.Text = "00000001"
         '
         'ToolStripStatusLabel2
@@ -116,7 +118,7 @@ Partial Class MDIMAIN
         Me.ToolStripStatusLabel2.Margin = New System.Windows.Forms.Padding(30, 3, 0, 2)
         Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
         Me.ToolStripStatusLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(72, 23)
+        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(94, 24)
         Me.ToolStripStatusLabel2.Text = "User Name:"
         '
         'LblName
@@ -125,14 +127,14 @@ Partial Class MDIMAIN
         Me.LblName.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblName.Name = "LblName"
         Me.LblName.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.LblName.Size = New System.Drawing.Size(128, 23)
+        Me.LblName.Size = New System.Drawing.Size(167, 23)
         Me.LblName.Text = "MICHAEL A. FAINZA"
         '
         'LblServer
         '
         Me.LblServer.BackColor = System.Drawing.Color.Transparent
         Me.LblServer.Name = "LblServer"
-        Me.LblServer.Size = New System.Drawing.Size(450, 23)
+        Me.LblServer.Size = New System.Drawing.Size(677, 23)
         Me.LblServer.Spring = True
         Me.LblServer.Text = "  "
         '
@@ -163,10 +165,11 @@ Partial Class MDIMAIN
         Me.Pnl_MainBtn.Controls.Add(Me.PnlOperation)
         Me.Pnl_MainBtn.Controls.Add(Me.BtnOperation)
         Me.Pnl_MainBtn.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Pnl_MainBtn.Location = New System.Drawing.Point(0, 50)
+        Me.Pnl_MainBtn.Location = New System.Drawing.Point(0, 62)
+        Me.Pnl_MainBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Pnl_MainBtn.Name = "Pnl_MainBtn"
-        Me.Pnl_MainBtn.Padding = New System.Windows.Forms.Padding(5)
-        Me.Pnl_MainBtn.Size = New System.Drawing.Size(272, 652)
+        Me.Pnl_MainBtn.Padding = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.Pnl_MainBtn.Size = New System.Drawing.Size(363, 807)
         Me.Pnl_MainBtn.TabIndex = 17
         '
         'PnlUtilities
@@ -174,9 +177,10 @@ Partial Class MDIMAIN
         Me.PnlUtilities.BackColor = System.Drawing.Color.Transparent
         Me.PnlUtilities.Controls.Add(Me.BtnSystemSettings)
         Me.PnlUtilities.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PnlUtilities.Location = New System.Drawing.Point(5, 718)
+        Me.PnlUtilities.Location = New System.Drawing.Point(7, 882)
+        Me.PnlUtilities.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PnlUtilities.Name = "PnlUtilities"
-        Me.PnlUtilities.Size = New System.Drawing.Size(245, 105)
+        Me.PnlUtilities.Size = New System.Drawing.Size(328, 129)
         Me.PnlUtilities.TabIndex = 55
         '
         'BtnSystemSettings
@@ -198,8 +202,9 @@ Partial Class MDIMAIN
         Me.BtnSystemSettings.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnSystemSettings.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnSystemSettings.Location = New System.Drawing.Point(0, 0)
+        Me.BtnSystemSettings.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnSystemSettings.Name = "BtnSystemSettings"
-        Me.BtnSystemSettings.Size = New System.Drawing.Size(245, 28)
+        Me.BtnSystemSettings.Size = New System.Drawing.Size(328, 34)
         Me.BtnSystemSettings.TabIndex = 37
         Me.BtnSystemSettings.Text = "System Settings"
         Me.BtnSystemSettings.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -225,9 +230,10 @@ Partial Class MDIMAIN
         Me.BtnSettings.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnSettings.Image = CType(resources.GetObject("BtnSettings.Image"), System.Drawing.Image)
         Me.BtnSettings.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.BtnSettings.Location = New System.Drawing.Point(5, 673)
+        Me.BtnSettings.Location = New System.Drawing.Point(7, 827)
+        Me.BtnSettings.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnSettings.Name = "BtnSettings"
-        Me.BtnSettings.Size = New System.Drawing.Size(245, 45)
+        Me.BtnSettings.Size = New System.Drawing.Size(328, 55)
         Me.BtnSettings.TabIndex = 54
         Me.BtnSettings.Text = "Settings"
         Me.BtnSettings.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -239,9 +245,10 @@ Partial Class MDIMAIN
         Me.PnlAdmin.Controls.Add(Me.BtnLogs)
         Me.PnlAdmin.Controls.Add(Me.BtnUser)
         Me.PnlAdmin.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PnlAdmin.Location = New System.Drawing.Point(5, 583)
+        Me.PnlAdmin.Location = New System.Drawing.Point(7, 716)
+        Me.PnlAdmin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PnlAdmin.Name = "PnlAdmin"
-        Me.PnlAdmin.Size = New System.Drawing.Size(245, 90)
+        Me.PnlAdmin.Size = New System.Drawing.Size(328, 111)
         Me.PnlAdmin.TabIndex = 53
         '
         'BtnLogs
@@ -262,9 +269,10 @@ Partial Class MDIMAIN
         Me.BtnLogs.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
         Me.BtnLogs.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnLogs.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
-        Me.BtnLogs.Location = New System.Drawing.Point(0, 28)
+        Me.BtnLogs.Location = New System.Drawing.Point(0, 34)
+        Me.BtnLogs.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnLogs.Name = "BtnLogs"
-        Me.BtnLogs.Size = New System.Drawing.Size(245, 28)
+        Me.BtnLogs.Size = New System.Drawing.Size(328, 34)
         Me.BtnLogs.TabIndex = 40
         Me.BtnLogs.Text = "Manage Logs"
         Me.BtnLogs.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -289,8 +297,9 @@ Partial Class MDIMAIN
         Me.BtnUser.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnUser.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnUser.Location = New System.Drawing.Point(0, 0)
+        Me.BtnUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnUser.Name = "BtnUser"
-        Me.BtnUser.Size = New System.Drawing.Size(245, 28)
+        Me.BtnUser.Size = New System.Drawing.Size(328, 34)
         Me.BtnUser.TabIndex = 39
         Me.BtnUser.Text = "User Accounts"
         Me.BtnUser.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -316,9 +325,10 @@ Partial Class MDIMAIN
         Me.BtnAdmin.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnAdmin.Image = CType(resources.GetObject("BtnAdmin.Image"), System.Drawing.Image)
         Me.BtnAdmin.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.BtnAdmin.Location = New System.Drawing.Point(5, 538)
+        Me.BtnAdmin.Location = New System.Drawing.Point(7, 661)
+        Me.BtnAdmin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnAdmin.Name = "BtnAdmin"
-        Me.BtnAdmin.Size = New System.Drawing.Size(245, 45)
+        Me.BtnAdmin.Size = New System.Drawing.Size(328, 55)
         Me.BtnAdmin.TabIndex = 52
         Me.BtnAdmin.Text = "Administration"
         Me.BtnAdmin.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -330,9 +340,10 @@ Partial Class MDIMAIN
         Me.PnlReports.Controls.Add(Me.Btnlog)
         Me.PnlReports.Controls.Add(Me.BtnTransReport)
         Me.PnlReports.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PnlReports.Location = New System.Drawing.Point(5, 455)
+        Me.PnlReports.Location = New System.Drawing.Point(7, 559)
+        Me.PnlReports.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PnlReports.Name = "PnlReports"
-        Me.PnlReports.Size = New System.Drawing.Size(245, 83)
+        Me.PnlReports.Size = New System.Drawing.Size(328, 102)
         Me.PnlReports.TabIndex = 51
         '
         'Btnlog
@@ -353,9 +364,10 @@ Partial Class MDIMAIN
         Me.Btnlog.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
         Me.Btnlog.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.Btnlog.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
-        Me.Btnlog.Location = New System.Drawing.Point(0, 28)
+        Me.Btnlog.Location = New System.Drawing.Point(0, 34)
+        Me.Btnlog.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Btnlog.Name = "Btnlog"
-        Me.Btnlog.Size = New System.Drawing.Size(245, 28)
+        Me.Btnlog.Size = New System.Drawing.Size(328, 34)
         Me.Btnlog.TabIndex = 14
         Me.Btnlog.Text = "Log Reports"
         Me.Btnlog.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -381,8 +393,9 @@ Partial Class MDIMAIN
         Me.BtnTransReport.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnTransReport.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnTransReport.Location = New System.Drawing.Point(0, 0)
+        Me.BtnTransReport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnTransReport.Name = "BtnTransReport"
-        Me.BtnTransReport.Size = New System.Drawing.Size(245, 28)
+        Me.BtnTransReport.Size = New System.Drawing.Size(328, 34)
         Me.BtnTransReport.TabIndex = 13
         Me.BtnTransReport.Text = "Transaction Reports"
         Me.BtnTransReport.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -408,9 +421,10 @@ Partial Class MDIMAIN
         Me.BtnReports.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnReports.Image = CType(resources.GetObject("BtnReports.Image"), System.Drawing.Image)
         Me.BtnReports.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.BtnReports.Location = New System.Drawing.Point(5, 410)
+        Me.BtnReports.Location = New System.Drawing.Point(7, 504)
+        Me.BtnReports.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnReports.Name = "BtnReports"
-        Me.BtnReports.Size = New System.Drawing.Size(245, 45)
+        Me.BtnReports.Size = New System.Drawing.Size(328, 55)
         Me.BtnReports.TabIndex = 49
         Me.BtnReports.Text = "Reporting"
         Me.BtnReports.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -426,9 +440,10 @@ Partial Class MDIMAIN
         Me.PnlDatabase.Controls.Add(Me.BtnSUp)
         Me.PnlDatabase.Controls.Add(Me.BtnCust)
         Me.PnlDatabase.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PnlDatabase.Location = New System.Drawing.Point(5, 181)
+        Me.PnlDatabase.Location = New System.Drawing.Point(7, 222)
+        Me.PnlDatabase.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PnlDatabase.Name = "PnlDatabase"
-        Me.PnlDatabase.Size = New System.Drawing.Size(245, 229)
+        Me.PnlDatabase.Size = New System.Drawing.Size(328, 282)
         Me.PnlDatabase.TabIndex = 50
         '
         'BtnDriver
@@ -449,9 +464,10 @@ Partial Class MDIMAIN
         Me.BtnDriver.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
         Me.BtnDriver.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnDriver.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
-        Me.BtnDriver.Location = New System.Drawing.Point(0, 140)
+        Me.BtnDriver.Location = New System.Drawing.Point(0, 170)
+        Me.BtnDriver.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnDriver.Name = "BtnDriver"
-        Me.BtnDriver.Size = New System.Drawing.Size(245, 28)
+        Me.BtnDriver.Size = New System.Drawing.Size(328, 34)
         Me.BtnDriver.TabIndex = 12
         Me.BtnDriver.Text = "Drivers"
         Me.BtnDriver.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -475,9 +491,10 @@ Partial Class MDIMAIN
         Me.BtnTrucks.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
         Me.BtnTrucks.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnTrucks.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
-        Me.BtnTrucks.Location = New System.Drawing.Point(0, 112)
+        Me.BtnTrucks.Location = New System.Drawing.Point(0, 136)
+        Me.BtnTrucks.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnTrucks.Name = "BtnTrucks"
-        Me.BtnTrucks.Size = New System.Drawing.Size(245, 28)
+        Me.BtnTrucks.Size = New System.Drawing.Size(328, 34)
         Me.BtnTrucks.TabIndex = 11
         Me.BtnTrucks.Text = "Trucks"
         Me.BtnTrucks.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -501,9 +518,10 @@ Partial Class MDIMAIN
         Me.BtnMaterials.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
         Me.BtnMaterials.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnMaterials.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
-        Me.BtnMaterials.Location = New System.Drawing.Point(0, 84)
+        Me.BtnMaterials.Location = New System.Drawing.Point(0, 102)
+        Me.BtnMaterials.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnMaterials.Name = "BtnMaterials"
-        Me.BtnMaterials.Size = New System.Drawing.Size(245, 28)
+        Me.BtnMaterials.Size = New System.Drawing.Size(328, 34)
         Me.BtnMaterials.TabIndex = 10
         Me.BtnMaterials.Text = "Commodity"
         Me.BtnMaterials.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -527,13 +545,15 @@ Partial Class MDIMAIN
         Me.BtnHauler.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
         Me.BtnHauler.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnHauler.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
-        Me.BtnHauler.Location = New System.Drawing.Point(0, 56)
+        Me.BtnHauler.Location = New System.Drawing.Point(0, 68)
+        Me.BtnHauler.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnHauler.Name = "BtnHauler"
-        Me.BtnHauler.Size = New System.Drawing.Size(245, 28)
+        Me.BtnHauler.Size = New System.Drawing.Size(328, 34)
         Me.BtnHauler.TabIndex = 13
         Me.BtnHauler.Text = "Hauler"
         Me.BtnHauler.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.BtnHauler.UseVisualStyleBackColor = True
+        Me.BtnHauler.Visible = False
         '
         'BtnSUp
         '
@@ -553,9 +573,10 @@ Partial Class MDIMAIN
         Me.BtnSUp.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
         Me.BtnSUp.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnSUp.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
-        Me.BtnSUp.Location = New System.Drawing.Point(0, 28)
+        Me.BtnSUp.Location = New System.Drawing.Point(0, 34)
+        Me.BtnSUp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnSUp.Name = "BtnSUp"
-        Me.BtnSUp.Size = New System.Drawing.Size(245, 28)
+        Me.BtnSUp.Size = New System.Drawing.Size(328, 34)
         Me.BtnSUp.TabIndex = 9
         Me.BtnSUp.Text = "Supplier"
         Me.BtnSUp.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -580,8 +601,9 @@ Partial Class MDIMAIN
         Me.BtnCust.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnCust.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnCust.Location = New System.Drawing.Point(0, 0)
+        Me.BtnCust.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnCust.Name = "BtnCust"
-        Me.BtnCust.Size = New System.Drawing.Size(245, 28)
+        Me.BtnCust.Size = New System.Drawing.Size(328, 34)
         Me.BtnCust.TabIndex = 8
         Me.BtnCust.Text = "Customer"
         Me.BtnCust.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -607,9 +629,10 @@ Partial Class MDIMAIN
         Me.BtnDatabase.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnDatabase.Image = CType(resources.GetObject("BtnDatabase.Image"), System.Drawing.Image)
         Me.BtnDatabase.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.BtnDatabase.Location = New System.Drawing.Point(5, 136)
+        Me.BtnDatabase.Location = New System.Drawing.Point(7, 167)
+        Me.BtnDatabase.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnDatabase.Name = "BtnDatabase"
-        Me.BtnDatabase.Size = New System.Drawing.Size(245, 45)
+        Me.BtnDatabase.Size = New System.Drawing.Size(328, 55)
         Me.BtnDatabase.TabIndex = 48
         Me.BtnDatabase.Text = "Database/File Maintenance"
         Me.BtnDatabase.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -622,9 +645,10 @@ Partial Class MDIMAIN
         Me.PnlOperation.Controls.Add(Me.BtnTrans)
         Me.PnlOperation.Dock = System.Windows.Forms.DockStyle.Top
         Me.PnlOperation.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PnlOperation.Location = New System.Drawing.Point(5, 50)
+        Me.PnlOperation.Location = New System.Drawing.Point(7, 61)
+        Me.PnlOperation.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PnlOperation.Name = "PnlOperation"
-        Me.PnlOperation.Size = New System.Drawing.Size(245, 86)
+        Me.PnlOperation.Size = New System.Drawing.Size(328, 106)
         Me.PnlOperation.TabIndex = 47
         '
         'BtnManagement
@@ -645,9 +669,10 @@ Partial Class MDIMAIN
         Me.BtnManagement.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
         Me.BtnManagement.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnManagement.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
-        Me.BtnManagement.Location = New System.Drawing.Point(0, 26)
+        Me.BtnManagement.Location = New System.Drawing.Point(0, 32)
+        Me.BtnManagement.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnManagement.Name = "BtnManagement"
-        Me.BtnManagement.Size = New System.Drawing.Size(245, 26)
+        Me.BtnManagement.Size = New System.Drawing.Size(328, 32)
         Me.BtnManagement.TabIndex = 8
         Me.BtnManagement.Text = "Management"
         Me.BtnManagement.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -672,8 +697,9 @@ Partial Class MDIMAIN
         Me.BtnTrans.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnTrans.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnTrans.Location = New System.Drawing.Point(0, 0)
+        Me.BtnTrans.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnTrans.Name = "BtnTrans"
-        Me.BtnTrans.Size = New System.Drawing.Size(245, 26)
+        Me.BtnTrans.Size = New System.Drawing.Size(328, 32)
         Me.BtnTrans.TabIndex = 7
         Me.BtnTrans.Text = "Transaction"
         Me.BtnTrans.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -699,9 +725,10 @@ Partial Class MDIMAIN
         Me.BtnOperation.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnOperation.Image = CType(resources.GetObject("BtnOperation.Image"), System.Drawing.Image)
         Me.BtnOperation.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.BtnOperation.Location = New System.Drawing.Point(5, 5)
+        Me.BtnOperation.Location = New System.Drawing.Point(7, 6)
+        Me.BtnOperation.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnOperation.Name = "BtnOperation"
-        Me.BtnOperation.Size = New System.Drawing.Size(245, 45)
+        Me.BtnOperation.Size = New System.Drawing.Size(328, 55)
         Me.BtnOperation.TabIndex = 46
         Me.BtnOperation.Text = "Transaction"
         Me.BtnOperation.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -715,8 +742,9 @@ Partial Class MDIMAIN
         Me.Panel4.Controls.Add(Me.Panel3)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1008, 50)
+        Me.Panel4.Size = New System.Drawing.Size(1344, 62)
         Me.Panel4.TabIndex = 19
         '
         'Panel3
@@ -725,21 +753,23 @@ Partial Class MDIMAIN
         Me.Panel3.Controls.Add(Me.LblH)
         Me.Panel3.Controls.Add(Me.BtnExit)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(583, 0)
+        Me.Panel3.Location = New System.Drawing.Point(777, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Padding = New System.Windows.Forms.Padding(5, 10, 5, 10)
-        Me.Panel3.Size = New System.Drawing.Size(425, 50)
+        Me.Panel3.Padding = New System.Windows.Forms.Padding(7, 12, 7, 12)
+        Me.Panel3.Size = New System.Drawing.Size(567, 62)
         Me.Panel3.TabIndex = 8
         '
         'LblH
         '
         Me.LblH.Dock = System.Windows.Forms.DockStyle.Right
         Me.LblH.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblH.Location = New System.Drawing.Point(8, 10)
+        Me.LblH.Location = New System.Drawing.Point(11, 12)
+        Me.LblH.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblH.Name = "LblH"
-        Me.LblH.Padding = New System.Windows.Forms.Padding(0, 0, 10, 0)
+        Me.LblH.Padding = New System.Windows.Forms.Padding(0, 0, 13, 0)
         Me.LblH.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.LblH.Size = New System.Drawing.Size(291, 30)
+        Me.LblH.Size = New System.Drawing.Size(388, 38)
         Me.LblH.TabIndex = 143
         Me.LblH.Text = "Welcome | admin"
         Me.LblH.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -764,18 +794,19 @@ Partial Class MDIMAIN
         Me.BtnExit.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnExit.Image = CType(resources.GetObject("BtnExit.Image"), System.Drawing.Image)
         Me.BtnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnExit.Location = New System.Drawing.Point(299, 10)
+        Me.BtnExit.Location = New System.Drawing.Point(399, 12)
+        Me.BtnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnExit.Name = "BtnExit"
-        Me.BtnExit.Size = New System.Drawing.Size(121, 30)
+        Me.BtnExit.Size = New System.Drawing.Size(161, 38)
         Me.BtnExit.TabIndex = 142
         Me.BtnExit.Text = "Log out"
         Me.BtnExit.UseVisualStyleBackColor = True
         '
         'MDIMAIN
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 730)
+        Me.ClientSize = New System.Drawing.Size(1344, 898)
         Me.Controls.Add(Me.Pnl_MainBtn)
         Me.Controls.Add(Me.StatusStrip_main)
         Me.Controls.Add(Me.Panel4)
@@ -783,6 +814,7 @@ Partial Class MDIMAIN
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.Name = "MDIMAIN"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide

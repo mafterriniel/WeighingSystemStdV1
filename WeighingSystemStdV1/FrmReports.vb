@@ -134,6 +134,15 @@
             Result = Result & " and {Outbound_Tbl.DriverName} = '" & Trim(TxtDriver.Text) & "'"
         End If
 
+        If chkByWeigher.Checked = True Then
+            Dim weigher = Trim(cboWeigher.Text)
+            If MOD_DATABASEPROC.ExistenceFound("Select User_Id from UserAccounts where User_DisplayName = '" & weigher & "'", Nothing, "User_Id", Nothing) Then
+                Result = Result & " and ({Outbound_Tbl.WeigherIn} = '" & ReturnedData & "' or {Outbound_Tbl.WeigherOut} = '" & ReturnedData & "')"
+            Else
+                MessageBox.Show("Weigher Wasn't found", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            End If
+        End If
+
         If ChkNone.Checked = True Then
             Result = ""
         End If
@@ -150,12 +159,18 @@
         MOD_DATABASEPROC.ThrowArrayToControl(CboClient, CustList)
         MOD_DATABASEPROC.ThrowArrayToControl(CboMaterial, CommList)
         MOD_DATABASEPROC.ThrowArrayToControl(TxtDriver, DRVList)
+        MOD_DATABASEPROC.ThrowArrayToControl(cboWeigher, UserList)
 
+        cboWeigher.Sorted = True
+        CboClient.Sorted = True
+        CboMaterial.Sorted = True
         CboReportType.SelectedIndex = 0
         RdoOutBound.Checked = True
         CboSort.SelectedIndex = 0
         CboOrder.SelectedIndex = 0
         ChkNone.Checked = True
+
+        cboWeigher.Text = FrmLogin.UserDisplayName
 
     End Sub
 #Region "SETTINGS DATA VARIABLES"
@@ -163,11 +178,13 @@
     Private CustList As New List(Of String)
     Private CommList As New List(Of String)
     Private DRVList As New List(Of String)
+    Private UserList As New List(Of String)
     Private Sub SetData()
         MOD_DATABASEPROC.ListDataToArray(CustList, Nothing, "Select CustName From Cust_Tbl where Cactive = true", "CustName", Nothing)
         MOD_DATABASEPROC.ListDataToArray(SupList, Nothing, "Select SupName From Sup_Tbl where SActive = yes", "SupName", Nothing)
         MOD_DATABASEPROC.ListDataToArray(CommList, Nothing, "Select CommDesc from Comm_tbl where active = true", "CommDesc", Nothing)
         MOD_DATABASEPROC.ListDataToArray(DRVList, Nothing, "Select DriverName from Drv_tbl", "DriverName", Nothing)
+        MOD_DATABASEPROC.ListDataToArray(UserList, Nothing, "Select User_DisplayName from UserAccounts", "User_DisplayName", Nothing)
     End Sub
 #End Region
 
@@ -178,22 +195,26 @@
             ChkTrans.Enabled = False
             ChkMaterial.Enabled = False
             ChkDriver.Enabled = False
+            chkByWeigher.Enabled = False
             PnlTrans.Enabled = False
             TxtPlateNo.Enabled = False
             PnlClientType.Enabled = False
             CboMaterial.Enabled = False
             TxtDriver.Enabled = False
+            cboWeigher.Enabled = False
         Else
             ChkPlateNo.Enabled = True
             ChkClient.Enabled = True
             ChkTrans.Enabled = True
             ChkMaterial.Enabled = True
             ChkDriver.Enabled = True
+            chkByWeigher.Enabled = True
             PnlTrans.Enabled = True
             TxtPlateNo.Enabled = True
             PnlClientType.Enabled = True
             CboMaterial.Enabled = True
             TxtDriver.Enabled = True
+            cboWeigher.Enabled = True
         End If
 
         ChkPlateNo.Checked = False
@@ -201,6 +222,7 @@
         ChkTrans.Checked = False
         ChkMaterial.Checked = False
         ChkDriver.Checked = False
+        chkByWeigher.Checked = False
     End Sub
 
     Private Sub PushButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PushButton1.Click
@@ -224,6 +246,10 @@
         Else
             MOD_DATABASEPROC.ThrowArrayToControl(CboClient, SupList)
         End If
+
+    End Sub
+
+    Private Sub cboWeigher_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboWeigher.SelectedIndexChanged
 
     End Sub
 End Class

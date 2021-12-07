@@ -119,8 +119,9 @@ Partial Class FrmEditTrans
         Me.PnlHeader.Controls.Add(Me.Btnsave)
         Me.PnlHeader.Dock = System.Windows.Forms.DockStyle.Top
         Me.PnlHeader.Location = New System.Drawing.Point(0, 0)
+        Me.PnlHeader.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlHeader.Name = "PnlHeader"
-        Me.PnlHeader.Size = New System.Drawing.Size(1366, 53)
+        Me.PnlHeader.Size = New System.Drawing.Size(1821, 65)
         Me.PnlHeader.TabIndex = 1
         '
         'BtnUpdatePrice
@@ -141,10 +142,11 @@ Partial Class FrmEditTrans
         Me.BtnUpdatePrice.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnUpdatePrice.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnUpdatePrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnUpdatePrice.Location = New System.Drawing.Point(722, 8)
+        Me.BtnUpdatePrice.Location = New System.Drawing.Point(963, 10)
+        Me.BtnUpdatePrice.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnUpdatePrice.Name = "BtnUpdatePrice"
-        Me.BtnUpdatePrice.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        Me.BtnUpdatePrice.Size = New System.Drawing.Size(132, 32)
+        Me.BtnUpdatePrice.Padding = New System.Windows.Forms.Padding(0, 6, 0, 6)
+        Me.BtnUpdatePrice.Size = New System.Drawing.Size(176, 39)
         Me.BtnUpdatePrice.TabIndex = 8
         Me.BtnUpdatePrice.Text = "CTRL+U Update Price"
         Me.BtnUpdatePrice.UseVisualStyleBackColor = True
@@ -168,10 +170,11 @@ Partial Class FrmEditTrans
         Me.BtnDelete.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnDelete.Image = CType(resources.GetObject("BtnDelete.Image"), System.Drawing.Image)
         Me.BtnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnDelete.Location = New System.Drawing.Point(150, 8)
+        Me.BtnDelete.Location = New System.Drawing.Point(200, 10)
+        Me.BtnDelete.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnDelete.Name = "BtnDelete"
-        Me.BtnDelete.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        Me.BtnDelete.Size = New System.Drawing.Size(137, 32)
+        Me.BtnDelete.Padding = New System.Windows.Forms.Padding(0, 6, 0, 6)
+        Me.BtnDelete.Size = New System.Drawing.Size(183, 39)
         Me.BtnDelete.TabIndex = 2
         Me.BtnDelete.Text = "DEL REMOVE"
         Me.BtnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -196,10 +199,11 @@ Partial Class FrmEditTrans
         Me.BtnExit.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnExit.Image = CType(resources.GetObject("BtnExit.Image"), System.Drawing.Image)
         Me.BtnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnExit.Location = New System.Drawing.Point(865, 8)
+        Me.BtnExit.Location = New System.Drawing.Point(1153, 10)
+        Me.BtnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnExit.Name = "BtnExit"
-        Me.BtnExit.Padding = New System.Windows.Forms.Padding(5)
-        Me.BtnExit.Size = New System.Drawing.Size(89, 32)
+        Me.BtnExit.Padding = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.BtnExit.Size = New System.Drawing.Size(119, 39)
         Me.BtnExit.TabIndex = 7
         Me.BtnExit.Text = "Exit"
         Me.BtnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -224,10 +228,11 @@ Partial Class FrmEditTrans
         Me.BtnEdit.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnEdit.Image = CType(resources.GetObject("BtnEdit.Image"), System.Drawing.Image)
         Me.BtnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEdit.Location = New System.Drawing.Point(7, 8)
+        Me.BtnEdit.Location = New System.Drawing.Point(9, 10)
+        Me.BtnEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnEdit.Name = "BtnEdit"
-        Me.BtnEdit.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        Me.BtnEdit.Size = New System.Drawing.Size(137, 32)
+        Me.BtnEdit.Padding = New System.Windows.Forms.Padding(0, 6, 0, 6)
+        Me.BtnEdit.Size = New System.Drawing.Size(183, 39)
         Me.BtnEdit.TabIndex = 0
         Me.BtnEdit.Text = "F1 EDIT"
         Me.BtnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -252,10 +257,11 @@ Partial Class FrmEditTrans
         Me.BtnPrint.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnPrint.Image = CType(resources.GetObject("BtnPrint.Image"), System.Drawing.Image)
         Me.BtnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnPrint.Location = New System.Drawing.Point(579, 8)
+        Me.BtnPrint.Location = New System.Drawing.Point(772, 10)
+        Me.BtnPrint.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnPrint.Name = "BtnPrint"
-        Me.BtnPrint.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        Me.BtnPrint.Size = New System.Drawing.Size(137, 32)
+        Me.BtnPrint.Padding = New System.Windows.Forms.Padding(0, 6, 0, 6)
+        Me.BtnPrint.Size = New System.Drawing.Size(183, 39)
         Me.BtnPrint.TabIndex = 6
         Me.BtnPrint.Text = "CTRL+P Print"
         Me.BtnPrint.UseVisualStyleBackColor = True
@@ -279,10 +285,11 @@ Partial Class FrmEditTrans
         Me.Btncancel.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.Btncancel.Image = CType(resources.GetObject("Btncancel.Image"), System.Drawing.Image)
         Me.Btncancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btncancel.Location = New System.Drawing.Point(436, 8)
+        Me.Btncancel.Location = New System.Drawing.Point(581, 10)
+        Me.Btncancel.Margin = New System.Windows.Forms.Padding(4)
         Me.Btncancel.Name = "Btncancel"
-        Me.Btncancel.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        Me.Btncancel.Size = New System.Drawing.Size(137, 32)
+        Me.Btncancel.Padding = New System.Windows.Forms.Padding(0, 6, 0, 6)
+        Me.Btncancel.Size = New System.Drawing.Size(183, 39)
         Me.Btncancel.TabIndex = 4
         Me.Btncancel.Text = "ESC  CANCEL"
         Me.Btncancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -307,10 +314,11 @@ Partial Class FrmEditTrans
         Me.Btnsave.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.Btnsave.Image = CType(resources.GetObject("Btnsave.Image"), System.Drawing.Image)
         Me.Btnsave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btnsave.Location = New System.Drawing.Point(293, 8)
+        Me.Btnsave.Location = New System.Drawing.Point(391, 10)
+        Me.Btnsave.Margin = New System.Windows.Forms.Padding(4)
         Me.Btnsave.Name = "Btnsave"
-        Me.Btnsave.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        Me.Btnsave.Size = New System.Drawing.Size(137, 32)
+        Me.Btnsave.Padding = New System.Windows.Forms.Padding(0, 6, 0, 6)
+        Me.Btnsave.Size = New System.Drawing.Size(183, 39)
         Me.Btnsave.TabIndex = 3
         Me.Btnsave.Text = "F3  SAVE"
         Me.Btnsave.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -321,10 +329,11 @@ Partial Class FrmEditTrans
         Me.TxtGross.BackColor = System.Drawing.Color.White
         Me.TxtGross.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtGross.ForeColor = System.Drawing.Color.Black
-        Me.TxtGross.Location = New System.Drawing.Point(116, 29)
+        Me.TxtGross.Location = New System.Drawing.Point(155, 36)
+        Me.TxtGross.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtGross.Name = "TxtGross"
         Me.TxtGross.ReadOnly = True
-        Me.TxtGross.Size = New System.Drawing.Size(116, 31)
+        Me.TxtGross.Size = New System.Drawing.Size(153, 36)
         Me.TxtGross.TabIndex = 145
         Me.TxtGross.TabStop = False
         Me.TxtGross.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -335,9 +344,10 @@ Partial Class FrmEditTrans
         Me.Label20.BackColor = System.Drawing.Color.Transparent
         Me.Label20.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.Black
-        Me.Label20.Location = New System.Drawing.Point(5, 80)
+        Me.Label20.Location = New System.Drawing.Point(7, 98)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(71, 15)
+        Me.Label20.Size = New System.Drawing.Size(87, 20)
         Me.Label20.TabIndex = 140
         Me.Label20.Text = "Tare Weight"
         '
@@ -347,9 +357,10 @@ Partial Class FrmEditTrans
         Me.Label21.BackColor = System.Drawing.Color.Transparent
         Me.Label21.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.Black
-        Me.Label21.Location = New System.Drawing.Point(5, 113)
+        Me.Label21.Location = New System.Drawing.Point(7, 139)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(67, 15)
+        Me.Label21.Size = New System.Drawing.Size(84, 20)
         Me.Label21.TabIndex = 144
         Me.Label21.Text = "Net Weight"
         Me.Label21.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -360,9 +371,10 @@ Partial Class FrmEditTrans
         Me.Label19.BackColor = System.Drawing.Color.Transparent
         Me.Label19.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.Black
-        Me.Label19.Location = New System.Drawing.Point(5, 43)
+        Me.Label19.Location = New System.Drawing.Point(7, 53)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(77, 15)
+        Me.Label19.Size = New System.Drawing.Size(96, 20)
         Me.Label19.TabIndex = 142
         Me.Label19.Text = "Gross Weight"
         '
@@ -371,10 +383,11 @@ Partial Class FrmEditTrans
         Me.TxtTare.BackColor = System.Drawing.Color.White
         Me.TxtTare.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtTare.ForeColor = System.Drawing.Color.Black
-        Me.TxtTare.Location = New System.Drawing.Point(116, 65)
+        Me.TxtTare.Location = New System.Drawing.Point(155, 80)
+        Me.TxtTare.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTare.Name = "TxtTare"
         Me.TxtTare.ReadOnly = True
-        Me.TxtTare.Size = New System.Drawing.Size(116, 31)
+        Me.TxtTare.Size = New System.Drawing.Size(153, 36)
         Me.TxtTare.TabIndex = 139
         Me.TxtTare.TabStop = False
         Me.TxtTare.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -384,10 +397,11 @@ Partial Class FrmEditTrans
         Me.TxtNet.BackColor = System.Drawing.Color.White
         Me.TxtNet.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtNet.ForeColor = System.Drawing.Color.Black
-        Me.TxtNet.Location = New System.Drawing.Point(116, 101)
+        Me.TxtNet.Location = New System.Drawing.Point(155, 124)
+        Me.TxtNet.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNet.Name = "TxtNet"
         Me.TxtNet.ReadOnly = True
-        Me.TxtNet.Size = New System.Drawing.Size(116, 31)
+        Me.TxtNet.Size = New System.Drawing.Size(153, 36)
         Me.TxtNet.TabIndex = 143
         Me.TxtNet.TabStop = False
         Me.TxtNet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -398,10 +412,11 @@ Partial Class FrmEditTrans
         Me.PnlMain.BackColor = System.Drawing.SystemColors.ControlDark
         Me.PnlMain.Controls.Add(Me.PnlDetails)
         Me.PnlMain.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PnlMain.Location = New System.Drawing.Point(0, 53)
+        Me.PnlMain.Location = New System.Drawing.Point(0, 65)
+        Me.PnlMain.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlMain.Name = "PnlMain"
-        Me.PnlMain.Padding = New System.Windows.Forms.Padding(5)
-        Me.PnlMain.Size = New System.Drawing.Size(1366, 547)
+        Me.PnlMain.Padding = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.PnlMain.Size = New System.Drawing.Size(1821, 673)
         Me.PnlMain.TabIndex = 0
         '
         'PnlDetails
@@ -429,9 +444,10 @@ Partial Class FrmEditTrans
         Me.PnlDetails.Controls.Add(Me.Label4)
         Me.PnlDetails.Controls.Add(Me.Panel4)
         Me.PnlDetails.Controls.Add(Me.Pnl_Weight)
-        Me.PnlDetails.Location = New System.Drawing.Point(5, 5)
+        Me.PnlDetails.Location = New System.Drawing.Point(7, 6)
+        Me.PnlDetails.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlDetails.Name = "PnlDetails"
-        Me.PnlDetails.Size = New System.Drawing.Size(952, 768)
+        Me.PnlDetails.Size = New System.Drawing.Size(1269, 945)
         Me.PnlDetails.TabIndex = 1
         '
         'PnlWeightStat
@@ -446,9 +462,10 @@ Partial Class FrmEditTrans
         Me.PnlWeightStat.Controls.Add(Me.TxtFINAL)
         Me.PnlWeightStat.Controls.Add(Me.Label16)
         Me.PnlWeightStat.Controls.Add(Me.Label18)
-        Me.PnlWeightStat.Location = New System.Drawing.Point(20, 321)
+        Me.PnlWeightStat.Location = New System.Drawing.Point(27, 395)
+        Me.PnlWeightStat.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlWeightStat.Name = "PnlWeightStat"
-        Me.PnlWeightStat.Size = New System.Drawing.Size(589, 120)
+        Me.PnlWeightStat.Size = New System.Drawing.Size(785, 147)
         Me.PnlWeightStat.TabIndex = 181
         '
         'TxtReasons
@@ -457,9 +474,10 @@ Partial Class FrmEditTrans
         Me.TxtReasons.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtReasons.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtReasons.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtReasons.Location = New System.Drawing.Point(91, 79)
+        Me.TxtReasons.Location = New System.Drawing.Point(121, 97)
+        Me.TxtReasons.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtReasons.Name = "TxtReasons"
-        Me.TxtReasons.Size = New System.Drawing.Size(491, 27)
+        Me.TxtReasons.Size = New System.Drawing.Size(653, 32)
         Me.TxtReasons.TabIndex = 171
         '
         'Label17
@@ -467,9 +485,10 @@ Partial Class FrmEditTrans
         Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.Black
-        Me.Label17.Location = New System.Drawing.Point(9, 73)
+        Me.Label17.Location = New System.Drawing.Point(12, 90)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(84, 39)
+        Me.Label17.Size = New System.Drawing.Size(112, 48)
         Me.Label17.TabIndex = 170
         Me.Label17.Text = "Reason For Deduction"
         Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -479,9 +498,10 @@ Partial Class FrmEditTrans
         Me.LblFinalNetUnit.BackColor = System.Drawing.Color.Transparent
         Me.LblFinalNetUnit.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblFinalNetUnit.ForeColor = System.Drawing.Color.Black
-        Me.LblFinalNetUnit.Location = New System.Drawing.Point(214, 51)
+        Me.LblFinalNetUnit.Location = New System.Drawing.Point(285, 63)
+        Me.LblFinalNetUnit.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblFinalNetUnit.Name = "LblFinalNetUnit"
-        Me.LblFinalNetUnit.Size = New System.Drawing.Size(84, 15)
+        Me.LblFinalNetUnit.Size = New System.Drawing.Size(112, 18)
         Me.LblFinalNetUnit.TabIndex = 169
         Me.LblFinalNetUnit.Text = "(KG)"
         Me.LblFinalNetUnit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -491,9 +511,10 @@ Partial Class FrmEditTrans
         Me.LblDedUnit.BackColor = System.Drawing.Color.Transparent
         Me.LblDedUnit.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblDedUnit.ForeColor = System.Drawing.Color.Black
-        Me.LblDedUnit.Location = New System.Drawing.Point(211, 16)
+        Me.LblDedUnit.Location = New System.Drawing.Point(281, 20)
+        Me.LblDedUnit.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblDedUnit.Name = "LblDedUnit"
-        Me.LblDedUnit.Size = New System.Drawing.Size(84, 15)
+        Me.LblDedUnit.Size = New System.Drawing.Size(112, 18)
         Me.LblDedUnit.TabIndex = 168
         Me.LblDedUnit.Text = "(%)"
         Me.LblDedUnit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -504,9 +525,10 @@ Partial Class FrmEditTrans
         Me.TxtDeduct.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtDeduct.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtDeduct.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDeduct.Location = New System.Drawing.Point(91, 11)
+        Me.TxtDeduct.Location = New System.Drawing.Point(121, 14)
+        Me.TxtDeduct.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDeduct.Name = "TxtDeduct"
-        Me.TxtDeduct.Size = New System.Drawing.Size(115, 26)
+        Me.TxtDeduct.Size = New System.Drawing.Size(152, 30)
         Me.TxtDeduct.TabIndex = 0
         Me.TxtDeduct.Text = "0.00"
         Me.TxtDeduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -516,10 +538,11 @@ Partial Class FrmEditTrans
         Me.TxtFINAL.BackColor = System.Drawing.SystemColors.Window
         Me.TxtFINAL.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtFINAL.ForeColor = System.Drawing.Color.Black
-        Me.TxtFINAL.Location = New System.Drawing.Point(91, 42)
+        Me.TxtFINAL.Location = New System.Drawing.Point(121, 52)
+        Me.TxtFINAL.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtFINAL.Name = "TxtFINAL"
         Me.TxtFINAL.ReadOnly = True
-        Me.TxtFINAL.Size = New System.Drawing.Size(115, 31)
+        Me.TxtFINAL.Size = New System.Drawing.Size(152, 36)
         Me.TxtFINAL.TabIndex = 1
         Me.TxtFINAL.TabStop = False
         Me.TxtFINAL.Text = "64000"
@@ -530,9 +553,10 @@ Partial Class FrmEditTrans
         Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.Black
-        Me.Label16.Location = New System.Drawing.Point(9, 50)
+        Me.Label16.Location = New System.Drawing.Point(12, 62)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(84, 15)
+        Me.Label16.Size = New System.Drawing.Size(112, 18)
         Me.Label16.TabIndex = 153
         Me.Label16.Text = "Final Net:"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -542,9 +566,10 @@ Partial Class FrmEditTrans
         Me.Label18.BackColor = System.Drawing.Color.Transparent
         Me.Label18.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.Black
-        Me.Label18.Location = New System.Drawing.Point(9, 9)
+        Me.Label18.Location = New System.Drawing.Point(12, 11)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(79, 36)
+        Me.Label18.Size = New System.Drawing.Size(105, 44)
         Me.Label18.TabIndex = 167
         Me.Label18.Text = "Net Wt. Deduction (%):"
         Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -556,9 +581,10 @@ Partial Class FrmEditTrans
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 657)
+        Me.Panel2.Location = New System.Drawing.Point(0, 809)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(950, 109)
+        Me.Panel2.Size = New System.Drawing.Size(1267, 134)
         Me.Panel2.TabIndex = 180
         '
         'Panel3
@@ -574,9 +600,10 @@ Partial Class FrmEditTrans
         Me.Panel3.Controls.Add(Me.Label15)
         Me.Panel3.Controls.Add(Me.TxtUpdby)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(387, 0)
+        Me.Panel3.Location = New System.Drawing.Point(517, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(561, 107)
+        Me.Panel3.Size = New System.Drawing.Size(748, 132)
         Me.Panel3.TabIndex = 0
         '
         'TxtDTUpd
@@ -584,10 +611,11 @@ Partial Class FrmEditTrans
         Me.TxtDTUpd.BackColor = System.Drawing.Color.White
         Me.TxtDTUpd.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtDTUpd.ForeColor = System.Drawing.Color.Black
-        Me.TxtDTUpd.Location = New System.Drawing.Point(415, 71)
+        Me.TxtDTUpd.Location = New System.Drawing.Point(553, 87)
+        Me.TxtDTUpd.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDTUpd.Name = "TxtDTUpd"
         Me.TxtDTUpd.ReadOnly = True
-        Me.TxtDTUpd.Size = New System.Drawing.Size(139, 26)
+        Me.TxtDTUpd.Size = New System.Drawing.Size(184, 30)
         Me.TxtDTUpd.TabIndex = 168
         Me.TxtDTUpd.TabStop = False
         '
@@ -596,10 +624,11 @@ Partial Class FrmEditTrans
         Me.TxtDTOut.BackColor = System.Drawing.Color.White
         Me.TxtDTOut.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtDTOut.ForeColor = System.Drawing.Color.Black
-        Me.TxtDTOut.Location = New System.Drawing.Point(415, 40)
+        Me.TxtDTOut.Location = New System.Drawing.Point(553, 49)
+        Me.TxtDTOut.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDTOut.Name = "TxtDTOut"
         Me.TxtDTOut.ReadOnly = True
-        Me.TxtDTOut.Size = New System.Drawing.Size(139, 26)
+        Me.TxtDTOut.Size = New System.Drawing.Size(184, 30)
         Me.TxtDTOut.TabIndex = 167
         Me.TxtDTOut.TabStop = False
         '
@@ -608,10 +637,11 @@ Partial Class FrmEditTrans
         Me.TxtDTIn.BackColor = System.Drawing.Color.White
         Me.TxtDTIn.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtDTIn.ForeColor = System.Drawing.Color.Black
-        Me.TxtDTIn.Location = New System.Drawing.Point(415, 8)
+        Me.TxtDTIn.Location = New System.Drawing.Point(553, 10)
+        Me.TxtDTIn.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDTIn.Name = "TxtDTIn"
         Me.TxtDTIn.ReadOnly = True
-        Me.TxtDTIn.Size = New System.Drawing.Size(139, 26)
+        Me.TxtDTIn.Size = New System.Drawing.Size(184, 30)
         Me.TxtDTIn.TabIndex = 166
         Me.TxtDTIn.TabStop = False
         '
@@ -621,9 +651,10 @@ Partial Class FrmEditTrans
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(18, 12)
+        Me.Label10.Location = New System.Drawing.Point(24, 15)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(86, 15)
+        Me.Label10.Size = New System.Drawing.Size(107, 20)
         Me.Label10.TabIndex = 160
         Me.Label10.Text = "Weighed in By:"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -634,9 +665,10 @@ Partial Class FrmEditTrans
         Me.Label14.BackColor = System.Drawing.Color.Transparent
         Me.Label14.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.Black
-        Me.Label14.Location = New System.Drawing.Point(18, 45)
+        Me.Label14.Location = New System.Drawing.Point(24, 55)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(94, 15)
+        Me.Label14.Size = New System.Drawing.Size(117, 20)
         Me.Label14.TabIndex = 161
         Me.Label14.Text = "Weighed out By:"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -646,10 +678,11 @@ Partial Class FrmEditTrans
         Me.txtWin.BackColor = System.Drawing.Color.White
         Me.txtWin.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtWin.ForeColor = System.Drawing.Color.Black
-        Me.txtWin.Location = New System.Drawing.Point(162, 8)
+        Me.txtWin.Location = New System.Drawing.Point(216, 10)
+        Me.txtWin.Margin = New System.Windows.Forms.Padding(4)
         Me.txtWin.Name = "txtWin"
         Me.txtWin.ReadOnly = True
-        Me.txtWin.Size = New System.Drawing.Size(251, 26)
+        Me.txtWin.Size = New System.Drawing.Size(333, 30)
         Me.txtWin.TabIndex = 162
         Me.txtWin.TabStop = False
         '
@@ -658,10 +691,11 @@ Partial Class FrmEditTrans
         Me.TxtWout.BackColor = System.Drawing.Color.White
         Me.TxtWout.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtWout.ForeColor = System.Drawing.Color.Black
-        Me.TxtWout.Location = New System.Drawing.Point(162, 40)
+        Me.TxtWout.Location = New System.Drawing.Point(216, 49)
+        Me.TxtWout.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtWout.Name = "TxtWout"
         Me.TxtWout.ReadOnly = True
-        Me.TxtWout.Size = New System.Drawing.Size(251, 26)
+        Me.TxtWout.Size = New System.Drawing.Size(333, 30)
         Me.TxtWout.TabIndex = 163
         Me.TxtWout.TabStop = False
         '
@@ -671,9 +705,10 @@ Partial Class FrmEditTrans
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(18, 77)
+        Me.Label15.Location = New System.Drawing.Point(24, 95)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(98, 15)
+        Me.Label15.Size = New System.Drawing.Size(123, 20)
         Me.Label15.TabIndex = 164
         Me.Label15.Text = "Last Modified By:"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -683,10 +718,11 @@ Partial Class FrmEditTrans
         Me.TxtUpdby.BackColor = System.Drawing.Color.White
         Me.TxtUpdby.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtUpdby.ForeColor = System.Drawing.Color.Black
-        Me.TxtUpdby.Location = New System.Drawing.Point(162, 72)
+        Me.TxtUpdby.Location = New System.Drawing.Point(216, 89)
+        Me.TxtUpdby.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtUpdby.Name = "TxtUpdby"
         Me.TxtUpdby.ReadOnly = True
-        Me.TxtUpdby.Size = New System.Drawing.Size(251, 26)
+        Me.TxtUpdby.Size = New System.Drawing.Size(333, 30)
         Me.TxtUpdby.TabIndex = 165
         Me.TxtUpdby.TabStop = False
         '
@@ -704,9 +740,10 @@ Partial Class FrmEditTrans
         Me.Panel1.Controls.Add(Me.TxtNet)
         Me.Panel1.Controls.Add(Me.Label20)
         Me.Panel1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(615, 146)
+        Me.Panel1.Location = New System.Drawing.Point(820, 180)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(325, 169)
+        Me.Panel1.Size = New System.Drawing.Size(433, 208)
         Me.Panel1.TabIndex = 178
         '
         'TxtGr_Time
@@ -715,10 +752,11 @@ Partial Class FrmEditTrans
         Me.TxtGr_Time.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtGr_Time.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtGr_Time.ForeColor = System.Drawing.Color.Black
-        Me.TxtGr_Time.Location = New System.Drawing.Point(238, 35)
+        Me.TxtGr_Time.Location = New System.Drawing.Point(317, 43)
+        Me.TxtGr_Time.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtGr_Time.Name = "TxtGr_Time"
         Me.TxtGr_Time.ReadOnly = True
-        Me.TxtGr_Time.Size = New System.Drawing.Size(75, 21)
+        Me.TxtGr_Time.Size = New System.Drawing.Size(100, 26)
         Me.TxtGr_Time.TabIndex = 150
         Me.TxtGr_Time.TabStop = False
         '
@@ -728,10 +766,11 @@ Partial Class FrmEditTrans
         Me.TxtTR_Time.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtTR_Time.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtTR_Time.ForeColor = System.Drawing.Color.Black
-        Me.TxtTR_Time.Location = New System.Drawing.Point(238, 71)
+        Me.TxtTR_Time.Location = New System.Drawing.Point(317, 87)
+        Me.TxtTR_Time.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTR_Time.Name = "TxtTR_Time"
         Me.TxtTR_Time.ReadOnly = True
-        Me.TxtTR_Time.Size = New System.Drawing.Size(75, 21)
+        Me.TxtTR_Time.Size = New System.Drawing.Size(100, 26)
         Me.TxtTR_Time.TabIndex = 148
         Me.TxtTR_Time.TabStop = False
         '
@@ -741,9 +780,10 @@ Partial Class FrmEditTrans
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(4, 8)
+        Me.Label3.Location = New System.Drawing.Point(5, 10)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(112, 20)
+        Me.Label3.Size = New System.Drawing.Size(141, 25)
         Me.Label3.TabIndex = 146
         Me.Label3.Text = "WEIGHT DATA"
         '
@@ -753,9 +793,10 @@ Partial Class FrmEditTrans
         Me.TxtRefNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtRefNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtRefNo.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtRefNo.Location = New System.Drawing.Point(772, 29)
+        Me.TxtRefNo.Location = New System.Drawing.Point(1029, 36)
+        Me.TxtRefNo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRefNo.Name = "TxtRefNo"
-        Me.TxtRefNo.Size = New System.Drawing.Size(169, 43)
+        Me.TxtRefNo.Size = New System.Drawing.Size(224, 52)
         Me.TxtRefNo.TabIndex = 176
         Me.TxtRefNo.Text = "00000001"
         Me.TxtRefNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -765,9 +806,10 @@ Partial Class FrmEditTrans
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(666, 29)
+        Me.Label9.Location = New System.Drawing.Point(888, 36)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(112, 27)
+        Me.Label9.Size = New System.Drawing.Size(149, 33)
         Me.Label9.TabIndex = 177
         Me.Label9.Text = "Receipt Number:"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -778,11 +820,12 @@ Partial Class FrmEditTrans
         Me.TxtRemarks.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtRemarks.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtRemarks.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtRemarks.Location = New System.Drawing.Point(112, 550)
+        Me.TxtRemarks.Location = New System.Drawing.Point(149, 677)
+        Me.TxtRemarks.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRemarks.Multiline = True
         Me.TxtRemarks.Name = "TxtRemarks"
         Me.TxtRemarks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtRemarks.Size = New System.Drawing.Size(457, 53)
+        Me.TxtRemarks.Size = New System.Drawing.Size(608, 64)
         Me.TxtRemarks.TabIndex = 7
         Me.TxtRemarks.Text = "SAMPLE ONLY. TSI STANDARD SOFTWARE"
         '
@@ -791,9 +834,10 @@ Partial Class FrmEditTrans
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(20, 551)
+        Me.Label12.Location = New System.Drawing.Point(27, 678)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(77, 27)
+        Me.Label12.Size = New System.Drawing.Size(103, 33)
         Me.Label12.TabIndex = 173
         Me.Label12.Text = "Remarks"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -804,9 +848,10 @@ Partial Class FrmEditTrans
         Me.TxtDriver.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtDriver.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtDriver.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDriver.Location = New System.Drawing.Point(112, 521)
+        Me.TxtDriver.Location = New System.Drawing.Point(149, 641)
+        Me.TxtDriver.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDriver.Name = "TxtDriver"
-        Me.TxtDriver.Size = New System.Drawing.Size(326, 27)
+        Me.TxtDriver.Size = New System.Drawing.Size(433, 32)
         Me.TxtDriver.TabIndex = 6
         Me.TxtDriver.Text = "JANNO GIBBS"
         '
@@ -815,9 +860,10 @@ Partial Class FrmEditTrans
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(20, 523)
+        Me.Label11.Location = New System.Drawing.Point(27, 644)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(77, 27)
+        Me.Label11.Size = New System.Drawing.Size(103, 33)
         Me.Label11.TabIndex = 171
         Me.Label11.Text = "Driver Name"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -832,9 +878,10 @@ Partial Class FrmEditTrans
         Me.Panel7.Controls.Add(Me.BtnComm)
         Me.Panel7.Controls.Add(Me.TxtPrice)
         Me.Panel7.Controls.Add(Me.LblPrice)
-        Me.Panel7.Location = New System.Drawing.Point(20, 240)
+        Me.Panel7.Location = New System.Drawing.Point(27, 295)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(589, 75)
+        Me.Panel7.Size = New System.Drawing.Size(785, 92)
         Me.Panel7.TabIndex = 3
         '
         'TxtPriceUnit
@@ -845,9 +892,10 @@ Partial Class FrmEditTrans
         Me.TxtPriceUnit.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtPriceUnit.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtPriceUnit.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtPriceUnit.Location = New System.Drawing.Point(215, 45)
+        Me.TxtPriceUnit.Location = New System.Drawing.Point(287, 55)
+        Me.TxtPriceUnit.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPriceUnit.Name = "TxtPriceUnit"
-        Me.TxtPriceUnit.Size = New System.Drawing.Size(88, 20)
+        Me.TxtPriceUnit.Size = New System.Drawing.Size(117, 25)
         Me.TxtPriceUnit.TabIndex = 2
         Me.TxtPriceUnit.TabStop = False
         Me.TxtPriceUnit.Text = "/KG"
@@ -861,10 +909,11 @@ Partial Class FrmEditTrans
         Me.CboCommodity.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboCommodity.FormattingEnabled = True
         Me.CboCommodity.IntegralHeight = False
-        Me.CboCommodity.Location = New System.Drawing.Point(95, 7)
+        Me.CboCommodity.Location = New System.Drawing.Point(127, 9)
+        Me.CboCommodity.Margin = New System.Windows.Forms.Padding(4)
         Me.CboCommodity.MaxLength = 50
         Me.CboCommodity.Name = "CboCommodity"
-        Me.CboCommodity.Size = New System.Drawing.Size(457, 27)
+        Me.CboCommodity.Size = New System.Drawing.Size(608, 32)
         Me.CboCommodity.Sorted = True
         Me.CboCommodity.TabIndex = 0
         Me.CboCommodity.Text = "MIXED WASTE"
@@ -874,11 +923,12 @@ Partial Class FrmEditTrans
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(7, 0)
+        Me.Label2.Location = New System.Drawing.Point(9, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 42)
+        Me.Label2.Size = New System.Drawing.Size(112, 52)
         Me.Label2.TabIndex = 153
-        Me.Label2.Text = "Commodity/Materials"
+        Me.Label2.Text = "Commodity"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'BtnComm
@@ -899,9 +949,10 @@ Partial Class FrmEditTrans
         Me.BtnComm.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnComm.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnComm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnComm.Location = New System.Drawing.Point(556, 7)
+        Me.BtnComm.Location = New System.Drawing.Point(741, 9)
+        Me.BtnComm.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnComm.Name = "BtnComm"
-        Me.BtnComm.Size = New System.Drawing.Size(26, 26)
+        Me.BtnComm.Size = New System.Drawing.Size(35, 32)
         Me.BtnComm.TabIndex = 166
         Me.BtnComm.TabStop = False
         Me.BtnComm.Text = "..."
@@ -916,9 +967,10 @@ Partial Class FrmEditTrans
         Me.TxtPrice.BackColor = System.Drawing.Color.White
         Me.TxtPrice.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtPrice.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtPrice.Location = New System.Drawing.Point(97, 45)
+        Me.TxtPrice.Location = New System.Drawing.Point(129, 55)
+        Me.TxtPrice.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPrice.Name = "TxtPrice"
-        Me.TxtPrice.Size = New System.Drawing.Size(112, 27)
+        Me.TxtPrice.Size = New System.Drawing.Size(148, 32)
         Me.TxtPrice.TabIndex = 1
         Me.TxtPrice.TabStop = False
         Me.TxtPrice.Text = "0.00"
@@ -929,9 +981,10 @@ Partial Class FrmEditTrans
         Me.LblPrice.BackColor = System.Drawing.Color.Transparent
         Me.LblPrice.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblPrice.ForeColor = System.Drawing.Color.Black
-        Me.LblPrice.Location = New System.Drawing.Point(9, 38)
+        Me.LblPrice.Location = New System.Drawing.Point(12, 47)
+        Me.LblPrice.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblPrice.Name = "LblPrice"
-        Me.LblPrice.Size = New System.Drawing.Size(77, 27)
+        Me.LblPrice.Size = New System.Drawing.Size(103, 33)
         Me.LblPrice.TabIndex = 167
         Me.LblPrice.Text = "Price"
         Me.LblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -942,9 +995,10 @@ Partial Class FrmEditTrans
         Me.TxtPlateNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtPlateNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtPlateNo.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtPlateNo.Location = New System.Drawing.Point(116, 103)
+        Me.TxtPlateNo.Location = New System.Drawing.Point(155, 127)
+        Me.TxtPlateNo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPlateNo.Name = "TxtPlateNo"
-        Me.TxtPlateNo.Size = New System.Drawing.Size(223, 37)
+        Me.TxtPlateNo.Size = New System.Drawing.Size(296, 44)
         Me.TxtPlateNo.TabIndex = 1
         Me.TxtPlateNo.Text = "ABC 123"
         '
@@ -954,9 +1008,10 @@ Partial Class FrmEditTrans
         Me.TxtTicketNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtTicketNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtTicketNo.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtTicketNo.Location = New System.Drawing.Point(112, 492)
+        Me.TxtTicketNo.Location = New System.Drawing.Point(149, 606)
+        Me.TxtTicketNo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTicketNo.Name = "TxtTicketNo"
-        Me.TxtTicketNo.Size = New System.Drawing.Size(186, 27)
+        Me.TxtTicketNo.Size = New System.Drawing.Size(247, 32)
         Me.TxtTicketNo.TabIndex = 5
         Me.TxtTicketNo.Text = "108"
         '
@@ -965,11 +1020,12 @@ Partial Class FrmEditTrans
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(20, 493)
+        Me.Label8.Location = New System.Drawing.Point(27, 607)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(77, 27)
+        Me.Label8.Size = New System.Drawing.Size(103, 33)
         Me.Label8.TabIndex = 164
-        Me.Label8.Text = "Lorry/ISO #"
+        Me.Label8.Text = "Ticket Num."
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label7
@@ -977,11 +1033,12 @@ Partial Class FrmEditTrans
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(20, 464)
+        Me.Label7.Location = New System.Drawing.Point(27, 571)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(77, 27)
+        Me.Label7.Size = New System.Drawing.Size(103, 33)
         Me.Label7.TabIndex = 163
-        Me.Label7.Text = "DR. No."
+        Me.Label7.Text = "DR Num."
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TxtDrNo
@@ -990,9 +1047,10 @@ Partial Class FrmEditTrans
         Me.TxtDrNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtDrNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtDrNo.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDrNo.Location = New System.Drawing.Point(112, 463)
+        Me.TxtDrNo.Location = New System.Drawing.Point(149, 570)
+        Me.TxtDrNo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDrNo.Name = "TxtDrNo"
-        Me.TxtDrNo.Size = New System.Drawing.Size(186, 27)
+        Me.TxtDrNo.Size = New System.Drawing.Size(247, 32)
         Me.TxtDrNo.TabIndex = 4
         Me.TxtDrNo.Text = "9879-16587"
         '
@@ -1001,9 +1059,10 @@ Partial Class FrmEditTrans
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(27, 104)
+        Me.Label4.Location = New System.Drawing.Point(36, 128)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(83, 40)
+        Me.Label4.Size = New System.Drawing.Size(111, 49)
         Me.Label4.TabIndex = 160
         Me.Label4.Text = "Plate Number:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1020,9 +1079,10 @@ Partial Class FrmEditTrans
         Me.Panel4.Controls.Add(Me.CboClient)
         Me.Panel4.Controls.Add(Me.Label1)
         Me.Panel4.Controls.Add(Me.RdoCust)
-        Me.Panel4.Location = New System.Drawing.Point(20, 146)
+        Me.Panel4.Location = New System.Drawing.Point(27, 180)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(589, 92)
+        Me.Panel4.Size = New System.Drawing.Size(785, 113)
         Me.Panel4.TabIndex = 2
         '
         'TxtAddress
@@ -1033,9 +1093,10 @@ Partial Class FrmEditTrans
         Me.TxtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtAddress.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAddress.Location = New System.Drawing.Point(97, 63)
+        Me.TxtAddress.Location = New System.Drawing.Point(129, 78)
+        Me.TxtAddress.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtAddress.Name = "TxtAddress"
-        Me.TxtAddress.Size = New System.Drawing.Size(454, 19)
+        Me.TxtAddress.Size = New System.Drawing.Size(605, 23)
         Me.TxtAddress.TabIndex = 3
         Me.TxtAddress.TabStop = False
         '
@@ -1044,9 +1105,10 @@ Partial Class FrmEditTrans
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(9, 57)
+        Me.Label13.Location = New System.Drawing.Point(12, 70)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(77, 27)
+        Me.Label13.Size = New System.Drawing.Size(103, 33)
         Me.Label13.TabIndex = 160
         Me.Label13.Text = "Address:"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1069,9 +1131,10 @@ Partial Class FrmEditTrans
         Me.BtnClient.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnClient.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnClient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnClient.Location = New System.Drawing.Point(556, 29)
+        Me.BtnClient.Location = New System.Drawing.Point(741, 36)
+        Me.BtnClient.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnClient.Name = "BtnClient"
-        Me.BtnClient.Size = New System.Drawing.Size(26, 27)
+        Me.BtnClient.Size = New System.Drawing.Size(35, 33)
         Me.BtnClient.TabIndex = 159
         Me.BtnClient.TabStop = False
         Me.BtnClient.Text = "..."
@@ -1084,20 +1147,22 @@ Partial Class FrmEditTrans
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(9, 30)
+        Me.Label5.Location = New System.Drawing.Point(12, 37)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(77, 27)
+        Me.Label5.Size = New System.Drawing.Size(103, 33)
         Me.Label5.TabIndex = 158
-        Me.Label5.Text = "Name:"
+        Me.Label5.Text = "Client"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'RdoSup
         '
         Me.RdoSup.AutoSize = True
         Me.RdoSup.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RdoSup.Location = New System.Drawing.Point(182, 6)
+        Me.RdoSup.Location = New System.Drawing.Point(243, 7)
+        Me.RdoSup.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoSup.Name = "RdoSup"
-        Me.RdoSup.Size = New System.Drawing.Size(78, 22)
+        Me.RdoSup.Size = New System.Drawing.Size(94, 27)
         Me.RdoSup.TabIndex = 1
         Me.RdoSup.TabStop = True
         Me.RdoSup.Text = "Supplier"
@@ -1112,10 +1177,11 @@ Partial Class FrmEditTrans
         Me.CboClient.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboClient.FormattingEnabled = True
         Me.CboClient.IntegralHeight = False
-        Me.CboClient.Location = New System.Drawing.Point(95, 31)
+        Me.CboClient.Location = New System.Drawing.Point(127, 38)
+        Me.CboClient.Margin = New System.Windows.Forms.Padding(4)
         Me.CboClient.MaxLength = 50
         Me.CboClient.Name = "CboClient"
-        Me.CboClient.Size = New System.Drawing.Size(456, 27)
+        Me.CboClient.Size = New System.Drawing.Size(607, 32)
         Me.CboClient.Sorted = True
         Me.CboClient.TabIndex = 2
         Me.CboClient.Text = "TERRINIEL SCALES INC."
@@ -1125,9 +1191,10 @@ Partial Class FrmEditTrans
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(6, 6)
+        Me.Label1.Location = New System.Drawing.Point(8, 7)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(77, 27)
+        Me.Label1.Size = New System.Drawing.Size(103, 33)
         Me.Label1.TabIndex = 151
         Me.Label1.Text = "Client Type:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1136,9 +1203,10 @@ Partial Class FrmEditTrans
         '
         Me.RdoCust.AutoSize = True
         Me.RdoCust.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RdoCust.Location = New System.Drawing.Point(97, 6)
+        Me.RdoCust.Location = New System.Drawing.Point(129, 7)
+        Me.RdoCust.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoCust.Name = "RdoCust"
-        Me.RdoCust.Size = New System.Drawing.Size(86, 22)
+        Me.RdoCust.Size = New System.Drawing.Size(106, 27)
         Me.RdoCust.TabIndex = 0
         Me.RdoCust.TabStop = True
         Me.RdoCust.Text = "Customer"
@@ -1149,8 +1217,9 @@ Partial Class FrmEditTrans
         Me.Pnl_Weight.BackColor = System.Drawing.Color.Transparent
         Me.Pnl_Weight.Dock = System.Windows.Forms.DockStyle.Top
         Me.Pnl_Weight.Location = New System.Drawing.Point(0, 0)
+        Me.Pnl_Weight.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_Weight.Name = "Pnl_Weight"
-        Me.Pnl_Weight.Size = New System.Drawing.Size(950, 23)
+        Me.Pnl_Weight.Size = New System.Drawing.Size(1267, 28)
         Me.Pnl_Weight.TabIndex = 0
         '
         'DataGridViewTextBoxColumn1
@@ -1167,6 +1236,7 @@ Partial Class FrmEditTrans
         '
         Me.Code.HeaderText = "Material Code"
         Me.Code.MaxInputLength = 15
+        Me.Code.MinimumWidth = 6
         Me.Code.Name = "Code"
         Me.Code.Width = 200
         '
@@ -1174,20 +1244,22 @@ Partial Class FrmEditTrans
         '
         Me.Col_Desc.HeaderText = "Description"
         Me.Col_Desc.MaxInputLength = 35
+        Me.Col_Desc.MinimumWidth = 6
         Me.Col_Desc.Name = "Col_Desc"
         Me.Col_Desc.Width = 300
         '
         'FrmEditTrans
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1366, 600)
+        Me.ClientSize = New System.Drawing.Size(1821, 738)
         Me.Controls.Add(Me.PnlMain)
         Me.Controls.Add(Me.PnlHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "FrmEditTrans"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide

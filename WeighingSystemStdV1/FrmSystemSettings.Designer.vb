@@ -99,6 +99,9 @@ Partial Class FrmSystemSettings
         Me.Label21 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.Pnl_General = New System.Windows.Forms.Panel()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.nupdTareWtTol = New System.Windows.Forms.NumericUpDown()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.RdoDKg = New System.Windows.Forms.RadioButton()
         Me.RdoDP = New System.Windows.Forms.RadioButton()
@@ -184,6 +187,7 @@ Partial Class FrmSystemSettings
         Me.s.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.Pnl_General.SuspendLayout()
+        CType(Me.nupdTareWtTol, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -251,7 +255,7 @@ Partial Class FrmSystemSettings
         Me.Panel1.Controls.Add(Me.Pnl_Buttons)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(7, 34)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Padding = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.Panel1.Size = New System.Drawing.Size(1133, 644)
@@ -265,7 +269,7 @@ Partial Class FrmSystemSettings
         Me.Pnl_Details.Controls.Add(Me.Pnl_ActionBtns)
         Me.Pnl_Details.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Pnl_Details.Location = New System.Drawing.Point(312, 6)
-        Me.Pnl_Details.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_Details.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_Details.Name = "Pnl_Details"
         Me.Pnl_Details.Size = New System.Drawing.Size(814, 632)
         Me.Pnl_Details.TabIndex = 6
@@ -281,7 +285,7 @@ Partial Class FrmSystemSettings
         Me.TabControl1.Controls.Add(Me.TabPage7)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(812, 571)
@@ -292,9 +296,9 @@ Partial Class FrmSystemSettings
         '
         Me.TabPage1.Controls.Add(Me.Pnl_Ports)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Size = New System.Drawing.Size(804, 542)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
@@ -307,7 +311,7 @@ Partial Class FrmSystemSettings
         Me.Pnl_Ports.Controls.Add(Me.Panel3)
         Me.Pnl_Ports.Dock = System.Windows.Forms.DockStyle.Top
         Me.Pnl_Ports.Location = New System.Drawing.Point(4, 4)
-        Me.Pnl_Ports.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_Ports.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_Ports.Name = "Pnl_Ports"
         Me.Pnl_Ports.Padding = New System.Windows.Forms.Padding(0, 0, 0, 6)
         Me.Pnl_Ports.Size = New System.Drawing.Size(796, 526)
@@ -329,7 +333,7 @@ Partial Class FrmSystemSettings
         Me.Pnl_Adv.Controls.Add(Me.CboDataBits)
         Me.Pnl_Adv.Dock = System.Windows.Forms.DockStyle.Top
         Me.Pnl_Adv.Location = New System.Drawing.Point(0, 271)
-        Me.Pnl_Adv.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_Adv.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_Adv.Name = "Pnl_Adv"
         Me.Pnl_Adv.Size = New System.Drawing.Size(796, 260)
         Me.Pnl_Adv.TabIndex = 114
@@ -344,7 +348,7 @@ Partial Class FrmSystemSettings
         Me.CboPort.IntegralHeight = False
         Me.CboPort.ItemHeight = 18
         Me.CboPort.Location = New System.Drawing.Point(175, 12)
-        Me.CboPort.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CboPort.Margin = New System.Windows.Forms.Padding(4)
         Me.CboPort.Name = "CboPort"
         Me.CboPort.Size = New System.Drawing.Size(239, 26)
         Me.CboPort.TabIndex = 0
@@ -356,7 +360,7 @@ Partial Class FrmSystemSettings
         Me.CboParity.FormattingEnabled = True
         Me.CboParity.Items.AddRange(New Object() {"Even", "Odd", "None", "Mark", "Space"})
         Me.CboParity.Location = New System.Drawing.Point(175, 112)
-        Me.CboParity.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CboParity.Margin = New System.Windows.Forms.Padding(4)
         Me.CboParity.Name = "CboParity"
         Me.CboParity.Size = New System.Drawing.Size(239, 26)
         Me.CboParity.TabIndex = 2
@@ -383,7 +387,7 @@ Partial Class FrmSystemSettings
         Me.CboBitsPerSecond.IntegralHeight = False
         Me.CboBitsPerSecond.Items.AddRange(New Object() {"75", "110", "134", "150", "300", "600", "1200", "1800", "2400", "4800", "7200", "9600", "14400", "19200", "38400", "57600", "115200", "128000", ""})
         Me.CboBitsPerSecond.Location = New System.Drawing.Point(175, 62)
-        Me.CboBitsPerSecond.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CboBitsPerSecond.Margin = New System.Windows.Forms.Padding(4)
         Me.CboBitsPerSecond.Name = "CboBitsPerSecond"
         Me.CboBitsPerSecond.Size = New System.Drawing.Size(239, 26)
         Me.CboBitsPerSecond.TabIndex = 1
@@ -434,7 +438,7 @@ Partial Class FrmSystemSettings
         Me.CboStopBits.FormattingEnabled = True
         Me.CboStopBits.Items.AddRange(New Object() {"1", "1.2", "2"})
         Me.CboStopBits.Location = New System.Drawing.Point(175, 218)
-        Me.CboStopBits.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CboStopBits.Margin = New System.Windows.Forms.Padding(4)
         Me.CboStopBits.Name = "CboStopBits"
         Me.CboStopBits.Size = New System.Drawing.Size(239, 26)
         Me.CboStopBits.TabIndex = 39
@@ -459,7 +463,7 @@ Partial Class FrmSystemSettings
         Me.CboDataBits.FormattingEnabled = True
         Me.CboDataBits.Items.AddRange(New Object() {"4", "5", "6", "7", "8"})
         Me.CboDataBits.Location = New System.Drawing.Point(175, 164)
-        Me.CboDataBits.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CboDataBits.Margin = New System.Windows.Forms.Padding(4)
         Me.CboDataBits.Name = "CboDataBits"
         Me.CboDataBits.Size = New System.Drawing.Size(239, 26)
         Me.CboDataBits.TabIndex = 3
@@ -485,7 +489,7 @@ Partial Class FrmSystemSettings
         Me.BtnAdv.Image = CType(resources.GetObject("BtnAdv.Image"), System.Drawing.Image)
         Me.BtnAdv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnAdv.Location = New System.Drawing.Point(0, 239)
-        Me.BtnAdv.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnAdv.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnAdv.Name = "BtnAdv"
         Me.BtnAdv.Size = New System.Drawing.Size(796, 32)
         Me.BtnAdv.TabIndex = 0
@@ -506,7 +510,7 @@ Partial Class FrmSystemSettings
         Me.Panel3.Controls.Add(Me.TV_Ports)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(796, 239)
         Me.Panel3.TabIndex = 110
@@ -529,7 +533,7 @@ Partial Class FrmSystemSettings
         Me.txtPort.Enabled = False
         Me.txtPort.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPort.Location = New System.Drawing.Point(623, 204)
-        Me.txtPort.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPort.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPort.MaxLength = 40
         Me.txtPort.Name = "txtPort"
         Me.txtPort.Size = New System.Drawing.Size(131, 26)
@@ -553,7 +557,7 @@ Partial Class FrmSystemSettings
         Me.txtIP.Enabled = False
         Me.txtIP.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIP.Location = New System.Drawing.Point(349, 204)
-        Me.txtIP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtIP.Margin = New System.Windows.Forms.Padding(4)
         Me.txtIP.MaxLength = 40
         Me.txtIP.Name = "txtIP"
         Me.txtIP.Size = New System.Drawing.Size(195, 26)
@@ -578,9 +582,9 @@ Partial Class FrmSystemSettings
         Me.GroupBox2.Controls.Add(Me.PictureBox2)
         Me.GroupBox2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(536, 43)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(236, 116)
         Me.GroupBox2.TabIndex = 116
         Me.GroupBox2.TabStop = False
@@ -605,7 +609,7 @@ Partial Class FrmSystemSettings
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox2.Image = Global.WeighingSystemV1_1.My.Resources.Resources.Info_48
         Me.PictureBox2.Location = New System.Drawing.Point(9, 31)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(65, 57)
         Me.PictureBox2.TabIndex = 116
@@ -648,7 +652,7 @@ Partial Class FrmSystemSettings
         Me.TV_Ports.ImageIndex = 0
         Me.TV_Ports.ImageList = Me.ImageList1
         Me.TV_Ports.Location = New System.Drawing.Point(15, 50)
-        Me.TV_Ports.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TV_Ports.Margin = New System.Windows.Forms.Padding(4)
         Me.TV_Ports.Name = "TV_Ports"
         Me.TV_Ports.SelectedImageIndex = 0
         Me.TV_Ports.ShowPlusMinus = False
@@ -667,9 +671,9 @@ Partial Class FrmSystemSettings
         '
         Me.TabPage2.Controls.Add(Me.Pnl_Connection)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Size = New System.Drawing.Size(804, 542)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
@@ -684,7 +688,7 @@ Partial Class FrmSystemSettings
         Me.Pnl_Connection.Controls.Add(Me.PnlServer)
         Me.Pnl_Connection.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Pnl_Connection.Location = New System.Drawing.Point(4, 4)
-        Me.Pnl_Connection.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_Connection.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_Connection.Name = "Pnl_Connection"
         Me.Pnl_Connection.Size = New System.Drawing.Size(796, 534)
         Me.Pnl_Connection.TabIndex = 0
@@ -696,7 +700,7 @@ Partial Class FrmSystemSettings
         Me.Panel5.Controls.Add(Me.RdoAccess)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(0, 41)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(796, 33)
         Me.Panel5.TabIndex = 1
@@ -717,7 +721,7 @@ Partial Class FrmSystemSettings
         Me.RdoSErver.AutoSize = True
         Me.RdoSErver.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdoSErver.Location = New System.Drawing.Point(259, 4)
-        Me.RdoSErver.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RdoSErver.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoSErver.Name = "RdoSErver"
         Me.RdoSErver.Size = New System.Drawing.Size(101, 22)
         Me.RdoSErver.TabIndex = 2
@@ -731,7 +735,7 @@ Partial Class FrmSystemSettings
         Me.RdoAccess.Checked = True
         Me.RdoAccess.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdoAccess.Location = New System.Drawing.Point(137, 4)
-        Me.RdoAccess.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RdoAccess.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoAccess.Name = "RdoAccess"
         Me.RdoAccess.Size = New System.Drawing.Size(102, 22)
         Me.RdoAccess.TabIndex = 1
@@ -764,7 +768,7 @@ Partial Class FrmSystemSettings
         Me.PnlAccess.Controls.Add(Me.Label11)
         Me.PnlAccess.Controls.Add(Me.Label9)
         Me.PnlAccess.Location = New System.Drawing.Point(16, 73)
-        Me.PnlAccess.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PnlAccess.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlAccess.Name = "PnlAccess"
         Me.PnlAccess.Size = New System.Drawing.Size(726, 278)
         Me.PnlAccess.TabIndex = 2
@@ -787,7 +791,7 @@ Partial Class FrmSystemSettings
         Me.BtnBrowse.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Empty
         Me.BtnBrowse.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnBrowse.Location = New System.Drawing.Point(473, 46)
-        Me.BtnBrowse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnBrowse.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnBrowse.Name = "BtnBrowse"
         Me.BtnBrowse.Size = New System.Drawing.Size(35, 27)
         Me.BtnBrowse.TabIndex = 1
@@ -811,7 +815,7 @@ Partial Class FrmSystemSettings
         Me.TxtDBpath.Enabled = False
         Me.TxtDBpath.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtDBpath.Location = New System.Drawing.Point(135, 47)
-        Me.TxtDBpath.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtDBpath.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDBpath.MaxLength = 60
         Me.TxtDBpath.Name = "TxtDBpath"
         Me.TxtDBpath.Size = New System.Drawing.Size(329, 26)
@@ -822,7 +826,7 @@ Partial Class FrmSystemSettings
         Me.TxtAccessPwd.Enabled = False
         Me.TxtAccessPwd.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtAccessPwd.Location = New System.Drawing.Point(135, 87)
-        Me.TxtAccessPwd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtAccessPwd.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtAccessPwd.MaxLength = 40
         Me.TxtAccessPwd.Name = "TxtAccessPwd"
         Me.TxtAccessPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -868,7 +872,7 @@ Partial Class FrmSystemSettings
         Me.PnlServer.Controls.Add(Me.Label20)
         Me.PnlServer.Controls.Add(Me.TxtPassword)
         Me.PnlServer.Location = New System.Drawing.Point(17, 71)
-        Me.PnlServer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PnlServer.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlServer.Name = "PnlServer"
         Me.PnlServer.Size = New System.Drawing.Size(726, 278)
         Me.PnlServer.TabIndex = 112
@@ -880,7 +884,7 @@ Partial Class FrmSystemSettings
         Me.CboServer.FormattingEnabled = True
         Me.CboServer.Items.AddRange(New Object() {"..."})
         Me.CboServer.Location = New System.Drawing.Point(163, 55)
-        Me.CboServer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CboServer.Margin = New System.Windows.Forms.Padding(4)
         Me.CboServer.Name = "CboServer"
         Me.CboServer.Size = New System.Drawing.Size(324, 28)
         Me.CboServer.TabIndex = 0
@@ -905,7 +909,7 @@ Partial Class FrmSystemSettings
         Me.CboDB.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboDB.FormattingEnabled = True
         Me.CboDB.Location = New System.Drawing.Point(163, 96)
-        Me.CboDB.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CboDB.Margin = New System.Windows.Forms.Padding(4)
         Me.CboDB.Name = "CboDB"
         Me.CboDB.Size = New System.Drawing.Size(299, 28)
         Me.CboDB.TabIndex = 0
@@ -954,7 +958,7 @@ Partial Class FrmSystemSettings
         '
         Me.TxtUserName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtUserName.Location = New System.Drawing.Point(163, 178)
-        Me.TxtUserName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtUserName.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtUserName.Name = "TxtUserName"
         Me.TxtUserName.Size = New System.Drawing.Size(219, 26)
         Me.TxtUserName.TabIndex = 3
@@ -977,7 +981,7 @@ Partial Class FrmSystemSettings
         '
         Me.TxtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtPassword.Location = New System.Drawing.Point(163, 219)
-        Me.TxtPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtPassword.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPassword.Name = "TxtPassword"
         Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtPassword.Size = New System.Drawing.Size(219, 26)
@@ -987,9 +991,9 @@ Partial Class FrmSystemSettings
         '
         Me.TabPage3.Controls.Add(Me.Pnl_refno)
         Me.TabPage3.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage3.Size = New System.Drawing.Size(804, 542)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "TabPage3"
@@ -1004,7 +1008,7 @@ Partial Class FrmSystemSettings
         Me.Pnl_refno.Controls.Add(Me.TxtId)
         Me.Pnl_refno.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Pnl_refno.Location = New System.Drawing.Point(4, 4)
-        Me.Pnl_refno.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_refno.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_refno.Name = "Pnl_refno"
         Me.Pnl_refno.Size = New System.Drawing.Size(796, 534)
         Me.Pnl_refno.TabIndex = 0
@@ -1031,9 +1035,9 @@ Partial Class FrmSystemSettings
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(36, 89)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(532, 123)
         Me.GroupBox1.TabIndex = 115
         Me.GroupBox1.TabStop = False
@@ -1044,7 +1048,7 @@ Partial Class FrmSystemSettings
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Image = Global.WeighingSystemV1_1.My.Resources.Resources.Info_48
         Me.PictureBox1.Location = New System.Drawing.Point(21, 38)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(65, 57)
         Me.PictureBox1.TabIndex = 116
@@ -1099,7 +1103,7 @@ Partial Class FrmSystemSettings
         Me.TxtId.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtId.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtId.Location = New System.Drawing.Point(175, 53)
-        Me.TxtId.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtId.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtId.MaxLength = 15
         Me.TxtId.Name = "TxtId"
         Me.TxtId.Size = New System.Drawing.Size(179, 30)
@@ -1109,9 +1113,9 @@ Partial Class FrmSystemSettings
         '
         Me.TabPage4.Controls.Add(Me.s)
         Me.TabPage4.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage4.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage4.Size = New System.Drawing.Size(804, 542)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "TabPage4"
@@ -1123,7 +1127,7 @@ Partial Class FrmSystemSettings
         Me.s.Controls.Add(Me.Label21)
         Me.s.Dock = System.Windows.Forms.DockStyle.Fill
         Me.s.Location = New System.Drawing.Point(4, 4)
-        Me.s.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.s.Margin = New System.Windows.Forms.Padding(4)
         Me.s.Name = "s"
         Me.s.Size = New System.Drawing.Size(796, 534)
         Me.s.TabIndex = 0
@@ -1133,7 +1137,7 @@ Partial Class FrmSystemSettings
         Me.Tv_Printers.ImageIndex = 0
         Me.Tv_Printers.ImageList = Me.ImageList1
         Me.Tv_Printers.Location = New System.Drawing.Point(11, 44)
-        Me.Tv_Printers.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Tv_Printers.Margin = New System.Windows.Forms.Padding(4)
         Me.Tv_Printers.Name = "Tv_Printers"
         Me.Tv_Printers.SelectedImageIndex = 0
         Me.Tv_Printers.Size = New System.Drawing.Size(769, 106)
@@ -1158,9 +1162,9 @@ Partial Class FrmSystemSettings
         '
         Me.TabPage5.Controls.Add(Me.Pnl_General)
         Me.TabPage5.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage5.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage5.Size = New System.Drawing.Size(804, 542)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "TabPage5"
@@ -1168,6 +1172,9 @@ Partial Class FrmSystemSettings
         '
         'Pnl_General
         '
+        Me.Pnl_General.Controls.Add(Me.nupdTareWtTol)
+        Me.Pnl_General.Controls.Add(Me.Label38)
+        Me.Pnl_General.Controls.Add(Me.Label37)
         Me.Pnl_General.Controls.Add(Me.Panel10)
         Me.Pnl_General.Controls.Add(Me.Panel9)
         Me.Pnl_General.Controls.Add(Me.Panel8)
@@ -1179,10 +1186,48 @@ Partial Class FrmSystemSettings
         Me.Pnl_General.Controls.Add(Me.Panel4)
         Me.Pnl_General.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Pnl_General.Location = New System.Drawing.Point(4, 4)
-        Me.Pnl_General.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_General.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_General.Name = "Pnl_General"
         Me.Pnl_General.Size = New System.Drawing.Size(796, 534)
         Me.Pnl_General.TabIndex = 0
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.BackColor = System.Drawing.Color.Transparent
+        Me.Label38.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label38.ForeColor = System.Drawing.Color.Black
+        Me.Label38.Location = New System.Drawing.Point(405, 487)
+        Me.Label38.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(19, 18)
+        Me.Label38.TabIndex = 122
+        Me.Label38.Text = "%"
+        Me.Label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.BackColor = System.Drawing.Color.Transparent
+        Me.Label37.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label37.ForeColor = System.Drawing.Color.Black
+        Me.Label37.Location = New System.Drawing.Point(16, 486)
+        Me.Label37.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(118, 18)
+        Me.Label37.TabIndex = 121
+        Me.Label37.Text = "Tare Wt Tolerance"
+        Me.Label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'nupdTareWtTol
+        '
+        Me.nupdTareWtTol.DecimalPlaces = 2
+        Me.nupdTareWtTol.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.nupdTareWtTol.Location = New System.Drawing.Point(154, 482)
+        Me.nupdTareWtTol.Name = "nupdTareWtTol"
+        Me.nupdTareWtTol.Size = New System.Drawing.Size(239, 26)
+        Me.nupdTareWtTol.TabIndex = 120
+        Me.nupdTareWtTol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel10
         '
@@ -1190,7 +1235,7 @@ Partial Class FrmSystemSettings
         Me.Panel10.Controls.Add(Me.RdoDP)
         Me.Panel10.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel10.Location = New System.Drawing.Point(280, 201)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(275, 28)
         Me.Panel10.TabIndex = 119
@@ -1200,7 +1245,7 @@ Partial Class FrmSystemSettings
         Me.RdoDKg.AutoSize = True
         Me.RdoDKg.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdoDKg.Location = New System.Drawing.Point(8, 2)
-        Me.RdoDKg.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RdoDKg.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoDKg.Name = "RdoDKg"
         Me.RdoDKg.Size = New System.Drawing.Size(108, 22)
         Me.RdoDKg.TabIndex = 1
@@ -1213,7 +1258,7 @@ Partial Class FrmSystemSettings
         Me.RdoDP.AutoSize = True
         Me.RdoDP.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdoDP.Location = New System.Drawing.Point(135, 2)
-        Me.RdoDP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RdoDP.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoDP.Name = "RdoDP"
         Me.RdoDP.Size = New System.Drawing.Size(99, 22)
         Me.RdoDP.TabIndex = 2
@@ -1229,7 +1274,7 @@ Partial Class FrmSystemSettings
         Me.Panel9.Controls.Add(Me.Label31)
         Me.Panel9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel9.Location = New System.Drawing.Point(12, 393)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(497, 79)
         Me.Panel9.TabIndex = 6
@@ -1243,8 +1288,8 @@ Partial Class FrmSystemSettings
         Me.cboConnType.IntegralHeight = False
         Me.cboConnType.ItemHeight = 18
         Me.cboConnType.Items.AddRange(New Object() {"GSE460", "RinstrumR323"})
-        Me.cboConnType.Location = New System.Drawing.Point(128, 44)
-        Me.cboConnType.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cboConnType.Location = New System.Drawing.Point(142, 44)
+        Me.cboConnType.Margin = New System.Windows.Forms.Padding(4)
         Me.cboConnType.Name = "cboConnType"
         Me.cboConnType.Size = New System.Drawing.Size(239, 26)
         Me.cboConnType.TabIndex = 117
@@ -1271,9 +1316,9 @@ Partial Class FrmSystemSettings
         Me.CboIndicator.FormattingEnabled = True
         Me.CboIndicator.IntegralHeight = False
         Me.CboIndicator.ItemHeight = 18
-        Me.CboIndicator.Items.AddRange(New Object() {"GSE460", "GSE460V2", "RINSTRUMR323V2", "RINSTRUMR323V3", "ZM405V2"})
-        Me.CboIndicator.Location = New System.Drawing.Point(128, 10)
-        Me.CboIndicator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CboIndicator.Items.AddRange(New Object() {"GSE460", "GSE460V2", "RINSTRUMR323V2", "RINSTRUMR323V3", "RINSTRUMR323V4", "ZM201", "ZM405"})
+        Me.CboIndicator.Location = New System.Drawing.Point(142, 10)
+        Me.CboIndicator.Margin = New System.Windows.Forms.Padding(4)
         Me.CboIndicator.Name = "CboIndicator"
         Me.CboIndicator.Size = New System.Drawing.Size(239, 26)
         Me.CboIndicator.TabIndex = 0
@@ -1299,7 +1344,7 @@ Partial Class FrmSystemSettings
         Me.Panel8.Controls.Add(Me.Rdo_InOutWeighing)
         Me.Panel8.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel8.Location = New System.Drawing.Point(4, 50)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(763, 47)
         Me.Panel8.TabIndex = 0
@@ -1323,7 +1368,7 @@ Partial Class FrmSystemSettings
         Me.Rdo_SingleWeighing.AutoSize = True
         Me.Rdo_SingleWeighing.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Rdo_SingleWeighing.Location = New System.Drawing.Point(145, 16)
-        Me.Rdo_SingleWeighing.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Rdo_SingleWeighing.Margin = New System.Windows.Forms.Padding(4)
         Me.Rdo_SingleWeighing.Name = "Rdo_SingleWeighing"
         Me.Rdo_SingleWeighing.Size = New System.Drawing.Size(144, 22)
         Me.Rdo_SingleWeighing.TabIndex = 0
@@ -1336,7 +1381,7 @@ Partial Class FrmSystemSettings
         Me.Rdo_InOutWeighing.AutoSize = True
         Me.Rdo_InOutWeighing.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Rdo_InOutWeighing.Location = New System.Drawing.Point(305, 16)
-        Me.Rdo_InOutWeighing.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Rdo_InOutWeighing.Margin = New System.Windows.Forms.Padding(4)
         Me.Rdo_InOutWeighing.Name = "Rdo_InOutWeighing"
         Me.Rdo_InOutWeighing.Size = New System.Drawing.Size(175, 22)
         Me.Rdo_InOutWeighing.TabIndex = 1
@@ -1352,7 +1397,7 @@ Partial Class FrmSystemSettings
         Me.Panel7.Controls.Add(Me.RdoEnablePrint)
         Me.Panel7.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel7.Location = New System.Drawing.Point(13, 234)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(496, 151)
         Me.Panel7.TabIndex = 5
@@ -1362,7 +1407,7 @@ Partial Class FrmSystemSettings
         Me.Pnl_PrintInOut.Controls.Add(Me.RdoPrintAll)
         Me.Pnl_PrintInOut.Controls.Add(Me.RdoPrintInOut)
         Me.Pnl_PrintInOut.Location = New System.Drawing.Point(68, 50)
-        Me.Pnl_PrintInOut.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_PrintInOut.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_PrintInOut.Name = "Pnl_PrintInOut"
         Me.Pnl_PrintInOut.Size = New System.Drawing.Size(400, 65)
         Me.Pnl_PrintInOut.TabIndex = 2
@@ -1372,7 +1417,7 @@ Partial Class FrmSystemSettings
         Me.RdoPrintAll.AutoSize = True
         Me.RdoPrintAll.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdoPrintAll.Location = New System.Drawing.Point(4, 33)
-        Me.RdoPrintAll.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RdoPrintAll.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoPrintAll.Name = "RdoPrintAll"
         Me.RdoPrintAll.Size = New System.Drawing.Size(231, 25)
         Me.RdoPrintAll.TabIndex = 4
@@ -1385,7 +1430,7 @@ Partial Class FrmSystemSettings
         Me.RdoPrintInOut.AutoSize = True
         Me.RdoPrintInOut.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdoPrintInOut.Location = New System.Drawing.Point(4, 7)
-        Me.RdoPrintInOut.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RdoPrintInOut.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoPrintInOut.Name = "RdoPrintInOut"
         Me.RdoPrintInOut.Size = New System.Drawing.Size(211, 25)
         Me.RdoPrintInOut.TabIndex = 3
@@ -1412,7 +1457,7 @@ Partial Class FrmSystemSettings
         Me.RdoDisablePrint.AutoSize = True
         Me.RdoDisablePrint.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdoDisablePrint.Location = New System.Drawing.Point(4, 123)
-        Me.RdoDisablePrint.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RdoDisablePrint.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoDisablePrint.Name = "RdoDisablePrint"
         Me.RdoDisablePrint.Size = New System.Drawing.Size(191, 25)
         Me.RdoDisablePrint.TabIndex = 1
@@ -1425,7 +1470,7 @@ Partial Class FrmSystemSettings
         Me.RdoEnablePrint.AutoSize = True
         Me.RdoEnablePrint.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdoEnablePrint.Location = New System.Drawing.Point(4, 4)
-        Me.RdoEnablePrint.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RdoEnablePrint.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoEnablePrint.Name = "RdoEnablePrint"
         Me.RdoEnablePrint.Size = New System.Drawing.Size(189, 25)
         Me.RdoEnablePrint.TabIndex = 0
@@ -1438,7 +1483,7 @@ Partial Class FrmSystemSettings
         Me.Chk_EnableDeduction.AutoSize = True
         Me.Chk_EnableDeduction.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Chk_EnableDeduction.Location = New System.Drawing.Point(13, 203)
-        Me.Chk_EnableDeduction.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Chk_EnableDeduction.Margin = New System.Windows.Forms.Padding(4)
         Me.Chk_EnableDeduction.Name = "Chk_EnableDeduction"
         Me.Chk_EnableDeduction.Size = New System.Drawing.Size(260, 25)
         Me.Chk_EnableDeduction.TabIndex = 4
@@ -1467,7 +1512,7 @@ Partial Class FrmSystemSettings
         Me.Panel6.Controls.Add(Me.RdoUTons)
         Me.Panel6.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel6.Location = New System.Drawing.Point(4, 105)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(505, 47)
         Me.Panel6.TabIndex = 1
@@ -1491,7 +1536,7 @@ Partial Class FrmSystemSettings
         Me.RdoUKg.AutoSize = True
         Me.RdoUKg.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdoUKg.Location = New System.Drawing.Point(281, 16)
-        Me.RdoUKg.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RdoUKg.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoUKg.Name = "RdoUKg"
         Me.RdoUKg.Size = New System.Drawing.Size(84, 22)
         Me.RdoUKg.TabIndex = 0
@@ -1504,7 +1549,7 @@ Partial Class FrmSystemSettings
         Me.RdoUTons.AutoSize = True
         Me.RdoUTons.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdoUTons.Location = New System.Drawing.Point(408, 16)
-        Me.RdoUTons.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RdoUTons.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoUTons.Name = "RdoUTons"
         Me.RdoUTons.Size = New System.Drawing.Size(57, 22)
         Me.RdoUTons.TabIndex = 1
@@ -1517,7 +1562,7 @@ Partial Class FrmSystemSettings
         Me.Chk_EnablePricing.AutoSize = True
         Me.Chk_EnablePricing.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Chk_EnablePricing.Location = New System.Drawing.Point(13, 161)
-        Me.Chk_EnablePricing.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Chk_EnablePricing.Margin = New System.Windows.Forms.Padding(4)
         Me.Chk_EnablePricing.Name = "Chk_EnablePricing"
         Me.Chk_EnablePricing.Size = New System.Drawing.Size(129, 25)
         Me.Chk_EnablePricing.TabIndex = 3
@@ -1531,7 +1576,7 @@ Partial Class FrmSystemSettings
         Me.Panel4.Controls.Add(Me.RdoPTons)
         Me.Panel4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel4.Location = New System.Drawing.Point(149, 159)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(360, 28)
         Me.Panel4.TabIndex = 2
@@ -1555,7 +1600,7 @@ Partial Class FrmSystemSettings
         Me.RdoPKg.AutoSize = True
         Me.RdoPKg.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdoPKg.Location = New System.Drawing.Point(136, 2)
-        Me.RdoPKg.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RdoPKg.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoPKg.Name = "RdoPKg"
         Me.RdoPKg.Size = New System.Drawing.Size(108, 22)
         Me.RdoPKg.TabIndex = 1
@@ -1568,7 +1613,7 @@ Partial Class FrmSystemSettings
         Me.RdoPTons.AutoSize = True
         Me.RdoPTons.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdoPTons.Location = New System.Drawing.Point(263, 2)
-        Me.RdoPTons.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RdoPTons.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoPTons.Name = "RdoPTons"
         Me.RdoPTons.Size = New System.Drawing.Size(80, 22)
         Me.RdoPTons.TabIndex = 2
@@ -1580,10 +1625,10 @@ Partial Class FrmSystemSettings
         '
         Me.TabPage6.Controls.Add(Me.Pnl_Profile)
         Me.TabPage6.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage6.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TabPage6.Size = New System.Drawing.Size(804, 540)
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(4)
+        Me.TabPage6.Size = New System.Drawing.Size(804, 542)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "TabPage6"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -1601,9 +1646,9 @@ Partial Class FrmSystemSettings
         Me.Pnl_Profile.Controls.Add(Me.Label25)
         Me.Pnl_Profile.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Pnl_Profile.Location = New System.Drawing.Point(4, 4)
-        Me.Pnl_Profile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_Profile.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_Profile.Name = "Pnl_Profile"
-        Me.Pnl_Profile.Size = New System.Drawing.Size(796, 532)
+        Me.Pnl_Profile.Size = New System.Drawing.Size(796, 534)
         Me.Pnl_Profile.TabIndex = 1
         '
         'BtnRemove
@@ -1625,7 +1670,7 @@ Partial Class FrmSystemSettings
         Me.BtnRemove.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnRemove.Location = New System.Drawing.Point(275, 380)
-        Me.BtnRemove.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnRemove.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnRemove.Name = "BtnRemove"
         Me.BtnRemove.Size = New System.Drawing.Size(119, 32)
         Me.BtnRemove.TabIndex = 167
@@ -1651,7 +1696,7 @@ Partial Class FrmSystemSettings
         Me.BtnChange.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnChange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnChange.Location = New System.Drawing.Point(152, 380)
-        Me.BtnChange.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnChange.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnChange.Name = "BtnChange"
         Me.BtnChange.Size = New System.Drawing.Size(115, 32)
         Me.BtnChange.TabIndex = 166
@@ -1662,7 +1707,7 @@ Partial Class FrmSystemSettings
         '
         Me.Pict.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Pict.Location = New System.Drawing.Point(152, 206)
-        Me.Pict.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pict.Margin = New System.Windows.Forms.Padding(4)
         Me.Pict.Name = "Pict"
         Me.Pict.Size = New System.Drawing.Size(241, 167)
         Me.Pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1689,7 +1734,7 @@ Partial Class FrmSystemSettings
         Me.TxtCompanyAddr.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtCompanyAddr.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCompanyAddr.Location = New System.Drawing.Point(152, 121)
-        Me.TxtCompanyAddr.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtCompanyAddr.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCompanyAddr.Multiline = True
         Me.TxtCompanyAddr.Name = "TxtCompanyAddr"
         Me.TxtCompanyAddr.Size = New System.Drawing.Size(565, 77)
@@ -1716,7 +1761,7 @@ Partial Class FrmSystemSettings
         Me.TxtCompanyNme.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtCompanyNme.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCompanyNme.Location = New System.Drawing.Point(152, 80)
-        Me.TxtCompanyNme.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtCompanyNme.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCompanyNme.Name = "TxtCompanyNme"
         Me.TxtCompanyNme.Size = New System.Drawing.Size(565, 32)
         Me.TxtCompanyNme.TabIndex = 161
@@ -1754,10 +1799,10 @@ Partial Class FrmSystemSettings
         '
         Me.TabPage7.Controls.Add(Me.Pnl_Backup)
         Me.TabPage7.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage7.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TabPage7.Size = New System.Drawing.Size(804, 540)
+        Me.TabPage7.Padding = New System.Windows.Forms.Padding(4)
+        Me.TabPage7.Size = New System.Drawing.Size(804, 542)
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "TabPage7"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -1768,9 +1813,9 @@ Partial Class FrmSystemSettings
         Me.Pnl_Backup.Controls.Add(Me.BtnBackupData)
         Me.Pnl_Backup.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Pnl_Backup.Location = New System.Drawing.Point(4, 4)
-        Me.Pnl_Backup.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_Backup.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_Backup.Name = "Pnl_Backup"
-        Me.Pnl_Backup.Size = New System.Drawing.Size(796, 532)
+        Me.Pnl_Backup.Size = New System.Drawing.Size(796, 534)
         Me.Pnl_Backup.TabIndex = 0
         '
         'GroupBox3
@@ -1779,9 +1824,9 @@ Partial Class FrmSystemSettings
         Me.GroupBox3.Controls.Add(Me.Label32)
         Me.GroupBox3.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(35, 25)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Size = New System.Drawing.Size(532, 123)
         Me.GroupBox3.TabIndex = 118
         Me.GroupBox3.TabStop = False
@@ -1792,7 +1837,7 @@ Partial Class FrmSystemSettings
         Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox3.Image = Global.WeighingSystemV1_1.My.Resources.Resources.Info_48
         Me.PictureBox3.Location = New System.Drawing.Point(21, 38)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(65, 57)
         Me.PictureBox3.TabIndex = 116
@@ -1832,7 +1877,7 @@ Partial Class FrmSystemSettings
         Me.BtnBackupData.Image = CType(resources.GetObject("BtnBackupData.Image"), System.Drawing.Image)
         Me.BtnBackupData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnBackupData.Location = New System.Drawing.Point(56, 166)
-        Me.BtnBackupData.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnBackupData.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnBackupData.Name = "BtnBackupData"
         Me.BtnBackupData.Size = New System.Drawing.Size(280, 49)
         Me.BtnBackupData.TabIndex = 117
@@ -1844,7 +1889,7 @@ Partial Class FrmSystemSettings
         Me.Pnl_ActionBtns.Controls.Add(Me.Panel2)
         Me.Pnl_ActionBtns.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Pnl_ActionBtns.Location = New System.Drawing.Point(0, 571)
-        Me.Pnl_ActionBtns.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_ActionBtns.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_ActionBtns.Name = "Pnl_ActionBtns"
         Me.Pnl_ActionBtns.Size = New System.Drawing.Size(812, 59)
         Me.Pnl_ActionBtns.TabIndex = 1
@@ -1857,7 +1902,7 @@ Partial Class FrmSystemSettings
         Me.Panel2.Controls.Add(Me.BtnSave)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel2.Location = New System.Drawing.Point(372, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(440, 59)
         Me.Panel2.TabIndex = 0
@@ -1882,7 +1927,7 @@ Partial Class FrmSystemSettings
         Me.BtnCancel.Image = CType(resources.GetObject("BtnCancel.Image"), System.Drawing.Image)
         Me.BtnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnCancel.Location = New System.Drawing.Point(300, 10)
-        Me.BtnCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnCancel.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(131, 46)
         Me.BtnCancel.TabIndex = 1
@@ -1910,7 +1955,7 @@ Partial Class FrmSystemSettings
         Me.BtnEdit.Image = CType(resources.GetObject("BtnEdit.Image"), System.Drawing.Image)
         Me.BtnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEdit.Location = New System.Drawing.Point(23, 10)
-        Me.BtnEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnEdit.Name = "BtnEdit"
         Me.BtnEdit.Size = New System.Drawing.Size(131, 46)
         Me.BtnEdit.TabIndex = 0
@@ -1938,7 +1983,7 @@ Partial Class FrmSystemSettings
         Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
         Me.BtnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnSave.Location = New System.Drawing.Point(161, 10)
-        Me.BtnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnSave.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(131, 46)
         Me.BtnSave.TabIndex = 0
@@ -1960,7 +2005,7 @@ Partial Class FrmSystemSettings
         Me.Pnl_Buttons.Controls.Add(Me.Lbl_PortLabel)
         Me.Pnl_Buttons.Dock = System.Windows.Forms.DockStyle.Left
         Me.Pnl_Buttons.Location = New System.Drawing.Point(7, 6)
-        Me.Pnl_Buttons.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_Buttons.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_Buttons.Name = "Pnl_Buttons"
         Me.Pnl_Buttons.Size = New System.Drawing.Size(305, 632)
         Me.Pnl_Buttons.TabIndex = 0
@@ -1984,7 +2029,7 @@ Partial Class FrmSystemSettings
         Me.BtnBackup.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnBackup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnBackup.Location = New System.Drawing.Point(15, 331)
-        Me.BtnBackup.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnBackup.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnBackup.Name = "BtnBackup"
         Me.BtnBackup.Size = New System.Drawing.Size(280, 47)
         Me.BtnBackup.TabIndex = 111
@@ -2011,7 +2056,7 @@ Partial Class FrmSystemSettings
         Me.BtnProfile.Image = CType(resources.GetObject("BtnProfile.Image"), System.Drawing.Image)
         Me.BtnProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnProfile.Location = New System.Drawing.Point(15, 277)
-        Me.BtnProfile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnProfile.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnProfile.Name = "BtnProfile"
         Me.BtnProfile.Size = New System.Drawing.Size(280, 47)
         Me.BtnProfile.TabIndex = 110
@@ -2038,7 +2083,7 @@ Partial Class FrmSystemSettings
         Me.BtnGeneral.Image = CType(resources.GetObject("BtnGeneral.Image"), System.Drawing.Image)
         Me.BtnGeneral.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnGeneral.Location = New System.Drawing.Point(15, 55)
-        Me.BtnGeneral.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnGeneral.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnGeneral.Name = "BtnGeneral"
         Me.BtnGeneral.Size = New System.Drawing.Size(280, 49)
         Me.BtnGeneral.TabIndex = 109
@@ -2065,7 +2110,7 @@ Partial Class FrmSystemSettings
         Me.BtnPrinters.Image = CType(resources.GetObject("BtnPrinters.Image"), System.Drawing.Image)
         Me.BtnPrinters.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnPrinters.Location = New System.Drawing.Point(15, 388)
-        Me.BtnPrinters.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnPrinters.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnPrinters.Name = "BtnPrinters"
         Me.BtnPrinters.Size = New System.Drawing.Size(280, 47)
         Me.BtnPrinters.TabIndex = 3
@@ -2093,7 +2138,7 @@ Partial Class FrmSystemSettings
         Me.BtnRefNo.Image = CType(resources.GetObject("BtnRefNo.Image"), System.Drawing.Image)
         Me.BtnRefNo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnRefNo.Location = New System.Drawing.Point(15, 223)
-        Me.BtnRefNo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnRefNo.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnRefNo.Name = "BtnRefNo"
         Me.BtnRefNo.Size = New System.Drawing.Size(280, 47)
         Me.BtnRefNo.TabIndex = 2
@@ -2120,7 +2165,7 @@ Partial Class FrmSystemSettings
         Me.BtnDbase.Image = CType(resources.GetObject("BtnDbase.Image"), System.Drawing.Image)
         Me.BtnDbase.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnDbase.Location = New System.Drawing.Point(15, 169)
-        Me.BtnDbase.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnDbase.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnDbase.Name = "BtnDbase"
         Me.BtnDbase.Size = New System.Drawing.Size(280, 47)
         Me.BtnDbase.TabIndex = 1
@@ -2147,7 +2192,7 @@ Partial Class FrmSystemSettings
         Me.BtnPorts.Image = CType(resources.GetObject("BtnPorts.Image"), System.Drawing.Image)
         Me.BtnPorts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnPorts.Location = New System.Drawing.Point(15, 112)
-        Me.BtnPorts.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnPorts.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnPorts.Name = "BtnPorts"
         Me.BtnPorts.Size = New System.Drawing.Size(280, 49)
         Me.BtnPorts.TabIndex = 0
@@ -2182,7 +2227,7 @@ Partial Class FrmSystemSettings
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmSystemSettings"
@@ -2220,6 +2265,7 @@ Partial Class FrmSystemSettings
         Me.TabPage5.ResumeLayout(False)
         Me.Pnl_General.ResumeLayout(False)
         Me.Pnl_General.PerformLayout()
+        CType(Me.nupdTareWtTol, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
         Me.Panel9.ResumeLayout(False)
@@ -2386,4 +2432,7 @@ Partial Class FrmSystemSettings
     Friend WithEvents txtIP As System.Windows.Forms.TextBox
     Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents Label37 As Label
+    Friend WithEvents nupdTareWtTol As NumericUpDown
+    Friend WithEvents Label38 As Label
 End Class

@@ -96,6 +96,7 @@
 
         CboIndicator.Text = SysSettings.device
         cboConnType.Text = SysSettings.DeviceConnectionType
+        nupdTareWtTol.Value = SysSettings.TareWtTolerance
     End Sub
 
     Private Sub GeneralSaveSettings()
@@ -145,6 +146,7 @@
 
         SysSettings.device = CboIndicator.Text
         SysSettings.DeviceConnectionType = cboConnType.Text
+        SysSettings.TareWtTolerance = nupdTareWtTol.Value
         SysSettings.Save()
     End Sub
     Private Sub EnableGeneralEdit()

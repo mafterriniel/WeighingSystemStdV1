@@ -35,22 +35,6 @@ Partial Class FrmManagement
         Me.PnlMain = New System.Windows.Forms.Panel()
         Me.PnlList = New System.Windows.Forms.Panel()
         Me.Dg = New System.Windows.Forms.DataGridView()
-        Me.Col_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_DateTimeIn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_DateTimeOut = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_PlateNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Client = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Comm = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Pricing = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Gross = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Tare = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Net = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Dr = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_TktNO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Driver = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_remarks = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Weigher = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_WeigherOut = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Pnl_Weight = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -71,6 +55,22 @@ Partial Class FrmManagement
         Me.BtnExit = New MykeCtrlEx.PushButton()
         Me.BtnView = New MykeCtrlEx.PushButton()
         Me.BtnPrint = New MykeCtrlEx.PushButton()
+        Me.Col_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_DateTimeIn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_DateTimeOut = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_PlateNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Client = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Comm = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Pricing = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Gross = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Tare = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Net = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Dr = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_TktNO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Driver = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_remarks = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Weigher = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_WeigherOut = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.PnlMain.SuspendLayout()
         Me.PnlList.SuspendLayout()
@@ -85,9 +85,10 @@ Partial Class FrmManagement
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(6, 17)
+        Me.Label1.Location = New System.Drawing.Point(8, 21)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(147, 15)
+        Me.Label1.Size = New System.Drawing.Size(191, 21)
         Me.Label1.TabIndex = 163
         Me.Label1.Text = "Number of records found:"
         '
@@ -99,18 +100,20 @@ Partial Class FrmManagement
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.LblRecord)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 466)
+        Me.Panel1.Location = New System.Drawing.Point(0, 574)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1354, 35)
+        Me.Panel1.Size = New System.Drawing.Size(1805, 43)
         Me.Panel1.TabIndex = 3
         '
         'LblRecord
         '
         Me.LblRecord.AutoSize = True
         Me.LblRecord.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblRecord.Location = New System.Drawing.Point(147, 1)
+        Me.LblRecord.Location = New System.Drawing.Point(196, 1)
+        Me.LblRecord.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblRecord.Name = "LblRecord"
-        Me.LblRecord.Size = New System.Drawing.Size(30, 36)
+        Me.LblRecord.Size = New System.Drawing.Size(39, 45)
         Me.LblRecord.TabIndex = 164
         Me.LblRecord.Text = "0"
         '
@@ -118,6 +121,7 @@ Partial Class FrmManagement
         '
         Me.Col_Desc.HeaderText = "Description"
         Me.Col_Desc.MaxInputLength = 35
+        Me.Col_Desc.MinimumWidth = 6
         Me.Col_Desc.Name = "Col_Desc"
         Me.Col_Desc.Width = 300
         '
@@ -126,10 +130,11 @@ Partial Class FrmManagement
         Me.PnlMain.BackColor = System.Drawing.Color.Transparent
         Me.PnlMain.Controls.Add(Me.PnlList)
         Me.PnlMain.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PnlMain.Location = New System.Drawing.Point(0, 87)
+        Me.PnlMain.Location = New System.Drawing.Point(0, 107)
+        Me.PnlMain.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlMain.Name = "PnlMain"
-        Me.PnlMain.Padding = New System.Windows.Forms.Padding(5)
-        Me.PnlMain.Size = New System.Drawing.Size(1366, 513)
+        Me.PnlMain.Padding = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.PnlMain.Size = New System.Drawing.Size(1821, 631)
         Me.PnlMain.TabIndex = 2
         '
         'PnlList
@@ -141,9 +146,10 @@ Partial Class FrmManagement
         Me.PnlList.Controls.Add(Me.Panel4)
         Me.PnlList.Controls.Add(Me.Panel1)
         Me.PnlList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PnlList.Location = New System.Drawing.Point(5, 5)
+        Me.PnlList.Location = New System.Drawing.Point(7, 6)
+        Me.PnlList.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlList.Name = "PnlList"
-        Me.PnlList.Size = New System.Drawing.Size(1356, 503)
+        Me.PnlList.Size = New System.Drawing.Size(1807, 619)
         Me.PnlList.TabIndex = 1
         '
         'Dg
@@ -175,7 +181,8 @@ Partial Class FrmManagement
         Me.Dg.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dg.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke
         Me.Dg.GridColor = System.Drawing.Color.Aqua
-        Me.Dg.Location = New System.Drawing.Point(0, 101)
+        Me.Dg.Location = New System.Drawing.Point(0, 124)
+        Me.Dg.Margin = New System.Windows.Forms.Padding(4)
         Me.Dg.MultiSelect = False
         Me.Dg.Name = "Dg"
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -199,107 +206,9 @@ Partial Class FrmManagement
         Me.Dg.RowTemplate.ReadOnly = True
         Me.Dg.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Dg.Size = New System.Drawing.Size(1354, 365)
+        Me.Dg.Size = New System.Drawing.Size(1805, 450)
         Me.Dg.StandardTab = True
         Me.Dg.TabIndex = 249
-        '
-        'Col_Id
-        '
-        Me.Col_Id.HeaderText = "Ref. No."
-        Me.Col_Id.MaxInputLength = 0
-        Me.Col_Id.MinimumWidth = 120
-        Me.Col_Id.Name = "Col_Id"
-        Me.Col_Id.ReadOnly = True
-        Me.Col_Id.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Col_Id.Width = 120
-        '
-        'Col_DateTimeIn
-        '
-        Me.Col_DateTimeIn.HeaderText = "Date & Time In"
-        Me.Col_DateTimeIn.MaxInputLength = 35
-        Me.Col_DateTimeIn.Name = "Col_DateTimeIn"
-        Me.Col_DateTimeIn.Width = 150
-        '
-        'Col_DateTimeOut
-        '
-        Me.Col_DateTimeOut.HeaderText = "Date & Time Out"
-        Me.Col_DateTimeOut.Name = "Col_DateTimeOut"
-        Me.Col_DateTimeOut.Width = 150
-        '
-        'Col_PlateNo
-        '
-        Me.Col_PlateNo.HeaderText = "Plate Number"
-        Me.Col_PlateNo.Name = "Col_PlateNo"
-        '
-        'Col_Client
-        '
-        Me.Col_Client.HeaderText = "Supplier/Customer Name"
-        Me.Col_Client.Name = "Col_Client"
-        Me.Col_Client.Width = 200
-        '
-        'Col_Comm
-        '
-        Me.Col_Comm.HeaderText = "Commodity/Materials"
-        Me.Col_Comm.Name = "Col_Comm"
-        Me.Col_Comm.Width = 140
-        '
-        'Col_Pricing
-        '
-        Me.Col_Pricing.HeaderText = "Price"
-        Me.Col_Pricing.Name = "Col_Pricing"
-        Me.Col_Pricing.Visible = False
-        '
-        'Col_Gross
-        '
-        Me.Col_Gross.HeaderText = "Gross Wt."
-        Me.Col_Gross.Name = "Col_Gross"
-        '
-        'Col_Tare
-        '
-        Me.Col_Tare.HeaderText = "Tare Wt."
-        Me.Col_Tare.Name = "Col_Tare"
-        '
-        'Col_Net
-        '
-        Me.Col_Net.HeaderText = "Net Wt."
-        Me.Col_Net.Name = "Col_Net"
-        '
-        'Col_Dr
-        '
-        Me.Col_Dr.HeaderText = "Dr No."
-        Me.Col_Dr.MinimumWidth = 120
-        Me.Col_Dr.Name = "Col_Dr"
-        Me.Col_Dr.Width = 120
-        '
-        'Col_TktNO
-        '
-        Me.Col_TktNO.HeaderText = "Ticket No."
-        Me.Col_TktNO.MinimumWidth = 120
-        Me.Col_TktNO.Name = "Col_TktNO"
-        Me.Col_TktNO.Width = 120
-        '
-        'Col_Driver
-        '
-        Me.Col_Driver.HeaderText = "Driver"
-        Me.Col_Driver.Name = "Col_Driver"
-        Me.Col_Driver.Width = 180
-        '
-        'Col_remarks
-        '
-        Me.Col_remarks.HeaderText = "Remarks"
-        Me.Col_remarks.Name = "Col_remarks"
-        '
-        'Col_Weigher
-        '
-        Me.Col_Weigher.HeaderText = "Weighed in by"
-        Me.Col_Weigher.Name = "Col_Weigher"
-        Me.Col_Weigher.Width = 180
-        '
-        'Col_WeigherOut
-        '
-        Me.Col_WeigherOut.HeaderText = "Weighed Out By"
-        Me.Col_WeigherOut.Name = "Col_WeigherOut"
-        Me.Col_WeigherOut.Width = 180
         '
         'Pnl_Weight
         '
@@ -311,9 +220,10 @@ Partial Class FrmManagement
         Me.Pnl_Weight.Controls.Add(Me.DTFrom)
         Me.Pnl_Weight.Controls.Add(Me.Label2)
         Me.Pnl_Weight.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Pnl_Weight.Location = New System.Drawing.Point(0, 31)
+        Me.Pnl_Weight.Location = New System.Drawing.Point(0, 38)
+        Me.Pnl_Weight.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_Weight.Name = "Pnl_Weight"
-        Me.Pnl_Weight.Size = New System.Drawing.Size(1354, 70)
+        Me.Pnl_Weight.Size = New System.Drawing.Size(1805, 86)
         Me.Pnl_Weight.TabIndex = 5
         '
         'Panel2
@@ -322,9 +232,10 @@ Partial Class FrmManagement
         Me.Panel2.Controls.Add(Me.CboSearchBy)
         Me.Panel2.Controls.Add(Me.TxtSearch)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(957, 0)
+        Me.Panel2.Location = New System.Drawing.Point(1276, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(397, 70)
+        Me.Panel2.Size = New System.Drawing.Size(529, 86)
         Me.Panel2.TabIndex = 241
         '
         'Label4
@@ -333,9 +244,10 @@ Partial Class FrmManagement
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(2, 19)
+        Me.Label4.Location = New System.Drawing.Point(3, 23)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(63, 15)
+        Me.Label4.Size = New System.Drawing.Size(82, 21)
         Me.Label4.TabIndex = 240
         Me.Label4.Text = "Search By:"
         '
@@ -350,10 +262,11 @@ Partial Class FrmManagement
         Me.CboSearchBy.FormattingEnabled = True
         Me.CboSearchBy.IntegralHeight = False
         Me.CboSearchBy.Items.AddRange(New Object() {"PLATE NUMBER", "REFERENCE NO.", "SUPPLIER NAME"})
-        Me.CboSearchBy.Location = New System.Drawing.Point(5, 37)
+        Me.CboSearchBy.Location = New System.Drawing.Point(7, 46)
+        Me.CboSearchBy.Margin = New System.Windows.Forms.Padding(4)
         Me.CboSearchBy.MaxLength = 50
         Me.CboSearchBy.Name = "CboSearchBy"
-        Me.CboSearchBy.Size = New System.Drawing.Size(190, 27)
+        Me.CboSearchBy.Size = New System.Drawing.Size(252, 32)
         Me.CboSearchBy.Sorted = True
         Me.CboSearchBy.TabIndex = 165
         '
@@ -363,9 +276,10 @@ Partial Class FrmManagement
         Me.TxtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtSearch.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtSearch.Location = New System.Drawing.Point(201, 37)
+        Me.TxtSearch.Location = New System.Drawing.Point(268, 46)
+        Me.TxtSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtSearch.Name = "TxtSearch"
-        Me.TxtSearch.Size = New System.Drawing.Size(190, 26)
+        Me.TxtSearch.Size = New System.Drawing.Size(252, 30)
         Me.TxtSearch.TabIndex = 163
         '
         'BtnGen
@@ -386,9 +300,10 @@ Partial Class FrmManagement
         Me.BtnGen.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
         Me.BtnGen.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnGen.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnGen.Location = New System.Drawing.Point(350, 33)
+        Me.BtnGen.Location = New System.Drawing.Point(467, 41)
+        Me.BtnGen.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnGen.Name = "BtnGen"
-        Me.BtnGen.Size = New System.Drawing.Size(95, 26)
+        Me.BtnGen.Size = New System.Drawing.Size(127, 32)
         Me.BtnGen.TabIndex = 240
         Me.BtnGen.Text = "GENERATE"
         Me.BtnGen.UseVisualStyleBackColor = True
@@ -397,9 +312,10 @@ Partial Class FrmManagement
         '
         Me.DTto.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTto.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DTto.Location = New System.Drawing.Point(215, 34)
+        Me.DTto.Location = New System.Drawing.Point(287, 42)
+        Me.DTto.Margin = New System.Windows.Forms.Padding(4)
         Me.DTto.Name = "DTto"
-        Me.DTto.Size = New System.Drawing.Size(129, 26)
+        Me.DTto.Size = New System.Drawing.Size(171, 30)
         Me.DTto.TabIndex = 237
         '
         'Label3
@@ -408,9 +324,10 @@ Partial Class FrmManagement
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(187, 39)
+        Me.Label3.Location = New System.Drawing.Point(249, 48)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(22, 15)
+        Me.Label3.Size = New System.Drawing.Size(30, 21)
         Me.Label3.TabIndex = 239
         Me.Label3.Text = "To:"
         '
@@ -418,9 +335,10 @@ Partial Class FrmManagement
         '
         Me.DTFrom.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DTFrom.Location = New System.Drawing.Point(49, 34)
+        Me.DTFrom.Location = New System.Drawing.Point(65, 42)
+        Me.DTFrom.Margin = New System.Windows.Forms.Padding(4)
         Me.DTFrom.Name = "DTFrom"
-        Me.DTFrom.Size = New System.Drawing.Size(135, 26)
+        Me.DTFrom.Size = New System.Drawing.Size(179, 30)
         Me.DTFrom.TabIndex = 236
         '
         'Label2
@@ -429,9 +347,10 @@ Partial Class FrmManagement
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(5, 39)
+        Me.Label2.Location = New System.Drawing.Point(7, 48)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(38, 15)
+        Me.Label2.Size = New System.Drawing.Size(52, 21)
         Me.Label2.TabIndex = 238
         Me.Label2.Text = "From:"
         '
@@ -441,8 +360,9 @@ Partial Class FrmManagement
         Me.Panel4.Controls.Add(Me.RdoInbound)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1354, 31)
+        Me.Panel4.Size = New System.Drawing.Size(1805, 38)
         Me.Panel4.TabIndex = 248
         '
         'RdoOutbound
@@ -450,9 +370,10 @@ Partial Class FrmManagement
         Me.RdoOutbound.Appearance = System.Windows.Forms.Appearance.Button
         Me.RdoOutbound.Dock = System.Windows.Forms.DockStyle.Left
         Me.RdoOutbound.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RdoOutbound.Location = New System.Drawing.Point(734, 0)
+        Me.RdoOutbound.Location = New System.Drawing.Point(979, 0)
+        Me.RdoOutbound.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoOutbound.Name = "RdoOutbound"
-        Me.RdoOutbound.Size = New System.Drawing.Size(617, 31)
+        Me.RdoOutbound.Size = New System.Drawing.Size(823, 38)
         Me.RdoOutbound.TabIndex = 245
         Me.RdoOutbound.Text = "OUTBOUND TRANSACTION"
         Me.RdoOutbound.UseVisualStyleBackColor = True
@@ -464,8 +385,9 @@ Partial Class FrmManagement
         Me.RdoInbound.Dock = System.Windows.Forms.DockStyle.Left
         Me.RdoInbound.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdoInbound.Location = New System.Drawing.Point(0, 0)
+        Me.RdoInbound.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoInbound.Name = "RdoInbound"
-        Me.RdoInbound.Size = New System.Drawing.Size(734, 31)
+        Me.RdoInbound.Size = New System.Drawing.Size(979, 38)
         Me.RdoInbound.TabIndex = 244
         Me.RdoInbound.TabStop = True
         Me.RdoInbound.Text = "INBOUND TRANSACTION"
@@ -475,6 +397,7 @@ Partial Class FrmManagement
         '
         Me.Code.HeaderText = "Material Code"
         Me.Code.MaxInputLength = 15
+        Me.Code.MinimumWidth = 6
         Me.Code.Name = "Code"
         Me.Code.Width = 200
         '
@@ -498,8 +421,9 @@ Partial Class FrmManagement
         Me.PnlHeader.Controls.Add(Me.BtnPrint)
         Me.PnlHeader.Dock = System.Windows.Forms.DockStyle.Top
         Me.PnlHeader.Location = New System.Drawing.Point(0, 0)
+        Me.PnlHeader.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlHeader.Name = "PnlHeader"
-        Me.PnlHeader.Size = New System.Drawing.Size(1366, 87)
+        Me.PnlHeader.Size = New System.Drawing.Size(1821, 107)
         Me.PnlHeader.TabIndex = 3
         '
         'BtnDelete
@@ -521,10 +445,11 @@ Partial Class FrmManagement
         Me.BtnDelete.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnDelete.Image = CType(resources.GetObject("BtnDelete.Image"), System.Drawing.Image)
         Me.BtnDelete.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnDelete.Location = New System.Drawing.Point(123, 8)
+        Me.BtnDelete.Location = New System.Drawing.Point(164, 10)
+        Me.BtnDelete.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnDelete.Name = "BtnDelete"
-        Me.BtnDelete.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        Me.BtnDelete.Size = New System.Drawing.Size(110, 64)
+        Me.BtnDelete.Padding = New System.Windows.Forms.Padding(0, 6, 0, 6)
+        Me.BtnDelete.Size = New System.Drawing.Size(147, 79)
         Me.BtnDelete.TabIndex = 2
         Me.BtnDelete.Text = "DEL REMOVE"
         Me.BtnDelete.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -549,10 +474,11 @@ Partial Class FrmManagement
         Me.BtnExit.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnExit.Image = CType(resources.GetObject("BtnExit.Image"), System.Drawing.Image)
         Me.BtnExit.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnExit.Location = New System.Drawing.Point(377, 8)
+        Me.BtnExit.Location = New System.Drawing.Point(503, 10)
+        Me.BtnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnExit.Name = "BtnExit"
-        Me.BtnExit.Padding = New System.Windows.Forms.Padding(5)
-        Me.BtnExit.Size = New System.Drawing.Size(110, 64)
+        Me.BtnExit.Padding = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.BtnExit.Size = New System.Drawing.Size(147, 79)
         Me.BtnExit.TabIndex = 7
         Me.BtnExit.Text = "EXIT"
         Me.BtnExit.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -577,10 +503,11 @@ Partial Class FrmManagement
         Me.BtnView.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnView.Image = CType(resources.GetObject("BtnView.Image"), System.Drawing.Image)
         Me.BtnView.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnView.Location = New System.Drawing.Point(7, 8)
+        Me.BtnView.Location = New System.Drawing.Point(9, 10)
+        Me.BtnView.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnView.Name = "BtnView"
-        Me.BtnView.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        Me.BtnView.Size = New System.Drawing.Size(110, 64)
+        Me.BtnView.Padding = New System.Windows.Forms.Padding(0, 6, 0, 6)
+        Me.BtnView.Size = New System.Drawing.Size(147, 79)
         Me.BtnView.TabIndex = 0
         Me.BtnView.Text = "F1 VIEW DATA"
         Me.BtnView.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -605,28 +532,147 @@ Partial Class FrmManagement
         Me.BtnPrint.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnPrint.Image = CType(resources.GetObject("BtnPrint.Image"), System.Drawing.Image)
         Me.BtnPrint.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnPrint.Location = New System.Drawing.Point(239, 8)
+        Me.BtnPrint.Location = New System.Drawing.Point(319, 10)
+        Me.BtnPrint.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnPrint.Name = "BtnPrint"
-        Me.BtnPrint.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        Me.BtnPrint.Size = New System.Drawing.Size(132, 64)
+        Me.BtnPrint.Padding = New System.Windows.Forms.Padding(0, 6, 0, 6)
+        Me.BtnPrint.Size = New System.Drawing.Size(176, 79)
         Me.BtnPrint.TabIndex = 6
         Me.BtnPrint.Text = "CTRL+P RE-PRINT SLIP"
         Me.BtnPrint.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.BtnPrint.UseVisualStyleBackColor = True
         '
+        'Col_Id
+        '
+        Me.Col_Id.HeaderText = "Ref. No."
+        Me.Col_Id.MaxInputLength = 0
+        Me.Col_Id.MinimumWidth = 120
+        Me.Col_Id.Name = "Col_Id"
+        Me.Col_Id.ReadOnly = True
+        Me.Col_Id.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Col_Id.Width = 120
+        '
+        'Col_DateTimeIn
+        '
+        Me.Col_DateTimeIn.HeaderText = "Date & Time In"
+        Me.Col_DateTimeIn.MaxInputLength = 35
+        Me.Col_DateTimeIn.MinimumWidth = 6
+        Me.Col_DateTimeIn.Name = "Col_DateTimeIn"
+        Me.Col_DateTimeIn.Width = 150
+        '
+        'Col_DateTimeOut
+        '
+        Me.Col_DateTimeOut.HeaderText = "Date & Time Out"
+        Me.Col_DateTimeOut.MinimumWidth = 6
+        Me.Col_DateTimeOut.Name = "Col_DateTimeOut"
+        Me.Col_DateTimeOut.Width = 150
+        '
+        'Col_PlateNo
+        '
+        Me.Col_PlateNo.HeaderText = "Plate Number"
+        Me.Col_PlateNo.MinimumWidth = 6
+        Me.Col_PlateNo.Name = "Col_PlateNo"
+        Me.Col_PlateNo.Width = 125
+        '
+        'Col_Client
+        '
+        Me.Col_Client.HeaderText = "Client"
+        Me.Col_Client.MinimumWidth = 6
+        Me.Col_Client.Name = "Col_Client"
+        Me.Col_Client.Width = 200
+        '
+        'Col_Comm
+        '
+        Me.Col_Comm.HeaderText = "Commodity"
+        Me.Col_Comm.MinimumWidth = 6
+        Me.Col_Comm.Name = "Col_Comm"
+        Me.Col_Comm.Width = 140
+        '
+        'Col_Pricing
+        '
+        Me.Col_Pricing.HeaderText = "Price"
+        Me.Col_Pricing.MinimumWidth = 6
+        Me.Col_Pricing.Name = "Col_Pricing"
+        Me.Col_Pricing.Visible = False
+        Me.Col_Pricing.Width = 125
+        '
+        'Col_Gross
+        '
+        Me.Col_Gross.HeaderText = "Gross Wt."
+        Me.Col_Gross.MinimumWidth = 6
+        Me.Col_Gross.Name = "Col_Gross"
+        Me.Col_Gross.Width = 125
+        '
+        'Col_Tare
+        '
+        Me.Col_Tare.HeaderText = "Tare Wt."
+        Me.Col_Tare.MinimumWidth = 6
+        Me.Col_Tare.Name = "Col_Tare"
+        Me.Col_Tare.Width = 125
+        '
+        'Col_Net
+        '
+        Me.Col_Net.HeaderText = "Net Wt."
+        Me.Col_Net.MinimumWidth = 6
+        Me.Col_Net.Name = "Col_Net"
+        Me.Col_Net.Width = 125
+        '
+        'Col_Dr
+        '
+        Me.Col_Dr.HeaderText = "DR Num."
+        Me.Col_Dr.MinimumWidth = 120
+        Me.Col_Dr.Name = "Col_Dr"
+        Me.Col_Dr.Width = 120
+        '
+        'Col_TktNO
+        '
+        Me.Col_TktNO.HeaderText = "Ticket Num."
+        Me.Col_TktNO.MinimumWidth = 120
+        Me.Col_TktNO.Name = "Col_TktNO"
+        Me.Col_TktNO.Width = 120
+        '
+        'Col_Driver
+        '
+        Me.Col_Driver.HeaderText = "Driver"
+        Me.Col_Driver.MinimumWidth = 6
+        Me.Col_Driver.Name = "Col_Driver"
+        Me.Col_Driver.Width = 180
+        '
+        'Col_remarks
+        '
+        Me.Col_remarks.HeaderText = "Remarks"
+        Me.Col_remarks.MinimumWidth = 6
+        Me.Col_remarks.Name = "Col_remarks"
+        Me.Col_remarks.Width = 125
+        '
+        'Col_Weigher
+        '
+        Me.Col_Weigher.HeaderText = "Weighed in by"
+        Me.Col_Weigher.MinimumWidth = 6
+        Me.Col_Weigher.Name = "Col_Weigher"
+        Me.Col_Weigher.Width = 180
+        '
+        'Col_WeigherOut
+        '
+        Me.Col_WeigherOut.HeaderText = "Weighed Out By"
+        Me.Col_WeigherOut.MinimumWidth = 6
+        Me.Col_WeigherOut.Name = "Col_WeigherOut"
+        Me.Col_WeigherOut.Width = 180
+        '
         'FrmManagement
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.BackgroundImage = Global.WeighingSystemV1_1.My.Resources.Resources.f
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1366, 600)
+        Me.ClientSize = New System.Drawing.Size(1821, 738)
         Me.Controls.Add(Me.PnlMain)
         Me.Controls.Add(Me.PnlHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "FrmManagement"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
@@ -673,20 +719,20 @@ Partial Class FrmManagement
     Friend WithEvents RdoOutbound As System.Windows.Forms.RadioButton
     Friend WithEvents RdoInbound As System.Windows.Forms.RadioButton
     Friend WithEvents Dg As System.Windows.Forms.DataGridView
-    Friend WithEvents Col_Id As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_DateTimeIn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_DateTimeOut As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_PlateNo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Client As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Comm As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Pricing As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Gross As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Tare As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Net As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Dr As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_TktNO As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Driver As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_remarks As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Weigher As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_WeigherOut As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Col_Id As DataGridViewTextBoxColumn
+    Friend WithEvents Col_DateTimeIn As DataGridViewTextBoxColumn
+    Friend WithEvents Col_DateTimeOut As DataGridViewTextBoxColumn
+    Friend WithEvents Col_PlateNo As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Client As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Comm As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Pricing As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Gross As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Tare As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Net As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Dr As DataGridViewTextBoxColumn
+    Friend WithEvents Col_TktNO As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Driver As DataGridViewTextBoxColumn
+    Friend WithEvents Col_remarks As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Weigher As DataGridViewTextBoxColumn
+    Friend WithEvents Col_WeigherOut As DataGridViewTextBoxColumn
 End Class

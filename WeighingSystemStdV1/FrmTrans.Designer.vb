@@ -73,18 +73,6 @@ Partial Class FrmTrans
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PnlList = New System.Windows.Forms.Panel()
         Me.Dg = New System.Windows.Forms.DataGridView()
-        Me.Col_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_PlateNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_DateTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_InboundWt = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Client = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Comm = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Pricing = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Dr = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_TktNO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Driver = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_remarks = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Weigher = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PnlSearch = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -100,7 +88,6 @@ Partial Class FrmTrans
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DTPicker = New System.Windows.Forms.DateTimePicker()
         Me.Pnl_indicator = New System.Windows.Forms.Panel()
-        Me.TxtOnline = New WeightDev.WeightIndicator()
         Me.TxtUnit = New System.Windows.Forms.TextBox()
         Me.TxtWeightType = New System.Windows.Forms.TextBox()
         Me.TxtOffline = New System.Windows.Forms.TextBox()
@@ -116,6 +103,19 @@ Partial Class FrmTrans
         Me.Label19 = New System.Windows.Forms.Label()
         Me.TxtNet = New System.Windows.Forms.TextBox()
         Me.TxtTare = New System.Windows.Forms.TextBox()
+        Me.TxtOnline = New WeightDev.WeightIndicator()
+        Me.Col_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_PlateNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_DateTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_InboundWt = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Client = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Comm = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Pricing = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Dr = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_TktNO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Driver = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_remarks = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Weigher = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PnlMain.SuspendLayout()
         Me.PnlDetails.SuspendLayout()
         Me.PnlWeightStat.SuspendLayout()
@@ -292,7 +292,7 @@ Partial Class FrmTrans
         Me.TxtFINAL.Size = New System.Drawing.Size(152, 36)
         Me.TxtFINAL.TabIndex = 1
         Me.TxtFINAL.TabStop = False
-        Me.TxtFINAL.Text = "64000"
+        Me.TxtFINAL.Text = "0.00"
         Me.TxtFINAL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label15
@@ -333,7 +333,6 @@ Partial Class FrmTrans
         Me.TxtRefNo.ReadOnly = True
         Me.TxtRefNo.Size = New System.Drawing.Size(224, 44)
         Me.TxtRefNo.TabIndex = 174
-        Me.TxtRefNo.Text = "00000001"
         Me.TxtRefNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label9
@@ -362,7 +361,6 @@ Partial Class FrmTrans
         Me.TxtRemarks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TxtRemarks.Size = New System.Drawing.Size(608, 64)
         Me.TxtRemarks.TabIndex = 7
-        Me.TxtRemarks.Text = "SAMPLE ONLY. TSI STANDARD SOFTWARE"
         '
         'Label12
         '
@@ -388,7 +386,6 @@ Partial Class FrmTrans
         Me.TxtDriver.Name = "TxtDriver"
         Me.TxtDriver.Size = New System.Drawing.Size(433, 32)
         Me.TxtDriver.TabIndex = 6
-        Me.TxtDriver.Text = "JANNO GIBBS"
         '
         'Label11
         '
@@ -414,7 +411,6 @@ Partial Class FrmTrans
         Me.TxtPlateNo.Name = "TxtPlateNo"
         Me.TxtPlateNo.Size = New System.Drawing.Size(296, 44)
         Me.TxtPlateNo.TabIndex = 0
-        Me.TxtPlateNo.Text = "ABC 123"
         '
         'TxtTicketNo
         '
@@ -427,7 +423,6 @@ Partial Class FrmTrans
         Me.TxtTicketNo.Name = "TxtTicketNo"
         Me.TxtTicketNo.Size = New System.Drawing.Size(252, 32)
         Me.TxtTicketNo.TabIndex = 5
-        Me.TxtTicketNo.Text = "108"
         '
         'Label8
         '
@@ -439,7 +434,7 @@ Partial Class FrmTrans
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(111, 33)
         Me.Label8.TabIndex = 164
-        Me.Label8.Text = "Ticket No."
+        Me.Label8.Text = "Ticket Num."
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label7
@@ -452,7 +447,7 @@ Partial Class FrmTrans
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(103, 33)
         Me.Label7.TabIndex = 163
-        Me.Label7.Text = "DR. No."
+        Me.Label7.Text = "Dr Num."
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TxtDrNo
@@ -466,7 +461,6 @@ Partial Class FrmTrans
         Me.TxtDrNo.Name = "TxtDrNo"
         Me.TxtDrNo.Size = New System.Drawing.Size(247, 32)
         Me.TxtDrNo.TabIndex = 4
-        Me.TxtDrNo.Text = "9879-16587"
         '
         'Label4
         '
@@ -564,7 +558,7 @@ Partial Class FrmTrans
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(103, 33)
         Me.Label5.TabIndex = 158
-        Me.Label5.Text = "Name:"
+        Me.Label5.Text = "Client"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'RdoSup
@@ -597,14 +591,13 @@ Partial Class FrmTrans
         Me.CboClient.Size = New System.Drawing.Size(569, 32)
         Me.CboClient.Sorted = True
         Me.CboClient.TabIndex = 2
-        Me.CboClient.Text = "TERRINIEL SCALES INC."
         '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(8, 7)
+        Me.Label1.Location = New System.Drawing.Point(12, 7)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(103, 33)
@@ -669,7 +662,6 @@ Partial Class FrmTrans
         Me.CboCommodity.Size = New System.Drawing.Size(571, 32)
         Me.CboCommodity.Sorted = True
         Me.CboCommodity.TabIndex = 0
-        Me.CboCommodity.Text = "MIXED WASTE"
         '
         'Label2
         '
@@ -681,7 +673,7 @@ Partial Class FrmTrans
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(112, 52)
         Me.Label2.TabIndex = 153
-        Me.Label2.Text = "Commodity/Materials"
+        Me.Label2.Text = "Commodity"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'BtnAddComm
@@ -824,95 +816,6 @@ Partial Class FrmTrans
         Me.Dg.StandardTab = True
         Me.Dg.TabIndex = 0
         '
-        'Col_Id
-        '
-        Me.Col_Id.HeaderText = "Ref. No."
-        Me.Col_Id.MaxInputLength = 0
-        Me.Col_Id.MinimumWidth = 2
-        Me.Col_Id.Name = "Col_Id"
-        Me.Col_Id.ReadOnly = True
-        Me.Col_Id.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Col_Id.Width = 2
-        '
-        'Col_PlateNo
-        '
-        Me.Col_PlateNo.HeaderText = "Plate Number"
-        Me.Col_PlateNo.MinimumWidth = 6
-        Me.Col_PlateNo.Name = "Col_PlateNo"
-        Me.Col_PlateNo.Width = 125
-        '
-        'Col_DateTime
-        '
-        Me.Col_DateTime.HeaderText = "Date & Time"
-        Me.Col_DateTime.MaxInputLength = 35
-        Me.Col_DateTime.MinimumWidth = 6
-        Me.Col_DateTime.Name = "Col_DateTime"
-        Me.Col_DateTime.Width = 150
-        '
-        'Col_InboundWt
-        '
-        Me.Col_InboundWt.HeaderText = "Inbound Wt."
-        Me.Col_InboundWt.MinimumWidth = 6
-        Me.Col_InboundWt.Name = "Col_InboundWt"
-        Me.Col_InboundWt.Width = 125
-        '
-        'Col_Client
-        '
-        Me.Col_Client.HeaderText = "Supplier/Customer Name"
-        Me.Col_Client.MinimumWidth = 6
-        Me.Col_Client.Name = "Col_Client"
-        Me.Col_Client.Width = 200
-        '
-        'Col_Comm
-        '
-        Me.Col_Comm.HeaderText = "Commodity/Materials"
-        Me.Col_Comm.MinimumWidth = 6
-        Me.Col_Comm.Name = "Col_Comm"
-        Me.Col_Comm.Width = 200
-        '
-        'Col_Pricing
-        '
-        Me.Col_Pricing.HeaderText = "Price"
-        Me.Col_Pricing.MinimumWidth = 6
-        Me.Col_Pricing.Name = "Col_Pricing"
-        Me.Col_Pricing.Visible = False
-        Me.Col_Pricing.Width = 125
-        '
-        'Col_Dr
-        '
-        Me.Col_Dr.HeaderText = "Dr No."
-        Me.Col_Dr.MinimumWidth = 120
-        Me.Col_Dr.Name = "Col_Dr"
-        Me.Col_Dr.Width = 120
-        '
-        'Col_TktNO
-        '
-        Me.Col_TktNO.HeaderText = "Ticket No."
-        Me.Col_TktNO.MinimumWidth = 120
-        Me.Col_TktNO.Name = "Col_TktNO"
-        Me.Col_TktNO.Width = 120
-        '
-        'Col_Driver
-        '
-        Me.Col_Driver.HeaderText = "Driver"
-        Me.Col_Driver.MinimumWidth = 6
-        Me.Col_Driver.Name = "Col_Driver"
-        Me.Col_Driver.Width = 180
-        '
-        'Col_remarks
-        '
-        Me.Col_remarks.HeaderText = "Remarks"
-        Me.Col_remarks.MinimumWidth = 6
-        Me.Col_remarks.Name = "Col_remarks"
-        Me.Col_remarks.Width = 125
-        '
-        'Col_Weigher
-        '
-        Me.Col_Weigher.HeaderText = "Weighed in by"
-        Me.Col_Weigher.MinimumWidth = 6
-        Me.Col_Weigher.Name = "Col_Weigher"
-        Me.Col_Weigher.Width = 125
-        '
         'PnlSearch
         '
         Me.PnlSearch.BackColor = System.Drawing.Color.Transparent
@@ -973,7 +876,6 @@ Partial Class FrmTrans
         Me.TxtSearch.Name = "TxtSearch"
         Me.TxtSearch.Size = New System.Drawing.Size(281, 36)
         Me.TxtSearch.TabIndex = 0
-        Me.TxtSearch.Text = "ABC 123"
         '
         'Label14
         '
@@ -1018,15 +920,15 @@ Partial Class FrmTrans
         'LblError
         '
         Me.LblError.BackColor = System.Drawing.Color.Transparent
-        Me.LblError.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblError.Font = New System.Drawing.Font("Calibri", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblError.ForeColor = System.Drawing.Color.Black
         Me.LblError.Image = CType(resources.GetObject("LblError.Image"), System.Drawing.Image)
         Me.LblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.LblError.Location = New System.Drawing.Point(5, 110)
+        Me.LblError.Location = New System.Drawing.Point(5, 100)
         Me.LblError.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblError.Name = "LblError"
         Me.LblError.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.LblError.Size = New System.Drawing.Size(532, 34)
+        Me.LblError.Size = New System.Drawing.Size(608, 62)
         Me.LblError.TabIndex = 147
         Me.LblError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.LblError.Visible = False
@@ -1157,49 +1059,6 @@ Partial Class FrmTrans
         Me.Pnl_indicator.Name = "Pnl_indicator"
         Me.Pnl_indicator.Size = New System.Drawing.Size(480, 91)
         Me.Pnl_indicator.TabIndex = 148
-        '
-        'TxtOnline
-        '
-        Me.TxtOnline.AccessPwd = "mijochanel09041990"
-        Me.TxtOnline.BackColor = System.Drawing.Color.Black
-        Me.TxtOnline.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxtOnline.CommBaudRate = 9600
-        Me.TxtOnline.CommDataBits = 8
-        Me.TxtOnline.CommDTREnable = True
-        Me.TxtOnline.CommNewLine = "" & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.TxtOnline.CommParity = "None"
-        Me.TxtOnline.CommPortName = "COM1"
-        Me.TxtOnline.CommReadBufferSize = 4
-        Me.TxtOnline.CommReadTimeout = 0
-        Me.TxtOnline.CommReceivedBytesThreshold = 1
-        Me.TxtOnline.CommRTSEnable = False
-        Me.TxtOnline.CommStopBits = "1"
-        Me.TxtOnline.CommWriteTimeout = 1000
-        Me.TxtOnline.ConnectionType = Nothing
-        Me.TxtOnline.DataLength = 0
-        Me.TxtOnline.DataSent = 0
-        Me.TxtOnline.DiscardInBuffer = False
-        Me.TxtOnline.DiscardOutBuffer = False
-        Me.TxtOnline.EndCharacter = Nothing
-        Me.TxtOnline.ExtStartIndex = 0
-        Me.TxtOnline.Font = New System.Drawing.Font("DS-Digital", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtOnline.ForeColor = System.Drawing.Color.YellowGreen
-        Me.TxtOnline.IPAddress = "192.168.1.41"
-        Me.TxtOnline.IPPort = "1"
-        Me.TxtOnline.IPReadTimeOut = 1000
-        Me.TxtOnline.LengthViewer = Nothing
-        Me.TxtOnline.Location = New System.Drawing.Point(7, 5)
-        Me.TxtOnline.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtOnline.Name = "TxtOnline"
-        Me.TxtOnline.ReadingInterval = 100
-        Me.TxtOnline.ReadOnly = True
-        Me.TxtOnline.SignalViewer = Nothing
-        Me.TxtOnline.SimulationIncrement = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.TxtOnline.SimulationSpeed = 100
-        Me.TxtOnline.Size = New System.Drawing.Size(337, 80)
-        Me.TxtOnline.TabIndex = 151
-        Me.TxtOnline.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.TxtOnline.WeighingDevice = Nothing
         '
         'TxtUnit
         '
@@ -1520,6 +1379,139 @@ Partial Class FrmTrans
         Me.TxtTare.TabStop = False
         Me.TxtTare.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
+        'TxtOnline
+        '
+        Me.TxtOnline.AccessPwd = "mijochanel09041990"
+        Me.TxtOnline.BackColor = System.Drawing.Color.Black
+        Me.TxtOnline.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtOnline.CommBaudRate = 9600
+        Me.TxtOnline.CommDataBits = 8
+        Me.TxtOnline.CommDTREnable = True
+        Me.TxtOnline.CommNewLine = "" & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.TxtOnline.CommParity = "None"
+        Me.TxtOnline.CommPortName = "COM1"
+        Me.TxtOnline.CommReadBufferSize = 4
+        Me.TxtOnline.CommReadTimeout = 0
+        Me.TxtOnline.CommReceivedBytesThreshold = 1
+        Me.TxtOnline.CommRTSEnable = False
+        Me.TxtOnline.CommStopBits = "1"
+        Me.TxtOnline.CommWriteTimeout = 1000
+        Me.TxtOnline.ConnectionType = Nothing
+        Me.TxtOnline.DataLength = 0
+        Me.TxtOnline.DataSent = 0
+        Me.TxtOnline.DiscardInBuffer = False
+        Me.TxtOnline.DiscardOutBuffer = False
+        Me.TxtOnline.EndCharacter = Nothing
+        Me.TxtOnline.ExtStartIndex = 0
+        Me.TxtOnline.Font = New System.Drawing.Font("DS-Digital", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtOnline.ForeColor = System.Drawing.Color.YellowGreen
+        Me.TxtOnline.IPAddress = "192.168.1.41"
+        Me.TxtOnline.IPPort = "1"
+        Me.TxtOnline.IPReadTimeOut = 1000
+        Me.TxtOnline.LengthViewer = Nothing
+        Me.TxtOnline.Location = New System.Drawing.Point(7, 5)
+        Me.TxtOnline.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtOnline.Name = "TxtOnline"
+        Me.TxtOnline.ReadingInterval = 100
+        Me.TxtOnline.ReadOnly = True
+        Me.TxtOnline.Sensitivity = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.TxtOnline.SignalViewer = Nothing
+        Me.TxtOnline.SimulationIncrement = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.TxtOnline.SimulationSpeed = 100
+        Me.TxtOnline.Size = New System.Drawing.Size(337, 80)
+        Me.TxtOnline.TabIndex = 151
+        Me.TxtOnline.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.TxtOnline.WeighingDevice = Nothing
+        '
+        'Col_Id
+        '
+        Me.Col_Id.HeaderText = "Ref. No."
+        Me.Col_Id.MaxInputLength = 0
+        Me.Col_Id.MinimumWidth = 2
+        Me.Col_Id.Name = "Col_Id"
+        Me.Col_Id.ReadOnly = True
+        Me.Col_Id.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Col_Id.Width = 2
+        '
+        'Col_PlateNo
+        '
+        Me.Col_PlateNo.HeaderText = "Plate Number"
+        Me.Col_PlateNo.MinimumWidth = 6
+        Me.Col_PlateNo.Name = "Col_PlateNo"
+        Me.Col_PlateNo.Width = 125
+        '
+        'Col_DateTime
+        '
+        Me.Col_DateTime.HeaderText = "Date & Time"
+        Me.Col_DateTime.MaxInputLength = 35
+        Me.Col_DateTime.MinimumWidth = 6
+        Me.Col_DateTime.Name = "Col_DateTime"
+        Me.Col_DateTime.Width = 150
+        '
+        'Col_InboundWt
+        '
+        Me.Col_InboundWt.HeaderText = "Inbound Wt."
+        Me.Col_InboundWt.MinimumWidth = 6
+        Me.Col_InboundWt.Name = "Col_InboundWt"
+        Me.Col_InboundWt.Width = 125
+        '
+        'Col_Client
+        '
+        Me.Col_Client.HeaderText = "Client"
+        Me.Col_Client.MinimumWidth = 6
+        Me.Col_Client.Name = "Col_Client"
+        Me.Col_Client.Width = 200
+        '
+        'Col_Comm
+        '
+        Me.Col_Comm.HeaderText = "Commodity"
+        Me.Col_Comm.MinimumWidth = 6
+        Me.Col_Comm.Name = "Col_Comm"
+        Me.Col_Comm.Width = 200
+        '
+        'Col_Pricing
+        '
+        Me.Col_Pricing.HeaderText = "Price"
+        Me.Col_Pricing.MinimumWidth = 6
+        Me.Col_Pricing.Name = "Col_Pricing"
+        Me.Col_Pricing.Visible = False
+        Me.Col_Pricing.Width = 125
+        '
+        'Col_Dr
+        '
+        Me.Col_Dr.HeaderText = "DR Num."
+        Me.Col_Dr.MinimumWidth = 120
+        Me.Col_Dr.Name = "Col_Dr"
+        Me.Col_Dr.Width = 120
+        '
+        'Col_TktNO
+        '
+        Me.Col_TktNO.HeaderText = "Ticket Num."
+        Me.Col_TktNO.MinimumWidth = 120
+        Me.Col_TktNO.Name = "Col_TktNO"
+        Me.Col_TktNO.Width = 120
+        '
+        'Col_Driver
+        '
+        Me.Col_Driver.HeaderText = "Driver"
+        Me.Col_Driver.MinimumWidth = 6
+        Me.Col_Driver.Name = "Col_Driver"
+        Me.Col_Driver.Width = 180
+        '
+        'Col_remarks
+        '
+        Me.Col_remarks.HeaderText = "Remarks"
+        Me.Col_remarks.MinimumWidth = 6
+        Me.Col_remarks.Name = "Col_remarks"
+        Me.Col_remarks.Width = 125
+        '
+        'Col_Weigher
+        '
+        Me.Col_Weigher.HeaderText = "Weighed in by"
+        Me.Col_Weigher.MinimumWidth = 6
+        Me.Col_Weigher.Name = "Col_Weigher"
+        Me.Col_Weigher.Width = 125
+        '
         'FrmTrans
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1594,18 +1586,6 @@ Partial Class FrmTrans
     Friend WithEvents Col_Desc As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents BtnDelete As MykeCtrlEx.PushButton
     Friend WithEvents TxtOffline As System.Windows.Forms.TextBox
-    Friend WithEvents Col_Id As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_PlateNo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_DateTime As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_InboundWt As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Client As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Comm As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Pricing As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Dr As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_TktNO As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Driver As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_remarks As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col_Weigher As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents BtnPrintOut As MykeCtrlEx.PushButton
     Friend WithEvents DTPicker As System.Windows.Forms.DateTimePicker
     Friend WithEvents LblError As System.Windows.Forms.Label
@@ -1651,4 +1631,16 @@ Partial Class FrmTrans
     Friend WithEvents BtnAddComm As MykeCtrlEx.PushButton
     Friend WithEvents TxtPrice As System.Windows.Forms.TextBox
     Friend WithEvents LblPriceLabel As System.Windows.Forms.Label
+    Friend WithEvents Col_Id As DataGridViewTextBoxColumn
+    Friend WithEvents Col_PlateNo As DataGridViewTextBoxColumn
+    Friend WithEvents Col_DateTime As DataGridViewTextBoxColumn
+    Friend WithEvents Col_InboundWt As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Client As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Comm As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Pricing As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Dr As DataGridViewTextBoxColumn
+    Friend WithEvents Col_TktNO As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Driver As DataGridViewTextBoxColumn
+    Friend WithEvents Col_remarks As DataGridViewTextBoxColumn
+    Friend WithEvents Col_Weigher As DataGridViewTextBoxColumn
 End Class

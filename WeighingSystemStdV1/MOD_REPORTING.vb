@@ -1,4 +1,6 @@
-﻿Module MOD_REPORTING
+﻿Imports System.Data.OleDb
+
+Module MOD_REPORTING
     Public Sub PrintToPrinter__OLD(ByVal ReportFile As String, ByVal SelectionFormula As String,
                           ByVal RR As CrystalDecisions.CrystalReports.Engine.ReportDocument, Optional ByVal refno As String = "")
         Try
@@ -159,6 +161,8 @@
 ",(SELECT USER_DISPLAYNAME FROM USERACCOUNTS WHERE User_id = WeigherIn),* FROM OUTBOUND_TBL where RefNo = '" & refno & "'"
                 Dim cls As New CLS_OLE_DB
                 cls.CONNECTION = OLEDBCONX
+
+
                 cls.Source = Src
                 cls.OpenSource()
                 Dim gr As String = 0

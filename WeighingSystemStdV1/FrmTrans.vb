@@ -168,7 +168,6 @@ Public Class FrmTrans
         End If
     End Sub
 
-
     Private Sub Change_WeightSource()
         If OnDevice = True Then
             ' Pnl_indicator.Visible = True
@@ -202,7 +201,6 @@ Public Class FrmTrans
         GrabSettings()
 
         SetPort(TxtOnline)
-
 
         ' Dg.Columns(Col_Pricing.Index).HeaderText += "(" & UnitPerPrice & ")"
         Me.Left = 0
@@ -560,7 +558,7 @@ Public Class FrmTrans
         Else
             If Weighout = True Then
                 If SysSettings.EnableDeduction = True Then
-                    Mc = _
+                    Mc =
             Replace(TxtDeduct.Text, ",", "")
                     If String.IsNullOrEmpty(Mc) Then Mc = 0.0
                     If IsNumeric(Mc) = False Then
@@ -575,8 +573,15 @@ Public Class FrmTrans
                 Else
                     Mc = 0
                 End If
+
+                Dim tareWt As Decimal = 0
+                Decimal.TryParse(TxtTare.Text, tareWt)
+                Dim validTare = VehicleService.ValidateTareWt(TxtPlateNo.Text, tareWt)
+                If (validTare = False) Then
+                    Errortext = Errortext & Environment.NewLine & "* Truck Tare Weight does not meet the required tolerance."
+                End If
             End If
-        End If
+            End If
 
         If IsNothing(Errortext) = False Then
             MessageBox.Show(Errortext, "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -638,7 +643,6 @@ Public Class FrmTrans
             'MOD_REPORTING.PrintToPrinter(Application.StartupPath & "\Reports\" & "TcktIn.rpt", "{OutBound_tbl.Refno} = '" & INBOUND_REFNO & "'", Nothing)
 
             MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketAll, LastOutRefNo)
-
 
             Dim frm As New FrmTransOK
             frm.MsgSTr = " Weighing Complete..." & vbNewLine & _
@@ -757,7 +761,6 @@ Public Class FrmTrans
             If EnableDeduction = True Then FinalNet = TxtFINAL.Text
             If EnableDeduction = False Then FinalNet = TxtNet.Text
 
-
             Dim Src As String
             Src = "UPDATE Outbound_Tbl SET" & _
 " [DTOut] = '" & DTOUT & "'" & _
@@ -798,7 +801,9 @@ Public Class FrmTrans
 
             SaveDriverName()
 
-            Threading.Thread.Sleep(100)
+            SaveTrucks()
+
+            Threading.Thread.Sleep(500)
             If SysSettings.EnablePrintOut = True Then
                 Select Case SysSettings.PrintAll
                     Case True
@@ -861,6 +866,39 @@ Public Class FrmTrans
 
     Private Sub SaveTrucks()
         Try
+            Dim vehicle = VehicleService.GetByPlateNo(TxtPlateNo.Text)
+            Dim tareWt As Double = 0
+
+            Double.TryParse(TxtTare.Text, tareWt)
+
+            If (IsNothing(vehicle)) Then
+                vehicle = New Vehicle()
+                vehicle.PlateNo = Trim(TxtPlateNo.Text)
+                vehicle.Prev_TareWt = tareWt
+                vehicle.DriverName = Trim(TxtDriver.Text)
+                vehicle.Prev_TareWt = tareWt
+                vehicle.SupCode = SupCode
+                vehicle.CustCode = CustCode
+                vehicle.PActive = True
+                VehicleService.Create(vehicle)
+            Else
+
+                If (tareWt > 0) Then
+                    vehicle.Prev_TareWt = tareWt
+                End If
+
+                vehicle.DriverName = Trim(TxtDriver.Text)
+                    vehicle.SupCode = SupCode
+                    vehicle.CustCode = CustCode
+                    VehicleService.Update(vehicle)
+                End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "An error encountered while saving driver data", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub SaveTrucks_Old()
+        Try
             Dim Saver
             If SysSettings.ConnectionType = "OLEDB" Then
                 Saver = New CLS_OLE_DB
@@ -871,15 +909,15 @@ Public Class FrmTrans
             End If
             If MOD_DATABASEPROC.ExistenceFound("Select * from Vehicle_Tbl where PlateNo = '" & Trim(TxtPlateNo.Text) & "'", Nothing, Nothing, Nothing) Then
                 Dim Src As String
-                Src = "UPDate Vehicle_Tbl set DriverName= '" & Trim(TxtDriver.Text) & "'" & _
-                    ",CustCode = '" & CustCode & "'" & _
-                ",SupCode = '" & SupCode & "'" & _
+                Src = "UPDate Vehicle_Tbl set DriverName= '" & Trim(TxtDriver.Text) & "'" &
+                    ",CustCode = '" & CustCode & "'" &
+                ",SupCode = '" & SupCode & "'" &
                " where PlateNo = '" & Trim(TxtPlateNo.Text) & "'"
                 Saver.source = Src
                 Saver.executecommand()
             Else
-                Saver.Source = "Insert into Vehicle_Tbl (PlateNo,DriverName) values (" & _
-                            "'" & Trim(TxtPlateNo.Text) & "'" & _
+                Saver.Source = "Insert into Vehicle_Tbl (PlateNo,DriverName) values (" &
+                            "'" & Trim(TxtPlateNo.Text) & "'" &
                                 ",'" & Trim(TxtDriver.Text) & "')"
                 Saver.executecommand()
             End If
@@ -887,6 +925,8 @@ Public Class FrmTrans
             MessageBox.Show(ex.Message, "An error encountered while saving driver data", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+
 
     Private Sub UpdateList()
         Dim Src As String = _

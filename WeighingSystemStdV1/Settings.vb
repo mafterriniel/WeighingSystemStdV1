@@ -105,6 +105,9 @@ Public Class settings
     <XmlElement(ElementName:="DeviceConnectionType")>
     Public Property DeviceConnectionType As String
 
+    <XmlElement(ElementName:="TareWtTolerance")>
+    Public Property TareWtTolerance As Decimal
+
     Private access_path As String = Application.StartupPath & "\c.txt"
 
     Private settings_path As String = Application.StartupPath & "\sys.file"
@@ -135,6 +138,7 @@ Public Class settings
         IPPort = "1"
         DeviceConnectionType = "COMM"
         OneTimeConnect = False
+        TareWtTolerance = 0
         Save()
         Load()
     End Sub
@@ -189,6 +193,7 @@ Public Class settings
             IPAddress = settings.IPAddress
             IPPort = settings.IPPort
             DeviceConnectionType = settings.DeviceConnectionType
+            TareWtTolerance = settings.TareWtTolerance
         Catch ex As Exception
             Throw New Exception(change_error_msg(ex.Message))
         End Try
