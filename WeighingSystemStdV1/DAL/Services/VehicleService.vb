@@ -56,7 +56,7 @@
         Dim tareWtTol = DBContextGlobalVariable.SysSettings.TareWtTolerance
 
         If (tareWtTol = 0) Then Return True
-        If (vehicle.Prev_TareWt = 0) Then) Return True
+        If (vehicle.Prev_TareWt = 0) Then Return True
 
         Dim minTol = vehicle.Prev_TareWt - (vehicle.Prev_TareWt * (tareWtTol / 100))
         Dim maxTol = vehicle.Prev_TareWt + (vehicle.Prev_TareWt * (tareWtTol / 100))
