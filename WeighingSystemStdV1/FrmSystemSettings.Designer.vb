@@ -99,9 +99,9 @@ Partial Class FrmSystemSettings
         Me.Label21 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.Pnl_General = New System.Windows.Forms.Panel()
+        Me.nupdTareWtTol = New System.Windows.Forms.NumericUpDown()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
-        Me.nupdTareWtTol = New System.Windows.Forms.NumericUpDown()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.RdoDKg = New System.Windows.Forms.RadioButton()
         Me.RdoDP = New System.Windows.Forms.RadioButton()
@@ -164,6 +164,8 @@ Partial Class FrmSystemSettings
         Me.BtnPorts = New MykeCtrlEx.PushButton()
         Me.Lbl_PortLabel = New System.Windows.Forms.Label()
         Me.SFDialog = New System.Windows.Forms.SaveFileDialog()
+        Me.cboPrinter = New System.Windows.Forms.ComboBox()
+        Me.Label39 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Pnl_Details.SuspendLayout()
@@ -1172,6 +1174,7 @@ Partial Class FrmSystemSettings
         '
         'Pnl_General
         '
+        Me.Pnl_General.AutoScroll = True
         Me.Pnl_General.Controls.Add(Me.nupdTareWtTol)
         Me.Pnl_General.Controls.Add(Me.Label38)
         Me.Pnl_General.Controls.Add(Me.Label37)
@@ -1191,13 +1194,23 @@ Partial Class FrmSystemSettings
         Me.Pnl_General.Size = New System.Drawing.Size(796, 534)
         Me.Pnl_General.TabIndex = 0
         '
+        'nupdTareWtTol
+        '
+        Me.nupdTareWtTol.DecimalPlaces = 2
+        Me.nupdTareWtTol.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.nupdTareWtTol.Location = New System.Drawing.Point(153, 537)
+        Me.nupdTareWtTol.Name = "nupdTareWtTol"
+        Me.nupdTareWtTol.Size = New System.Drawing.Size(239, 26)
+        Me.nupdTareWtTol.TabIndex = 120
+        Me.nupdTareWtTol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Label38
         '
         Me.Label38.AutoSize = True
         Me.Label38.BackColor = System.Drawing.Color.Transparent
         Me.Label38.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label38.ForeColor = System.Drawing.Color.Black
-        Me.Label38.Location = New System.Drawing.Point(405, 487)
+        Me.Label38.Location = New System.Drawing.Point(404, 542)
         Me.Label38.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(19, 18)
@@ -1211,23 +1224,13 @@ Partial Class FrmSystemSettings
         Me.Label37.BackColor = System.Drawing.Color.Transparent
         Me.Label37.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label37.ForeColor = System.Drawing.Color.Black
-        Me.Label37.Location = New System.Drawing.Point(16, 486)
+        Me.Label37.Location = New System.Drawing.Point(15, 541)
         Me.Label37.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(118, 18)
         Me.Label37.TabIndex = 121
         Me.Label37.Text = "Tare Wt Tolerance"
         Me.Label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'nupdTareWtTol
-        '
-        Me.nupdTareWtTol.DecimalPlaces = 2
-        Me.nupdTareWtTol.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.nupdTareWtTol.Location = New System.Drawing.Point(154, 482)
-        Me.nupdTareWtTol.Name = "nupdTareWtTol"
-        Me.nupdTareWtTol.Size = New System.Drawing.Size(239, 26)
-        Me.nupdTareWtTol.TabIndex = 120
-        Me.nupdTareWtTol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel10
         '
@@ -1273,7 +1276,7 @@ Partial Class FrmSystemSettings
         Me.Panel9.Controls.Add(Me.CboIndicator)
         Me.Panel9.Controls.Add(Me.Label31)
         Me.Panel9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel9.Location = New System.Drawing.Point(12, 393)
+        Me.Panel9.Location = New System.Drawing.Point(11, 441)
         Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(497, 79)
@@ -1391,6 +1394,8 @@ Partial Class FrmSystemSettings
         '
         'Panel7
         '
+        Me.Panel7.Controls.Add(Me.Label39)
+        Me.Panel7.Controls.Add(Me.cboPrinter)
         Me.Panel7.Controls.Add(Me.Pnl_PrintInOut)
         Me.Panel7.Controls.Add(Me.Label30)
         Me.Panel7.Controls.Add(Me.RdoDisablePrint)
@@ -1399,14 +1404,14 @@ Partial Class FrmSystemSettings
         Me.Panel7.Location = New System.Drawing.Point(13, 234)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(496, 151)
+        Me.Panel7.Size = New System.Drawing.Size(496, 198)
         Me.Panel7.TabIndex = 5
         '
         'Pnl_PrintInOut
         '
         Me.Pnl_PrintInOut.Controls.Add(Me.RdoPrintAll)
         Me.Pnl_PrintInOut.Controls.Add(Me.RdoPrintInOut)
-        Me.Pnl_PrintInOut.Location = New System.Drawing.Point(68, 50)
+        Me.Pnl_PrintInOut.Location = New System.Drawing.Point(62, 92)
         Me.Pnl_PrintInOut.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_PrintInOut.Name = "Pnl_PrintInOut"
         Me.Pnl_PrintInOut.Size = New System.Drawing.Size(400, 65)
@@ -1444,7 +1449,7 @@ Partial Class FrmSystemSettings
         Me.Label30.BackColor = System.Drawing.Color.Transparent
         Me.Label30.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.ForeColor = System.Drawing.Color.Black
-        Me.Label30.Location = New System.Drawing.Point(68, 30)
+        Me.Label30.Location = New System.Drawing.Point(62, 72)
         Me.Label30.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(338, 18)
@@ -1456,7 +1461,7 @@ Partial Class FrmSystemSettings
         '
         Me.RdoDisablePrint.AutoSize = True
         Me.RdoDisablePrint.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RdoDisablePrint.Location = New System.Drawing.Point(4, 123)
+        Me.RdoDisablePrint.Location = New System.Drawing.Point(-2, 165)
         Me.RdoDisablePrint.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoDisablePrint.Name = "RdoDisablePrint"
         Me.RdoDisablePrint.Size = New System.Drawing.Size(191, 25)
@@ -1469,7 +1474,7 @@ Partial Class FrmSystemSettings
         '
         Me.RdoEnablePrint.AutoSize = True
         Me.RdoEnablePrint.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RdoEnablePrint.Location = New System.Drawing.Point(4, 4)
+        Me.RdoEnablePrint.Location = New System.Drawing.Point(-2, 46)
         Me.RdoEnablePrint.Margin = New System.Windows.Forms.Padding(4)
         Me.RdoEnablePrint.Name = "RdoEnablePrint"
         Me.RdoEnablePrint.Size = New System.Drawing.Size(189, 25)
@@ -1500,7 +1505,7 @@ Partial Class FrmSystemSettings
         Me.Label24.Margin = New System.Windows.Forms.Padding(4, 25, 4, 0)
         Me.Label24.Name = "Label24"
         Me.Label24.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.Label24.Size = New System.Drawing.Size(796, 41)
+        Me.Label24.Size = New System.Drawing.Size(775, 41)
         Me.Label24.TabIndex = 118
         Me.Label24.Text = "General Settings"
         Me.Label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -2216,6 +2221,34 @@ Partial Class FrmSystemSettings
         Me.Lbl_PortLabel.Text = "SYSTEM SETTINGS"
         Me.Lbl_PortLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'cboPrinter
+        '
+        Me.cboPrinter.DropDownHeight = 90
+        Me.cboPrinter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboPrinter.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboPrinter.FormattingEnabled = True
+        Me.cboPrinter.IntegralHeight = False
+        Me.cboPrinter.ItemHeight = 18
+        Me.cboPrinter.Location = New System.Drawing.Point(136, 12)
+        Me.cboPrinter.Margin = New System.Windows.Forms.Padding(4)
+        Me.cboPrinter.Name = "cboPrinter"
+        Me.cboPrinter.Size = New System.Drawing.Size(239, 26)
+        Me.cboPrinter.TabIndex = 123
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.BackColor = System.Drawing.Color.Transparent
+        Me.Label39.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label39.ForeColor = System.Drawing.Color.Black
+        Me.Label39.Location = New System.Drawing.Point(2, 15)
+        Me.Label39.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(100, 18)
+        Me.Label39.TabIndex = 127
+        Me.Label39.Text = "Default Printer"
+        Me.Label39.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'FrmSystemSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -2435,4 +2468,6 @@ Partial Class FrmSystemSettings
     Friend WithEvents Label37 As Label
     Friend WithEvents nupdTareWtTol As NumericUpDown
     Friend WithEvents Label38 As Label
+    Friend WithEvents cboPrinter As ComboBox
+    Friend WithEvents Label39 As Label
 End Class

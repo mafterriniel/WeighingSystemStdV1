@@ -108,6 +108,9 @@ Public Class settings
     <XmlElement(ElementName:="TareWtTolerance")>
     Public Property TareWtTolerance As Decimal
 
+    <XmlElement(ElementName:="DefaultPrinter")>
+    Public Property DefaultPrinter As String
+
     Private access_path As String = Application.StartupPath & "\c.txt"
 
     Private settings_path As String = Application.StartupPath & "\sys.file"
@@ -139,6 +142,7 @@ Public Class settings
         DeviceConnectionType = "COMM"
         OneTimeConnect = False
         TareWtTolerance = 0
+        DefaultPrinter = String.Empty
         Save()
         Load()
     End Sub
@@ -194,6 +198,12 @@ Public Class settings
             IPPort = settings.IPPort
             DeviceConnectionType = settings.DeviceConnectionType
             TareWtTolerance = settings.TareWtTolerance
+            If (String.IsNullOrEmpty(settings.DefaultPrinter)) Then
+                DefaultPrinter = MOD_REPORTING.GetDefaultPrinter2()
+            Else
+                DefaultPrinter = settings.DefaultPrinter
+            End If
+
         Catch ex As Exception
             Throw New Exception(change_error_msg(ex.Message))
         End Try

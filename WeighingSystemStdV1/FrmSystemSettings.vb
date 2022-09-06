@@ -13,6 +13,9 @@
         cboConnType.Items.Add("IP")
         cboConnType.Items.Add("COMM")
 
+        Dim printers = MOD_REPORTING.ListPrinters()
+        cboPrinter.Items.AddRange(printers.ToArray())
+
         ListDB()
 
         GeneralRefreshSettings()
@@ -72,6 +75,8 @@
             Case "%"
                 RdoDP.Checked = True
         End Select
+
+        cboPrinter.Text = SysSettings.DefaultPrinter
 
         Select Case SysSettings.EnablePrintOut
             Case True
@@ -147,6 +152,7 @@
         SysSettings.device = CboIndicator.Text
         SysSettings.DeviceConnectionType = cboConnType.Text
         SysSettings.TareWtTolerance = nupdTareWtTol.Value
+        SysSettings.DefaultPrinter = cboPrinter.Text
         SysSettings.Save()
     End Sub
     Private Sub EnableGeneralEdit()
@@ -971,6 +977,14 @@
     End Sub
 
     Private Sub CboIndicator_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboIndicator.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboPrinter.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Pnl_General_Paint(sender As Object, e As PaintEventArgs) Handles Pnl_General.Paint
 
     End Sub
 End Class

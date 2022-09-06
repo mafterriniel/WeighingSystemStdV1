@@ -731,6 +731,7 @@ Public Class FrmTrans
     Public LastOutRefNo As String = Nothing
     Private Sub SaveOutboundData()
         Try
+            ONProcess = False
             Dim DTOUT As DateTime = DT
             Dim GR_Time As String = ""
             Dim TR_Time As String = ""
@@ -762,28 +763,28 @@ Public Class FrmTrans
             If EnableDeduction = False Then FinalNet = TxtNet.Text
 
             Dim Src As String
-            Src = "UPDATE Outbound_Tbl SET" & _
-" [DTOut] = '" & DTOUT & "'" & _
-",[PlateNo] = '" & TxtPlateNo.Text.Trim & "'" & _
-",[CustomerCode] = '" & CustCode & "'" & _
-",[SupplierCode] = '" & SupCode & "'" & _
-",[CommodityCode] = '" & CommCode & "'" & _
-",[Pricing] = '" & Pricing & "'" & _
-",[UnitPerPrice] = = '" & UnitPerPrice & "'" & _
-",[DRNo] = '" & TxtDrNo.Text.Trim & "'" & _
-",[TicketNo] = '" & TxtTicketNo.Text.Trim & "'" & _
-",[UnitWeight] = '" & UnitWeight & "'" & _
-",[Gross_Wt]= '" & Val(TxtGross.Text) & "'" & _
-",[Gross_DT] = '" & GR_Time & "'" & _
-",[Tare_Wt]= '" & Val(TxtTare.Text) & "'" & _
-",[Tare_Dt]= '" & TR_Time & "'" & _
-",[Net_Wt] = '" & Val(TxtNet.Text) & "'" & _
-",[Final_wt] = '" & FinalNet & "'" & _
-",[MC] = '" & Mc & "'" & _
-",[DedReason] = '" & Trim(TxtReasons.Text) & "'" & _
-",[Remarks] = '" & TxtRemarks.Text.Trim & "'" & _
-",[WeigherOut] = '" & FrmLogin.UserId & "'" & _
-",[DriverName] = '" & Trim(TxtDriver.Text) & "'" & _
+            Src = "UPDATE Outbound_Tbl SET" &
+" [DTOut] = '" & DTOUT & "'" &
+",[PlateNo] = '" & TxtPlateNo.Text.Trim & "'" &
+",[CustomerCode] = '" & CustCode & "'" &
+",[SupplierCode] = '" & SupCode & "'" &
+",[CommodityCode] = '" & CommCode & "'" &
+",[Pricing] = '" & Pricing & "'" &
+",[UnitPerPrice] = = '" & UnitPerPrice & "'" &
+",[DRNo] = '" & TxtDrNo.Text.Trim & "'" &
+",[TicketNo] = '" & TxtTicketNo.Text.Trim & "'" &
+",[UnitWeight] = '" & UnitWeight & "'" &
+",[Gross_Wt]= '" & Val(TxtGross.Text) & "'" &
+",[Gross_DT] = '" & GR_Time & "'" &
+",[Tare_Wt]= '" & Val(TxtTare.Text) & "'" &
+",[Tare_Dt]= '" & TR_Time & "'" &
+",[Net_Wt] = '" & Val(TxtNet.Text) & "'" &
+",[Final_wt] = '" & FinalNet & "'" &
+",[MC] = '" & Mc & "'" &
+",[DedReason] = '" & Trim(TxtReasons.Text) & "'" &
+",[Remarks] = '" & TxtRemarks.Text.Trim & "'" &
+",[WeigherOut] = '" & FrmLogin.UserId & "'" &
+",[DriverName] = '" & Trim(TxtDriver.Text) & "'" &
  " where RefNo = '" & RefNO_Tmp & "'"
             Saver.source = Src
             Saver.executecommand()
@@ -820,13 +821,15 @@ Public Class FrmTrans
 
             RemoveHandler TxtOnline.TextChanged, AddressOf TxtOnline_TextChanged
             Dim frm As New FrmTransOK
-            frm.MsgSTr = "Outbound Weighing Complete..." & vbNewLine & _
+            frm.MsgSTr = "Outbound Weighing Complete..." & vbNewLine &
                 "Press Close to exit window."
             frm.ReceiptNo = TxtRefNo.Text
             frm.ShowDialog(Me)
             AddHandler TxtOnline.TextChanged, AddressOf TxtOnline_TextChanged
         Catch ex As Exception
             MessageBox.Show(ex.Message)
+        Finally
+            ONProcess = True
         End Try
 
         LblRecord.Text = Dg.Rows.Count

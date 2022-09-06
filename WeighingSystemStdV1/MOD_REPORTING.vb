@@ -1,4 +1,7 @@
 ﻿Imports System.Data.OleDb
+Imports System.Drawing.Printing
+Imports System.Printing
+Imports System.Linq
 
 Module MOD_REPORTING
     Public Sub PrintToPrinter__OLD(ByVal ReportFile As String, ByVal SelectionFormula As String,
@@ -210,7 +213,8 @@ Module MOD_REPORTING
 
 
             RR.SetDataSource(dds)
-            RR.PrintOptions.PrinterName = GetDefaultPrinter()
+
+
             '  RR.SaveAs(Application.StartupPath & "\Reports\tmp.rpt")
             'Dim margins As CrystalDecisions.Shared.PageMargins
 
@@ -224,6 +228,13 @@ Module MOD_REPORTING
             Dim printPrompt As New Windows.Forms.PrintDialog
             printPrompt.PrinterSettings = New System.Drawing.Printing.PrinterSettings
             printPrompt.AllowSomePages = True '
+
+            If (String.IsNullOrEmpty(SysSettings.DefaultPrinter)) Then
+                printPrompt.PrinterSettings.PrinterName = GetDefaultPrinter()
+            Else
+                printPrompt.PrinterSettings.PrinterName = SysSettings.DefaultPrinter
+            End If
+
             'printPrompt.PrinterSettings.PrinterName = "Send To OneNote 2013"
             ' printPrompt.PrinterSettings.PrinterName = "Microsoft XPS Document Writer"
 
@@ -242,11 +253,11 @@ Module MOD_REPORTING
             Throw New Exception(ex.Message)
         End Try
     End Sub
-    Private Function GetDefaultPrinter() As String
+    Public Function GetDefaultPrinter() As String
         Dim Result As String = ""
 
         Dim _SEARCHER = New System.Management.ManagementObjectSearcher(
-    "Select * from  Win32_Printer")
+    "Select Caption from  Win32_Printer Where Default = True")
 
         For Each _QUERYJOB As System.Management.ManagementObject In _SEARCHER.Get()
             If _QUERYJOB("Default") = True Then
@@ -254,6 +265,36 @@ Module MOD_REPORTING
             End If
         Next
         Return Result
+    End Function
+
+    Public Function GetDefaultPrinter2() As String
+
+        Dim defaultPrinter As String
+
+        Dim ps = New LocalPrintServer()
+        With ps
+            defaultPrinter = ps.DefaultPrintQueue.FullName
+        End With
+
+        Return defaultPrinter
+    End Function
+
+    Public Function ListPrinters() As List(Of String)
+
+        '    Dim r As New List(Of String)
+
+        '    Dim printers = New System.Management.ManagementObjectSearcher(
+        '"Select * from  Win32_Printer")
+
+        '    For Each _QUERYJOB As System.Management.ManagementObject In printers.Get()
+        '        r.Add(_QUERYJOB("Caption"))
+        '    Next
+
+        '    Return r
+
+
+        Dim prs = System.Drawing.Printing.PrinterSettings.InstalledPrinters
+        Return prs.Cast(Of String)().ToList()
     End Function
 
     Public Sub ViewReport(ByVal crviewer As CrystalDecisions.Windows.Forms.CrystalReportViewer,
@@ -272,9 +313,13 @@ Module MOD_REPORTING
                 SetConnectionString(RR)
             End If
 
+            Dim sysSettings = New settings()
+            sysSettings.Load()
+
             RR.DataDefinition.FormulaFields.Item("From").Text = "'" & DTFrom & "'"
             RR.DataDefinition.FormulaFields.Item("To").Text = "'" & DTTO & "'"
             RR.DataDefinition.FormulaFields.Item("PreparedBy").Text = "'" & PreparedBy & "'"
+            RR.DataDefinition.FormulaFields.Item("DeductUnit").Text = "'" & sysSettings.DeductUnit & "'"
 
             If IsNothing(SortFieldTable) = False Then
                 Dim SortFieldData As CrystalDecisions.CrystalReports.Engine.FieldDefinition
