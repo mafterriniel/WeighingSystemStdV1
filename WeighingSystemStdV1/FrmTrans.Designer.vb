@@ -73,6 +73,18 @@ Partial Class FrmTrans
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PnlList = New System.Windows.Forms.Panel()
         Me.Dg = New System.Windows.Forms.DataGridView()
+        Me.Col_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_PlateNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_DateTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_InboundWt = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Client = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Comm = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Pricing = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Dr = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_TktNO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Driver = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_remarks = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col_Weigher = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PnlSearch = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -104,18 +116,6 @@ Partial Class FrmTrans
         Me.TxtNet = New System.Windows.Forms.TextBox()
         Me.TxtTare = New System.Windows.Forms.TextBox()
         Me.TxtOnline = New WeightDev.WeightIndicator()
-        Me.Col_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_PlateNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_DateTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_InboundWt = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Client = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Comm = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Pricing = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Dr = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_TktNO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Driver = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_remarks = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Weigher = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PnlMain.SuspendLayout()
         Me.PnlDetails.SuspendLayout()
         Me.PnlWeightStat.SuspendLayout()
@@ -816,6 +816,95 @@ Partial Class FrmTrans
         Me.Dg.StandardTab = True
         Me.Dg.TabIndex = 0
         '
+        'Col_Id
+        '
+        Me.Col_Id.HeaderText = "Ref. No."
+        Me.Col_Id.MaxInputLength = 0
+        Me.Col_Id.MinimumWidth = 2
+        Me.Col_Id.Name = "Col_Id"
+        Me.Col_Id.ReadOnly = True
+        Me.Col_Id.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Col_Id.Width = 2
+        '
+        'Col_PlateNo
+        '
+        Me.Col_PlateNo.HeaderText = "Plate Number"
+        Me.Col_PlateNo.MinimumWidth = 6
+        Me.Col_PlateNo.Name = "Col_PlateNo"
+        Me.Col_PlateNo.Width = 125
+        '
+        'Col_DateTime
+        '
+        Me.Col_DateTime.HeaderText = "Date & Time"
+        Me.Col_DateTime.MaxInputLength = 35
+        Me.Col_DateTime.MinimumWidth = 6
+        Me.Col_DateTime.Name = "Col_DateTime"
+        Me.Col_DateTime.Width = 150
+        '
+        'Col_InboundWt
+        '
+        Me.Col_InboundWt.HeaderText = "Inbound Wt."
+        Me.Col_InboundWt.MinimumWidth = 6
+        Me.Col_InboundWt.Name = "Col_InboundWt"
+        Me.Col_InboundWt.Width = 125
+        '
+        'Col_Client
+        '
+        Me.Col_Client.HeaderText = "Client"
+        Me.Col_Client.MinimumWidth = 6
+        Me.Col_Client.Name = "Col_Client"
+        Me.Col_Client.Width = 200
+        '
+        'Col_Comm
+        '
+        Me.Col_Comm.HeaderText = "Commodity"
+        Me.Col_Comm.MinimumWidth = 6
+        Me.Col_Comm.Name = "Col_Comm"
+        Me.Col_Comm.Width = 200
+        '
+        'Col_Pricing
+        '
+        Me.Col_Pricing.HeaderText = "Price"
+        Me.Col_Pricing.MinimumWidth = 6
+        Me.Col_Pricing.Name = "Col_Pricing"
+        Me.Col_Pricing.Visible = False
+        Me.Col_Pricing.Width = 125
+        '
+        'Col_Dr
+        '
+        Me.Col_Dr.HeaderText = "DR Num."
+        Me.Col_Dr.MinimumWidth = 120
+        Me.Col_Dr.Name = "Col_Dr"
+        Me.Col_Dr.Width = 120
+        '
+        'Col_TktNO
+        '
+        Me.Col_TktNO.HeaderText = "Ticket Num."
+        Me.Col_TktNO.MinimumWidth = 120
+        Me.Col_TktNO.Name = "Col_TktNO"
+        Me.Col_TktNO.Width = 120
+        '
+        'Col_Driver
+        '
+        Me.Col_Driver.HeaderText = "Driver"
+        Me.Col_Driver.MinimumWidth = 6
+        Me.Col_Driver.Name = "Col_Driver"
+        Me.Col_Driver.Width = 180
+        '
+        'Col_remarks
+        '
+        Me.Col_remarks.HeaderText = "Remarks"
+        Me.Col_remarks.MinimumWidth = 6
+        Me.Col_remarks.Name = "Col_remarks"
+        Me.Col_remarks.Width = 125
+        '
+        'Col_Weigher
+        '
+        Me.Col_Weigher.HeaderText = "Weighed in by"
+        Me.Col_Weigher.MinimumWidth = 6
+        Me.Col_Weigher.Name = "Col_Weigher"
+        Me.Col_Weigher.Width = 125
+        '
         'PnlSearch
         '
         Me.PnlSearch.BackColor = System.Drawing.Color.Transparent
@@ -1405,6 +1494,7 @@ Partial Class FrmTrans
         Me.TxtOnline.ExtStartIndex = 0
         Me.TxtOnline.Font = New System.Drawing.Font("DS-Digital", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtOnline.ForeColor = System.Drawing.Color.YellowGreen
+        Me.TxtOnline.IP = Nothing
         Me.TxtOnline.IPAddress = "192.168.1.41"
         Me.TxtOnline.IPPort = "1"
         Me.TxtOnline.IPReadTimeOut = 1000
@@ -1422,95 +1512,6 @@ Partial Class FrmTrans
         Me.TxtOnline.TabIndex = 151
         Me.TxtOnline.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.TxtOnline.WeighingDevice = Nothing
-        '
-        'Col_Id
-        '
-        Me.Col_Id.HeaderText = "Ref. No."
-        Me.Col_Id.MaxInputLength = 0
-        Me.Col_Id.MinimumWidth = 2
-        Me.Col_Id.Name = "Col_Id"
-        Me.Col_Id.ReadOnly = True
-        Me.Col_Id.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Col_Id.Width = 2
-        '
-        'Col_PlateNo
-        '
-        Me.Col_PlateNo.HeaderText = "Plate Number"
-        Me.Col_PlateNo.MinimumWidth = 6
-        Me.Col_PlateNo.Name = "Col_PlateNo"
-        Me.Col_PlateNo.Width = 125
-        '
-        'Col_DateTime
-        '
-        Me.Col_DateTime.HeaderText = "Date & Time"
-        Me.Col_DateTime.MaxInputLength = 35
-        Me.Col_DateTime.MinimumWidth = 6
-        Me.Col_DateTime.Name = "Col_DateTime"
-        Me.Col_DateTime.Width = 150
-        '
-        'Col_InboundWt
-        '
-        Me.Col_InboundWt.HeaderText = "Inbound Wt."
-        Me.Col_InboundWt.MinimumWidth = 6
-        Me.Col_InboundWt.Name = "Col_InboundWt"
-        Me.Col_InboundWt.Width = 125
-        '
-        'Col_Client
-        '
-        Me.Col_Client.HeaderText = "Client"
-        Me.Col_Client.MinimumWidth = 6
-        Me.Col_Client.Name = "Col_Client"
-        Me.Col_Client.Width = 200
-        '
-        'Col_Comm
-        '
-        Me.Col_Comm.HeaderText = "Commodity"
-        Me.Col_Comm.MinimumWidth = 6
-        Me.Col_Comm.Name = "Col_Comm"
-        Me.Col_Comm.Width = 200
-        '
-        'Col_Pricing
-        '
-        Me.Col_Pricing.HeaderText = "Price"
-        Me.Col_Pricing.MinimumWidth = 6
-        Me.Col_Pricing.Name = "Col_Pricing"
-        Me.Col_Pricing.Visible = False
-        Me.Col_Pricing.Width = 125
-        '
-        'Col_Dr
-        '
-        Me.Col_Dr.HeaderText = "DR Num."
-        Me.Col_Dr.MinimumWidth = 120
-        Me.Col_Dr.Name = "Col_Dr"
-        Me.Col_Dr.Width = 120
-        '
-        'Col_TktNO
-        '
-        Me.Col_TktNO.HeaderText = "Ticket Num."
-        Me.Col_TktNO.MinimumWidth = 120
-        Me.Col_TktNO.Name = "Col_TktNO"
-        Me.Col_TktNO.Width = 120
-        '
-        'Col_Driver
-        '
-        Me.Col_Driver.HeaderText = "Driver"
-        Me.Col_Driver.MinimumWidth = 6
-        Me.Col_Driver.Name = "Col_Driver"
-        Me.Col_Driver.Width = 180
-        '
-        'Col_remarks
-        '
-        Me.Col_remarks.HeaderText = "Remarks"
-        Me.Col_remarks.MinimumWidth = 6
-        Me.Col_remarks.Name = "Col_remarks"
-        Me.Col_remarks.Width = 125
-        '
-        'Col_Weigher
-        '
-        Me.Col_Weigher.HeaderText = "Weighed in by"
-        Me.Col_Weigher.MinimumWidth = 6
-        Me.Col_Weigher.Name = "Col_Weigher"
-        Me.Col_Weigher.Width = 125
         '
         'FrmTrans
         '

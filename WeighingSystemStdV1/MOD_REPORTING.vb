@@ -253,6 +253,7 @@ Module MOD_REPORTING
             Throw New Exception(ex.Message)
         End Try
     End Sub
+
     Public Function GetDefaultPrinter() As String
         Dim Result As String = ""
 

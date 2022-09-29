@@ -220,7 +220,10 @@
     End Sub
 
     Private Sub BtnPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnPrint.Click
-        If BtnPrint.Enabled = False Then Exit Sub
+
+        Try
+
+            If BtnPrint.Enabled = False Then Exit Sub
         If Dg.Rows.Count = 0 Then Exit Sub
         If IsNothing(Dg.CurrentRow) Then Exit Sub
 
@@ -234,6 +237,10 @@
             MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketAll, Dg.CurrentRow.Cells(0).Value)
         End If
 
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        End Try
     End Sub
 
     Private Sub BtnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnExit.Click

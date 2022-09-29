@@ -45,30 +45,33 @@
     End Sub
 
     Private Sub BtnReprint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnReprint.Click
-        Dim SysSettings As New settings
-        SysSettings.Load()
-        If SysSettings.WeighingType = "S" Then
-            If MessageBox.Show("Continue re-printing of ticket?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.No Then Exit Sub
-            MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketAll, ReceiptNo)
+        Try
+            Dim SysSettings As New settings
+            SysSettings.Load()
+            If SysSettings.WeighingType = "S" Then
+                If MessageBox.Show("Continue re-printing of ticket?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.No Then Exit Sub
+                MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketAll, ReceiptNo)
+                Exit Sub
+            End If
+            If SysSettings.EnablePrintOut = False Then Exit Sub
 
-            Exit Sub
-        End If
-        If SysSettings.EnablePrintOut = False Then Exit Sub
-
-        Select Case True
-            Case FrmTrans.WeighIn
-                If SysSettings.PrintAll = False Then
-                    If MessageBox.Show("Continue re-printing of ticket?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.No Then Exit Sub
-                    MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketIn, ReceiptNo)
-                End If
-            Case FrmTrans.Weighout
-                If SysSettings.PrintAll = False Then
-                    If MessageBox.Show("Continue re-printing of ticket?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.No Then Exit Sub
-                    MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketOut, FrmTrans.RefNO_Tmp)
-                Else
-                    MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketAll, ReceiptNo)
-                End If
-        End Select
+            Select Case True
+                Case FrmTrans.WeighIn
+                    If SysSettings.PrintAll = False Then
+                        If MessageBox.Show("Continue re-printing of ticket?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.No Then Exit Sub
+                        MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketIn, ReceiptNo)
+                    End If
+                Case FrmTrans.Weighout
+                    If SysSettings.PrintAll = False Then
+                        If MessageBox.Show("Continue re-printing of ticket?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.No Then Exit Sub
+                        MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketOut, FrmTrans.RefNO_Tmp)
+                    Else
+                        MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketAll, ReceiptNo)
+                    End If
+            End Select
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
 

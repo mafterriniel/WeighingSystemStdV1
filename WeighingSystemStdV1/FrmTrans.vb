@@ -1518,4 +1518,8 @@ Public Class FrmTrans
     Private Sub Btnsave_Click_1(sender As Object, e As EventArgs) Handles Btnsave.Click
 
     End Sub
+
+    Private Sub BtnPrintIN_Click_1(sender As Object, e As EventArgs) Handles BtnPrintIN.Click
+
+    End Sub
 End Class
