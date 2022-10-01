@@ -1,0 +1,10 @@
+GATEWAY: 192.168.1.1
+
+THIS PC : 192.168.1.10 -> ACCESS POINT 1: 192.168.1.66
+
+INDICATOR : 192.168.1.41 -> ACCESS POINT 1: 192.168.1.67
+
+ACCESS POINTS - CONFIG
+-> open Internet browser (Recommend is Google Chrome)
+-> goto IP Address: 192.168.1.66 or 192.168.1.67
+-> Login: admin; Password: admin01
