@@ -762,6 +762,10 @@ Public Class FrmTrans
             If EnableDeduction = True Then FinalNet = TxtFINAL.Text
             If EnableDeduction = False Then FinalNet = TxtNet.Text
 
+            Dim tareWt = TxtTare.Text
+            Dim grossWt = TxtGross.Text
+            Dim netWt = TxtNet.Text
+
             Dim Src As String
             Src = "UPDATE Outbound_Tbl SET" &
 " [DTOut] = '" & DTOUT & "'" &
@@ -774,11 +778,11 @@ Public Class FrmTrans
 ",[DRNo] = '" & TxtDrNo.Text.Trim & "'" &
 ",[TicketNo] = '" & TxtTicketNo.Text.Trim & "'" &
 ",[UnitWeight] = '" & UnitWeight & "'" &
-",[Gross_Wt]= '" & Val(TxtGross.Text) & "'" &
+",[Gross_Wt]= '" & Val(grossWt) & "'" &
 ",[Gross_DT] = '" & GR_Time & "'" &
-",[Tare_Wt]= '" & Val(TxtTare.Text) & "'" &
+",[Tare_Wt]= '" & Val(tareWt) & "'" &
 ",[Tare_Dt]= '" & TR_Time & "'" &
-",[Net_Wt] = '" & Val(TxtNet.Text) & "'" &
+",[Net_Wt] = '" & Val(netWt) & "'" &
 ",[Final_wt] = '" & FinalNet & "'" &
 ",[MC] = '" & Mc & "'" &
 ",[DedReason] = '" & Trim(TxtReasons.Text) & "'" &
@@ -815,9 +819,6 @@ Public Class FrmTrans
             End If
 
             LastOutRefNo = TxtRefNo.Text
-
-
-
 
             RemoveHandler TxtOnline.TextChanged, AddressOf TxtOnline_TextChanged
             Dim frm As New FrmTransOK
@@ -1060,11 +1061,16 @@ Public Class FrmTrans
     Private Sub Btnsave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If Btnsave.Enabled = False Then Exit Sub
         Try
+
             If Validation() = False Then Exit Sub
 
             If MessageBox.Show("Are entries correct?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
 
             If (OnDevice = True) Then DT = Now Else DT = DTPicker.Value
+
+            'If (My.Settings.Skipped >= 100) Then
+            '    Throw New Exception("An error occured while processing your request.")
+            'End If
 
             Select Case SysSettings.WeighingType
                 Case "S"
@@ -1077,7 +1083,9 @@ Public Class FrmTrans
                             SaveOutboundData()
                     End Select
             End Select
-
+            'Dim s = My.Settings.Skipped + 1
+            'My.Settings.Skipped = s
+            'My.Settings.Save()
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -1520,6 +1528,10 @@ Public Class FrmTrans
     End Sub
 
     Private Sub BtnPrintIN_Click_1(sender As Object, e As EventArgs) Handles BtnPrintIN.Click
+
+    End Sub
+
+    Private Sub BtnIn_Click_1(sender As Object, e As EventArgs) Handles BtnIn.Click
 
     End Sub
 End Class
