@@ -18,6 +18,16 @@
             _ReceiptNo = value
         End Set
     End Property
+
+    Private _IsWeighIn As Boolean
+    Public Property IsWeighIn() As Boolean
+        Get
+            Return _IsWeighIn
+        End Get
+        Set(ByVal value As Boolean)
+            _IsWeighIn = value
+        End Set
+    End Property
     Private Sub FrmTransOK_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         Me.Dispose()
     End Sub
@@ -55,13 +65,13 @@
             End If
             If SysSettings.EnablePrintOut = False Then Exit Sub
 
-            Select Case True
-                Case FrmTrans.WeighIn
+            Select Case IsWeighIn
+                Case True
                     If SysSettings.PrintAll = False Then
                         If MessageBox.Show("Continue re-printing of ticket?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.No Then Exit Sub
                         MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketIn, ReceiptNo)
                     End If
-                Case FrmTrans.Weighout
+                Case False
                     If SysSettings.PrintAll = False Then
                         If MessageBox.Show("Continue re-printing of ticket?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.No Then Exit Sub
                         MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketOut, FrmTrans.RefNO_Tmp)

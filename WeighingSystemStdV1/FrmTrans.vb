@@ -1,4 +1,6 @@
-﻿Imports System.Data.OleDb
+﻿Imports System.Data.Common
+Imports System.Data.OleDb
+Imports System.Runtime.CompilerServices
 Imports System.Web.Services.Description
 Imports WeightDev
 Imports WeightDev.Enums
@@ -144,13 +146,9 @@ Public Class FrmTrans
                     If OnDevice = False Then Exit Sub
                     Select Case FrmLogin.ManualWeighing
                         Case "RO"
-                            OnDevice = False
-                            Change_WeightSource()
-                            TxtOffline_TextChanged(sender, e)
                         Case "RW"
                             OnDevice = False
                             Change_WeightSource()
-                            TxtOffline_TextChanged(sender, e)
                         Case "N/A"
                         Case Nothing
                     End Select
@@ -184,20 +182,17 @@ Public Class FrmTrans
     Private Sub Change_WeightSource()
 
         If OnDevice = True Then
-            'Pnl_indicator.Visible = True
-            TxtOffline.Visible = False
-            TxtOnline.Visible = True
             DTPicker.Visible = False
+            TxtOnline.ForeColor = Color.YellowGreen
             TxtOnline.WeighingInput = WeighingInputEnum.AUTO
-            TxtOnline_TextChanged(Nothing, Nothing)
         Else
-            'Pnl_indicator.Visible = False
-            TxtOffline.Visible = True
-            TxtOnline.Visible = False
+            TxtOnline.ForeColor = Color.Red
             DTPicker.Visible = True
             TxtOnline.WeighingInput = WeighingInputEnum.MANUAL
-            TxtOnline_TextChanged(Nothing, Nothing)
+            TxtOnline.Text = "0"
         End If
+
+        TxtOnline_TextChanged(Nothing, Nothing)
     End Sub
 
     Private Sub FrmTrans_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Leave
@@ -771,7 +766,6 @@ Public Class FrmTrans
             Dim TR_Time As String = ""
             Dim WT_TMP As Integer
             If OnDevice = True Then WT_TMP = TxtOnline.Text
-            If OnDevice = False Then WT_TMP = TxtOffline.Text
             If INBOUNDWT_Tmp <= WT_TMP Then
                 GR_Time = DTOUT
                 TR_Time = DTIN_Tmp
@@ -954,13 +948,16 @@ Public Class FrmTrans
                 MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketAll, INBOUND_REFNO)
             End If
 
+            Me.Weighout = True
+
             Dim frm As New FrmTransOK
             frm.ReceiptNo = LastOutRefNo
             frm.MsgSTr = "Inbound Weighing Complete..." & vbNewLine &
          "Press Close to exit window."
             frm.ShowDialog(MDIMAIN)
+            CLS_CLEARMEM.ClearMem(New Object() {frm})
         Catch ex As Exception
-            Throw ex
+            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             conn.Close()
         End Try
@@ -1152,13 +1149,7 @@ Public Class FrmTrans
 
         TxtOnline.ResetAxle()
         AxleResults.Clear()
-        If OnDevice = True Then
-            TxtOnline_TextChanged(sender, e)
-        Else
-            TxtOffline_TextChanged(sender, e)
-        End If
-
-
+        TxtOnline_TextChanged(sender, e)
 
         TxtDeduct_LostFocus(sender, e)
         EnableData()
@@ -1180,13 +1171,7 @@ Public Class FrmTrans
         TxtOnline.ResetAxle()
         AxleResults.Clear()
 
-        If OnDevice = True Then
-            TxtOnline_TextChanged(sender, e)
-        Else
-            TxtOffline_TextChanged(sender, e)
-        End If
-
-
+        TxtOnline_TextChanged(sender, e)
 
 
         SearchClient()
@@ -1293,7 +1278,7 @@ Public Class FrmTrans
 
 #Region "BUTTON TOGGLES"
 
-
+    Private RecalledTareWt As Double
     Private Sub ClearData()
         RecalledTareWt = 0
 
@@ -1452,20 +1437,7 @@ Public Class FrmTrans
         GetDeviceVal(Val(FormatNumber((Val(TxtOnline.Text)), 0, TriState.False, TriState.False, TriState.False)))
     End Sub
 
-    Public Sub TxtOffline_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtOffline.TextChanged
-        On Error Resume Next
-        If OnDevice = True Then Exit Sub
-        If IsNumeric(TxtOffline.Text) = False Then
-            If String.IsNullOrWhiteSpace(TxtOffline.Text) = False Then
-                MessageBox.Show("Weight be should be numeric..")
-                Exit Sub
-            End If
-        End If
 
-
-        'GetDeviceVal(Val(FormatNumber((TxtOffline.Text), 0, TriState.False, TriState.False)))
-        GetDeviceVal(Val(FormatNumber((Val(TxtOffline.Text)), 0, TriState.False, TriState.False, TriState.False)))
-    End Sub
 
 
     Public Sub GetDeviceVal(ByVal Weight As String)
@@ -1698,5 +1670,41 @@ Public Class FrmTrans
 
     Private Sub BtnPrintIN_Click_1(sender As Object, e As EventArgs) Handles BtnPrintIN.Click
 
+    End Sub
+
+    Private Sub btnRecall_Click(sender As Object, e As EventArgs) Handles btnRecall.Click
+
+        Try
+
+            Dim vehicleNum = TxtPlateNo.Text.Trim()
+            RecalledTareWt = 0
+
+            If (vehicleNum.Contains("'") Or vehicleNum.Contains("""")) Then
+                MessageBox.Show("Plate Number is invalid.", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                Return
+            End If
+
+            Dim tblName = "Vehicle_Tbl"
+            Using conn = New OleDbConnection(DBContextFactory.GetConnectionString())
+                Using cmd = New OleDbCommand($"Select Prev_TareWt From {tblName} where PlateNo = '{vehicleNum}'", conn)
+                    Dim ds = New DataSet()
+                    Dim ad = New OleDbDataAdapter(cmd)
+                    ad.Fill(ds, tblName)
+
+                    Dim truckTbl = ds.Tables(tblName)
+
+                    If (truckTbl.Rows.Count = 0) Then Return
+
+                    Dim tareWt = truckTbl.Rows(0).Field(Of Double)("Prev_TareWt")
+
+                    RecalledTareWt = tareWt
+                End Using
+            End Using
+
+            TxtOnline_TextChanged(Nothing, Nothing)
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class

@@ -4,6 +4,7 @@ Imports System.Printing
 Imports System.Linq
 Imports System.Net.Sockets
 Imports WeightDev.Enums
+Imports CrystalDecisions.Shared
 
 Module MOD_REPORTING
     Public Sub PrintToPrinter__OLD(ByVal ReportFile As String, ByVal SelectionFormula As String,
