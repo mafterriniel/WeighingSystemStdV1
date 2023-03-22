@@ -439,6 +439,13 @@ Module MOD_REPORTING
                 End If
             End If
 
+            Dim margins = New PageMargins()
+            margins.bottomMargin = 500
+            margins.topMargin = 500
+            margins.leftMargin = 500
+            margins.rightMargin = 500
+
+            RR.PrintOptions.ApplyPageMargins(margins)
             'If IsNothing(Groupings) = False Then
             '    Dim GroupFieldData As CrystalDecisions.CrystalReports.Engine.GroupNa
 

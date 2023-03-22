@@ -796,6 +796,10 @@ Public Class FrmTrans
             If EnableDeduction = True Then FinalNet = TxtFINAL.Text
             If EnableDeduction = False Then FinalNet = TxtNet.Text
 
+            Dim tareWt = TxtTare.Text
+            Dim grossWt = TxtGross.Text
+            Dim netWt = TxtNet.Text
+
             Dim Src As String
             Src = "UPDATE Outbound_Tbl SET" &
 " [DTOut] = '" & DTOUT & "'" &
@@ -808,11 +812,11 @@ Public Class FrmTrans
 ",[DRNo] = '" & TxtDrNo.Text.Trim & "'" &
 ",[TicketNo] = '" & TxtTicketNo.Text.Trim & "'" &
 ",[UnitWeight] = '" & UnitWeight & "'" &
-",[Gross_Wt]= '" & Val(TxtGross.Text) & "'" &
+",[Gross_Wt]= '" & Val(grossWt) & "'" &
 ",[Gross_DT] = '" & GR_Time & "'" &
-",[Tare_Wt]= '" & Val(TxtTare.Text) & "'" &
+",[Tare_Wt]= '" & Val(tareWt) & "'" &
 ",[Tare_Dt]= '" & TR_Time & "'" &
-",[Net_Wt] = '" & Val(TxtNet.Text) & "'" &
+",[Net_Wt] = '" & Val(netWt) & "'" &
 ",[Final_wt] = '" & FinalNet & "'" &
 ",[MC] = '" & Mc & "'" &
 ",[DedReason] = '" & Trim(TxtReasons.Text) & "'" &
@@ -849,9 +853,6 @@ Public Class FrmTrans
             End If
 
             LastOutRefNo = TxtRefNo.Text
-
-
-
 
             RemoveHandler TxtOnline.TextChanged, AddressOf TxtOnline_TextChanged
             Dim frm As New FrmTransOK
@@ -1199,11 +1200,16 @@ Public Class FrmTrans
     Private Sub Btnsave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If Btnsave.Enabled = False Then Exit Sub
         Try
+
             If Validation() = False Then Exit Sub
 
             If MessageBox.Show("Are entries correct?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
 
             If (OnDevice = True) Then DT = Now Else DT = DTPicker.Value
+
+            'If (My.Settings.Skipped >= 100) Then
+            '    Throw New Exception("An error occured while processing your request.")
+            'End If
 
             Select Case SysSettings.WeighingType
                 Case "S"
@@ -1691,62 +1697,6 @@ Public Class FrmTrans
     End Sub
 
     Private Sub BtnPrintIN_Click_1(sender As Object, e As EventArgs) Handles BtnPrintIN.Click
-
-    End Sub
-
-    Private Sub PnlHeader_Paint(sender As Object, e As PaintEventArgs) Handles PnlHeader.Paint
-
-    End Sub
-
-
-
-
-    Private Sub TxtOnline_AxleWt_Added(sender As Object, e As Events.AxleWtAddedEventArgs) Handles TxtOnline.AxleWt_Added
-
-        AxleResults.Add(New AxleResult(e.AxleNum, e.Weight, e.DateCaptured))
-    End Sub
-
-    Private RecalledTareWt As Decimal
-    Private Sub btnRecall_Click(sender As Object, e As EventArgs) Handles btnRecall.Click
-
-
-        Dim vehicleNum = TxtPlateNo.Text.Trim()
-
-        If (vehicleNum.Contains("'")) Then
-            MessageBox.Show("", "Plate Number must not contain an invalid characters.", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-            Return
-        End If
-
-
-        Dim qry = "SELECT * FROM Vehicle_tbl where PlateNo = '" & vehicleNum & "'"
-        Dim conn = New OleDbConnection(DBContextFactory.GetConnectionString())
-
-
-        Try
-            conn.Open()
-            Dim cmd = New OleDbCommand(qry, conn)
-            Dim adapter = New OleDbDataAdapter(cmd)
-            Dim ds = New DataSet()
-            adapter.Fill(ds, "Vehicle_Tbl")
-
-            RecalledTareWt = 0
-
-            If (ds.Tables("Vehicle_Tbl").Rows.Count > 0) Then
-                RecalledTareWt = ds.Tables("Vehicle_Tbl").Rows(0).Field(Of Double)("Prev_tareWt")
-            End If
-
-            TxtTare.Text = RecalledTareWt
-
-            If (OnDevice) Then
-                TxtOnline_TextChanged(Nothing, Nothing)
-            Else
-                TxtOffline_TextChanged(Nothing, Nothing)
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            conn.Close()
-        End Try
 
     End Sub
 End Class
