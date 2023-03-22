@@ -6,6 +6,9 @@
 */**/obj/*
 */**/obj/*
 */**/packages
+*/WeighingSystemStd_Bundle/Prereqs
+*/WeighingSystemStd_Installer/bin
+*/WeighingSystemStd_Installer/obj   
 /node_modules
 /.vs
 .dtbcachev2

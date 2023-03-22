@@ -76,9 +76,8 @@ Public Class CLS_SERVERPROC
                     '                    ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & DBName_ & ";" &
                     '"               Jet OLEDB:Database Password=" & Pwd_ & ";"
 
-                    ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & DBName_ & ";" &
+                    ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & DBName_ & ";" &
                         "Jet OLEDB:Database Password= " & Pwd_ & ";"
-
 
                     '  OleDbConn = New System.Data.OleDb.OleDbConnection(ConnectionString)
                     If OleDbConn.State = ConnectionState.Open Then OleDbConn.Close()

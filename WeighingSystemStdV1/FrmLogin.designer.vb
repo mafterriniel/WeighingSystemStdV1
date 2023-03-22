@@ -78,28 +78,31 @@ Partial Class FrmLogin
         '
         'UsernameLabel
         '
-        Me.UsernameLabel.Location = New System.Drawing.Point(155, 0)
+        Me.UsernameLabel.Location = New System.Drawing.Point(232, 0)
+        Me.UsernameLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.UsernameLabel.Name = "UsernameLabel"
-        Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
+        Me.UsernameLabel.Size = New System.Drawing.Size(330, 35)
         Me.UsernameLabel.TabIndex = 0
         Me.UsernameLabel.Text = "&User name"
         Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'PasswordLabel
         '
-        Me.PasswordLabel.Location = New System.Drawing.Point(155, 61)
+        Me.PasswordLabel.Location = New System.Drawing.Point(232, 94)
+        Me.PasswordLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.PasswordLabel.Name = "PasswordLabel"
-        Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
+        Me.PasswordLabel.Size = New System.Drawing.Size(330, 35)
         Me.PasswordLabel.TabIndex = 0
         Me.PasswordLabel.Text = "&Password"
         Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TxtUserName
         '
-        Me.TxtUserName.Location = New System.Drawing.Point(155, 26)
+        Me.TxtUserName.Location = New System.Drawing.Point(232, 40)
+        Me.TxtUserName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtUserName.MaxLength = 40
         Me.TxtUserName.Name = "TxtUserName"
-        Me.TxtUserName.Size = New System.Drawing.Size(220, 20)
+        Me.TxtUserName.Size = New System.Drawing.Size(328, 26)
         Me.TxtUserName.TabIndex = 1
         '
         'Tbl_Login
@@ -108,9 +111,10 @@ Partial Class FrmLogin
         Me.Tbl_Login.Controls.Add(Me.Pge_Server)
         Me.Tbl_Login.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Tbl_Login.Location = New System.Drawing.Point(0, 0)
+        Me.Tbl_Login.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Tbl_Login.Name = "Tbl_Login"
         Me.Tbl_Login.SelectedIndex = 0
-        Me.Tbl_Login.Size = New System.Drawing.Size(412, 225)
+        Me.Tbl_Login.Size = New System.Drawing.Size(618, 346)
         Me.Tbl_Login.TabIndex = 0
         '
         'Pge_Login
@@ -123,10 +127,11 @@ Partial Class FrmLogin
         Me.Pge_Login.Controls.Add(Me.TxtUserName)
         Me.Pge_Login.Controls.Add(Me.TxtPassword)
         Me.Pge_Login.Controls.Add(Me.LogoPictureBox)
-        Me.Pge_Login.Location = New System.Drawing.Point(4, 22)
+        Me.Pge_Login.Location = New System.Drawing.Point(4, 29)
+        Me.Pge_Login.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Pge_Login.Name = "Pge_Login"
-        Me.Pge_Login.Padding = New System.Windows.Forms.Padding(3)
-        Me.Pge_Login.Size = New System.Drawing.Size(404, 199)
+        Me.Pge_Login.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Pge_Login.Size = New System.Drawing.Size(610, 313)
         Me.Pge_Login.TabIndex = 0
         Me.Pge_Login.Text = "Log-in"
         Me.Pge_Login.UseVisualStyleBackColor = True
@@ -148,9 +153,10 @@ Partial Class FrmLogin
         Me.BtnExit.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
         Me.BtnExit.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Empty
         Me.BtnExit.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
-        Me.BtnExit.Location = New System.Drawing.Point(268, 113)
+        Me.BtnExit.Location = New System.Drawing.Point(402, 174)
+        Me.BtnExit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnExit.Name = "BtnExit"
-        Me.BtnExit.Size = New System.Drawing.Size(107, 36)
+        Me.BtnExit.Size = New System.Drawing.Size(160, 55)
         Me.BtnExit.TabIndex = 7
         Me.BtnExit.Text = "Exit"
         Me.BtnExit.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -173,9 +179,10 @@ Partial Class FrmLogin
         Me.BtnLogIn.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
         Me.BtnLogIn.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Empty
         Me.BtnLogIn.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
-        Me.BtnLogIn.Location = New System.Drawing.Point(155, 113)
+        Me.BtnLogIn.Location = New System.Drawing.Point(232, 174)
+        Me.BtnLogIn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnLogIn.Name = "BtnLogIn"
-        Me.BtnLogIn.Size = New System.Drawing.Size(107, 36)
+        Me.BtnLogIn.Size = New System.Drawing.Size(160, 55)
         Me.BtnLogIn.TabIndex = 6
         Me.BtnLogIn.Text = "Login"
         Me.BtnLogIn.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -185,9 +192,10 @@ Partial Class FrmLogin
         '
         Me.LblConnStat.Image = CType(resources.GetObject("LblConnStat.Image"), System.Drawing.Image)
         Me.LblConnStat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.LblConnStat.Location = New System.Drawing.Point(152, 159)
+        Me.LblConnStat.Location = New System.Drawing.Point(228, 245)
+        Me.LblConnStat.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblConnStat.Name = "LblConnStat"
-        Me.LblConnStat.Size = New System.Drawing.Size(247, 23)
+        Me.LblConnStat.Size = New System.Drawing.Size(370, 35)
         Me.LblConnStat.TabIndex = 5
         Me.LblConnStat.TabStop = True
         Me.LblConnStat.Text = "Failed to Connect to Server. Click for details"
@@ -196,20 +204,22 @@ Partial Class FrmLogin
         '
         'TxtPassword
         '
-        Me.TxtPassword.Location = New System.Drawing.Point(155, 87)
+        Me.TxtPassword.Location = New System.Drawing.Point(232, 134)
+        Me.TxtPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtPassword.MaxLength = 30
         Me.TxtPassword.Name = "TxtPassword"
         Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtPassword.Size = New System.Drawing.Size(220, 20)
+        Me.TxtPassword.Size = New System.Drawing.Size(328, 26)
         Me.TxtPassword.TabIndex = 2
         '
         'LogoPictureBox
         '
         Me.LogoPictureBox.BackgroundImage = CType(resources.GetObject("LogoPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.LogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.LogoPictureBox.Location = New System.Drawing.Point(-16, 3)
+        Me.LogoPictureBox.Location = New System.Drawing.Point(-24, 5)
+        Me.LogoPictureBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(189, 183)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(284, 282)
         Me.LogoPictureBox.TabIndex = 0
         Me.LogoPictureBox.TabStop = False
         '
@@ -226,10 +236,11 @@ Partial Class FrmLogin
         Me.Pge_Server.Controls.Add(Me.RdoAccess)
         Me.Pge_Server.Controls.Add(Me.Tbl_Access)
         Me.Pge_Server.Controls.Add(Me.Tbl_Sql)
-        Me.Pge_Server.Location = New System.Drawing.Point(4, 22)
+        Me.Pge_Server.Location = New System.Drawing.Point(4, 29)
+        Me.Pge_Server.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Pge_Server.Name = "Pge_Server"
-        Me.Pge_Server.Padding = New System.Windows.Forms.Padding(3)
-        Me.Pge_Server.Size = New System.Drawing.Size(404, 199)
+        Me.Pge_Server.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Pge_Server.Size = New System.Drawing.Size(610, 313)
         Me.Pge_Server.TabIndex = 1
         Me.Pge_Server.Text = "Database Connection"
         Me.Pge_Server.UseVisualStyleBackColor = True
@@ -253,9 +264,10 @@ Partial Class FrmLogin
         Me.BtnServerCancel.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnServerCancel.Image = CType(resources.GetObject("BtnServerCancel.Image"), System.Drawing.Image)
         Me.BtnServerCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnServerCancel.Location = New System.Drawing.Point(277, 154)
+        Me.BtnServerCancel.Location = New System.Drawing.Point(416, 237)
+        Me.BtnServerCancel.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnServerCancel.Name = "BtnServerCancel"
-        Me.BtnServerCancel.Size = New System.Drawing.Size(98, 37)
+        Me.BtnServerCancel.Size = New System.Drawing.Size(147, 57)
         Me.BtnServerCancel.TabIndex = 29
         Me.BtnServerCancel.Text = "&Cancel"
         Me.BtnServerCancel.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -280,9 +292,10 @@ Partial Class FrmLogin
         Me.BtnServerSave.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnServerSave.Image = CType(resources.GetObject("BtnServerSave.Image"), System.Drawing.Image)
         Me.BtnServerSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnServerSave.Location = New System.Drawing.Point(173, 154)
+        Me.BtnServerSave.Location = New System.Drawing.Point(260, 237)
+        Me.BtnServerSave.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnServerSave.Name = "BtnServerSave"
-        Me.BtnServerSave.Size = New System.Drawing.Size(98, 37)
+        Me.BtnServerSave.Size = New System.Drawing.Size(147, 57)
         Me.BtnServerSave.TabIndex = 28
         Me.BtnServerSave.Text = "&Save"
         Me.BtnServerSave.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -307,9 +320,10 @@ Partial Class FrmLogin
         Me.BtnServerEdit.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnServerEdit.Image = CType(resources.GetObject("BtnServerEdit.Image"), System.Drawing.Image)
         Me.BtnServerEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnServerEdit.Location = New System.Drawing.Point(69, 154)
+        Me.BtnServerEdit.Location = New System.Drawing.Point(104, 237)
+        Me.BtnServerEdit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnServerEdit.Name = "BtnServerEdit"
-        Me.BtnServerEdit.Size = New System.Drawing.Size(98, 37)
+        Me.BtnServerEdit.Size = New System.Drawing.Size(147, 57)
         Me.BtnServerEdit.TabIndex = 27
         Me.BtnServerEdit.Text = "&Edit"
         Me.BtnServerEdit.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -332,9 +346,10 @@ Partial Class FrmLogin
         Me.BtnReloadServeConnection.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
         Me.BtnReloadServeConnection.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Empty
         Me.BtnReloadServeConnection.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
-        Me.BtnReloadServeConnection.Location = New System.Drawing.Point(20, 156)
+        Me.BtnReloadServeConnection.Location = New System.Drawing.Point(30, 240)
+        Me.BtnReloadServeConnection.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnReloadServeConnection.Name = "BtnReloadServeConnection"
-        Me.BtnReloadServeConnection.Size = New System.Drawing.Size(34, 23)
+        Me.BtnReloadServeConnection.Size = New System.Drawing.Size(51, 35)
         Me.BtnReloadServeConnection.TabIndex = 25
         Me.BtnReloadServeConnection.Text = "..."
         Me.BtnReloadServeConnection.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -344,9 +359,10 @@ Partial Class FrmLogin
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(358, 7)
+        Me.PictureBox1.Location = New System.Drawing.Point(537, 11)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(32, 29)
+        Me.PictureBox1.Size = New System.Drawing.Size(48, 45)
         Me.PictureBox1.TabIndex = 14
         Me.PictureBox1.TabStop = False
         '
@@ -354,9 +370,10 @@ Partial Class FrmLogin
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.Label18.Location = New System.Drawing.Point(5, 7)
+        Me.Label18.Location = New System.Drawing.Point(8, 11)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(88, 13)
+        Me.Label18.Size = New System.Drawing.Size(134, 20)
         Me.Label18.TabIndex = 16
         Me.Label18.Text = "Connection Type"
         '
@@ -364,9 +381,10 @@ Partial Class FrmLogin
         '
         Me.RdoSErver.AutoSize = True
         Me.RdoSErver.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RdoSErver.Location = New System.Drawing.Point(194, 5)
+        Me.RdoSErver.Location = New System.Drawing.Point(291, 8)
+        Me.RdoSErver.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RdoSErver.Name = "RdoSErver"
-        Me.RdoSErver.Size = New System.Drawing.Size(86, 18)
+        Me.RdoSErver.Size = New System.Drawing.Size(126, 26)
         Me.RdoSErver.TabIndex = 0
         Me.RdoSErver.Text = "SQL SERVER"
         Me.RdoSErver.UseVisualStyleBackColor = True
@@ -377,9 +395,10 @@ Partial Class FrmLogin
         Me.RdoAccess.AutoSize = True
         Me.RdoAccess.Checked = True
         Me.RdoAccess.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RdoAccess.Location = New System.Drawing.Point(103, 5)
+        Me.RdoAccess.Location = New System.Drawing.Point(154, 8)
+        Me.RdoAccess.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RdoAccess.Name = "RdoAccess"
-        Me.RdoAccess.Size = New System.Drawing.Size(85, 18)
+        Me.RdoAccess.Size = New System.Drawing.Size(127, 26)
         Me.RdoAccess.TabIndex = 1
         Me.RdoAccess.TabStop = True
         Me.RdoAccess.Text = "ACCESS FILE"
@@ -388,10 +407,11 @@ Partial Class FrmLogin
         'Tbl_Access
         '
         Me.Tbl_Access.Controls.Add(Me.TabPage1)
-        Me.Tbl_Access.Location = New System.Drawing.Point(7, 29)
+        Me.Tbl_Access.Location = New System.Drawing.Point(10, 45)
+        Me.Tbl_Access.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Tbl_Access.Name = "Tbl_Access"
         Me.Tbl_Access.SelectedIndex = 0
-        Me.Tbl_Access.Size = New System.Drawing.Size(386, 119)
+        Me.Tbl_Access.Size = New System.Drawing.Size(579, 183)
         Me.Tbl_Access.TabIndex = 0
         '
         'TabPage1
@@ -401,10 +421,11 @@ Partial Class FrmLogin
         Me.TabPage1.Controls.Add(Me.TxtDBpath)
         Me.TabPage1.Controls.Add(Me.TxtAccessPwd)
         Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 29)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(378, 93)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage1.Size = New System.Drawing.Size(571, 150)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Settings"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -426,9 +447,10 @@ Partial Class FrmLogin
         Me.BtnBrowse.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
         Me.BtnBrowse.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Empty
         Me.BtnBrowse.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
-        Me.BtnBrowse.Location = New System.Drawing.Point(337, 12)
+        Me.BtnBrowse.Location = New System.Drawing.Point(506, 18)
+        Me.BtnBrowse.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnBrowse.Name = "BtnBrowse"
-        Me.BtnBrowse.Size = New System.Drawing.Size(26, 22)
+        Me.BtnBrowse.Size = New System.Drawing.Size(39, 34)
         Me.BtnBrowse.TabIndex = 24
         Me.BtnBrowse.Text = "..."
         Me.BtnBrowse.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -436,9 +458,10 @@ Partial Class FrmLogin
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(5, 13)
+        Me.Label1.Location = New System.Drawing.Point(8, 20)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 23)
+        Me.Label1.Size = New System.Drawing.Size(112, 35)
         Me.Label1.TabIndex = 21
         Me.Label1.Text = "Database File"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -446,27 +469,30 @@ Partial Class FrmLogin
         'TxtDBpath
         '
         Me.TxtDBpath.Enabled = False
-        Me.TxtDBpath.Location = New System.Drawing.Point(86, 13)
+        Me.TxtDBpath.Location = New System.Drawing.Point(129, 20)
+        Me.TxtDBpath.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtDBpath.MaxLength = 60
         Me.TxtDBpath.Name = "TxtDBpath"
-        Me.TxtDBpath.Size = New System.Drawing.Size(248, 20)
+        Me.TxtDBpath.Size = New System.Drawing.Size(370, 26)
         Me.TxtDBpath.TabIndex = 0
         '
         'TxtAccessPwd
         '
         Me.TxtAccessPwd.Enabled = False
-        Me.TxtAccessPwd.Location = New System.Drawing.Point(86, 46)
+        Me.TxtAccessPwd.Location = New System.Drawing.Point(129, 71)
+        Me.TxtAccessPwd.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtAccessPwd.MaxLength = 40
         Me.TxtAccessPwd.Name = "TxtAccessPwd"
         Me.TxtAccessPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtAccessPwd.Size = New System.Drawing.Size(137, 20)
+        Me.TxtAccessPwd.Size = New System.Drawing.Size(204, 26)
         Me.TxtAccessPwd.TabIndex = 1
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(5, 45)
+        Me.Label2.Location = New System.Drawing.Point(8, 69)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(75, 23)
+        Me.Label2.Size = New System.Drawing.Size(112, 35)
         Me.Label2.TabIndex = 23
         Me.Label2.Text = "Password"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -475,10 +501,11 @@ Partial Class FrmLogin
         '
         Me.Tbl_Sql.Controls.Add(Me.Tbl_Settings)
         Me.Tbl_Sql.Controls.Add(Me.Tbl_authentication)
-        Me.Tbl_Sql.Location = New System.Drawing.Point(8, 29)
+        Me.Tbl_Sql.Location = New System.Drawing.Point(12, 45)
+        Me.Tbl_Sql.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Tbl_Sql.Name = "Tbl_Sql"
         Me.Tbl_Sql.SelectedIndex = 0
-        Me.Tbl_Sql.Size = New System.Drawing.Size(386, 119)
+        Me.Tbl_Sql.Size = New System.Drawing.Size(579, 183)
         Me.Tbl_Sql.TabIndex = 0
         Me.Tbl_Sql.Visible = False
         '
@@ -488,19 +515,21 @@ Partial Class FrmLogin
         Me.Tbl_Settings.Controls.Add(Me.TxtDB)
         Me.Tbl_Settings.Controls.Add(Me.Label3)
         Me.Tbl_Settings.Controls.Add(Me.CboServers)
-        Me.Tbl_Settings.Location = New System.Drawing.Point(4, 22)
+        Me.Tbl_Settings.Location = New System.Drawing.Point(4, 29)
+        Me.Tbl_Settings.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Tbl_Settings.Name = "Tbl_Settings"
-        Me.Tbl_Settings.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tbl_Settings.Size = New System.Drawing.Size(378, 93)
+        Me.Tbl_Settings.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Tbl_Settings.Size = New System.Drawing.Size(571, 150)
         Me.Tbl_Settings.TabIndex = 0
         Me.Tbl_Settings.Text = "Settings"
         Me.Tbl_Settings.UseVisualStyleBackColor = True
         '
         'Label4
         '
-        Me.Label4.Location = New System.Drawing.Point(5, 13)
+        Me.Label4.Location = New System.Drawing.Point(8, 20)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(75, 23)
+        Me.Label4.Size = New System.Drawing.Size(112, 35)
         Me.Label4.TabIndex = 21
         Me.Label4.Text = "Name"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -508,17 +537,19 @@ Partial Class FrmLogin
         'TxtDB
         '
         Me.TxtDB.Enabled = False
-        Me.TxtDB.Location = New System.Drawing.Point(86, 46)
+        Me.TxtDB.Location = New System.Drawing.Point(129, 71)
+        Me.TxtDB.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtDB.MaxLength = 40
         Me.TxtDB.Name = "TxtDB"
-        Me.TxtDB.Size = New System.Drawing.Size(137, 20)
+        Me.TxtDB.Size = New System.Drawing.Size(204, 26)
         Me.TxtDB.TabIndex = 0
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(5, 45)
+        Me.Label3.Location = New System.Drawing.Point(8, 69)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(75, 23)
+        Me.Label3.Size = New System.Drawing.Size(112, 35)
         Me.Label3.TabIndex = 23
         Me.Label3.Text = "Database "
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -528,9 +559,10 @@ Partial Class FrmLogin
         Me.CboServers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboServers.FormattingEnabled = True
         Me.CboServers.Items.AddRange(New Object() {"..."})
-        Me.CboServers.Location = New System.Drawing.Point(86, 15)
+        Me.CboServers.Location = New System.Drawing.Point(129, 23)
+        Me.CboServers.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.CboServers.Name = "CboServers"
-        Me.CboServers.Size = New System.Drawing.Size(244, 21)
+        Me.CboServers.Size = New System.Drawing.Size(364, 28)
         Me.CboServers.TabIndex = 0
         '
         'Tbl_authentication
@@ -539,19 +571,21 @@ Partial Class FrmLogin
         Me.Tbl_authentication.Controls.Add(Me.TxtServerLogin)
         Me.Tbl_authentication.Controls.Add(Me.TxtServerPassword)
         Me.Tbl_authentication.Controls.Add(Me.Label6)
-        Me.Tbl_authentication.Location = New System.Drawing.Point(4, 22)
+        Me.Tbl_authentication.Location = New System.Drawing.Point(4, 29)
+        Me.Tbl_authentication.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Tbl_authentication.Name = "Tbl_authentication"
-        Me.Tbl_authentication.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tbl_authentication.Size = New System.Drawing.Size(378, 93)
+        Me.Tbl_authentication.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Tbl_authentication.Size = New System.Drawing.Size(571, 150)
         Me.Tbl_authentication.TabIndex = 1
         Me.Tbl_authentication.Text = "Authentication"
         Me.Tbl_authentication.UseVisualStyleBackColor = True
         '
         'Label5
         '
-        Me.Label5.Location = New System.Drawing.Point(9, 13)
+        Me.Label5.Location = New System.Drawing.Point(14, 20)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(75, 23)
+        Me.Label5.Size = New System.Drawing.Size(112, 35)
         Me.Label5.TabIndex = 21
         Me.Label5.Text = "Login"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -559,38 +593,42 @@ Partial Class FrmLogin
         'TxtServerLogin
         '
         Me.TxtServerLogin.Enabled = False
-        Me.TxtServerLogin.Location = New System.Drawing.Point(90, 13)
+        Me.TxtServerLogin.Location = New System.Drawing.Point(135, 20)
+        Me.TxtServerLogin.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtServerLogin.Name = "TxtServerLogin"
-        Me.TxtServerLogin.Size = New System.Drawing.Size(220, 20)
+        Me.TxtServerLogin.Size = New System.Drawing.Size(328, 26)
         Me.TxtServerLogin.TabIndex = 0
         '
         'TxtServerPassword
         '
         Me.TxtServerPassword.Enabled = False
-        Me.TxtServerPassword.Location = New System.Drawing.Point(90, 48)
+        Me.TxtServerPassword.Location = New System.Drawing.Point(135, 74)
+        Me.TxtServerPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtServerPassword.Name = "TxtServerPassword"
         Me.TxtServerPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtServerPassword.Size = New System.Drawing.Size(220, 20)
+        Me.TxtServerPassword.Size = New System.Drawing.Size(328, 26)
         Me.TxtServerPassword.TabIndex = 1
         '
         'Label6
         '
-        Me.Label6.Location = New System.Drawing.Point(9, 48)
+        Me.Label6.Location = New System.Drawing.Point(14, 74)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(75, 23)
+        Me.Label6.Size = New System.Drawing.Size(112, 35)
         Me.Label6.TabIndex = 23
         Me.Label6.Text = "Password"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'FrmLogin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(243, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(412, 225)
+        Me.ClientSize = New System.Drawing.Size(618, 346)
         Me.Controls.Add(Me.Tbl_Login)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmLogin"

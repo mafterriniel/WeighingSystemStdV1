@@ -2,6 +2,8 @@
 Imports System.Drawing.Printing
 Imports System.Printing
 Imports System.Linq
+Imports System.Net.Sockets
+Imports WeightDev.Enums
 
 Module MOD_REPORTING
     Public Sub PrintToPrinter__OLD(ByVal ReportFile As String, ByVal SelectionFormula As String,
@@ -131,11 +133,15 @@ Module MOD_REPORTING
             Dim SysSettings As New settings
             SysSettings.Load()
 
-            Dim repotFile As String = Application.StartupPath & "\Reports\" & "TcktInOutAll.rpt"
+            Dim repotFile As String = String.Empty
+            If (SysSettings.WeighingMode = WeighingModeEnum.STANDARD.ToString()) Then
+                repotFile = Application.StartupPath & "\Reports\" & "TcktStd.rpt"
+            ElseIf (SysSettings.WeighingMode = WeighingModeEnum.AXLE.ToString()) Then
+                repotFile = Application.StartupPath & "\Reports\" & "TcktAxle.rpt"
+            End If
 
             Dim RR = New CrystalDecisions.CrystalReports.Engine.ReportDocument
             RR.Load(repotFile)
-
 
             Dim dds As ds = New ds()
             Dim outbount_tbl As String = "Select * from Outbound_tbl where refno = '" & refno & "'"
@@ -299,6 +305,108 @@ Module MOD_REPORTING
     End Function
 
     Public Sub ViewReport(ByVal crviewer As CrystalDecisions.Windows.Forms.CrystalReportViewer,
+                          ByVal ReportFile As String, ByVal sqlQuery As String,
+                          ByVal RR As CrystalDecisions.CrystalReports.Engine.ReportDocument, ByVal DTFrom As String,
+                          ByVal DTTO As String, ByVal PreparedBy As String,
+                          ByVal SortFieldTable As String, ByVal SortField As String, ByVal SortFieldOrder As CrystalDecisions.Shared.SortDirection,
+                          ByVal Groupings As String)
+        Try
+
+            RR = New CrystalDecisions.CrystalReports.Engine.ReportDocument
+            RR.Load(ReportFile)
+
+            Dim sysSettings = New settings()
+            sysSettings.Load()
+
+            RR.DataDefinition.FormulaFields.Item("From").Text = "'" & DTFrom & "'"
+            RR.DataDefinition.FormulaFields.Item("To").Text = "'" & DTTO & "'"
+            RR.DataDefinition.FormulaFields.Item("PreparedBy").Text = "'" & PreparedBy & "'"
+            RR.DataDefinition.FormulaFields.Item("DeductUnit").Text = "'" & sysSettings.DeductUnit & "'"
+
+            If IsNothing(SortFieldTable) = False Then
+                Dim SortFieldData As CrystalDecisions.CrystalReports.Engine.FieldDefinition
+                SortFieldData = RR.Database.Tables(SortFieldTable).Fields(SortField)
+                RR.DataDefinition.SortFields(0).Field = SortFieldData
+                If (SortFieldOrder = CrystalDecisions.Shared.SortDirection.TopNOrder) = False Then
+                    RR.DataDefinition.SortFields(0).SortDirection = SortFieldOrder
+                End If
+            End If
+            Dim dds As ds = New ds()
+            Dim outbount_tbl As String = sqlQuery
+            Dim comm_tbl As String = ""
+            Dim sup_tbl As String = ""
+            Dim cust_tbl As String = ""
+            Dim useraccounts1 As String = ""
+            Dim useraccounts2 As String = ""
+            Dim compnyProf As String = ""
+            Dim sa As New OleDb.OleDbDataAdapter
+
+
+            Dim cls As New CLS_OLE_DB
+            cls.CONNECTION = OLEDBCONX
+
+            cls.Source = outbount_tbl
+            cls.OpenSource()
+            Dim gr As String = 0
+            Dim tr As String = 0
+            Dim nt As String = 0
+            Dim dtout As String = 0
+            Dim tbl As New DataTable()
+
+            With cls.DATAREADER
+                If .HasRows Then
+                    While .Read
+                        comm_tbl = "select * from  comm_tbl where  COMMCODE = '" & .Item("CommodityCode") & "'"
+                        sup_tbl = "select * from  sup_tbl where  supcode = '" & .Item("supplierCode") & "'"
+                        cust_tbl = "select * from  cust_tbl where  custcode = '" & .Item("customerCode") & "'"
+                        useraccounts1 = "select * from  useraccounts where  user_id = '" & .Item("WeigherIn") & "'"
+                        useraccounts2 = "select * from  useraccounts where  user_id = '" & .Item("WeigherOut") & "'"
+                        compnyProf = "select * from companyProfile"
+                    End While
+                    .Close()
+
+                    sa = New OleDb.OleDbDataAdapter(comm_tbl, OLEDBCONX)
+                    sa.Fill(dds, "Comm_Tbl")
+
+                    sa = New OleDb.OleDbDataAdapter(outbount_tbl, OLEDBCONX)
+                    sa.Fill(dds, "Outbound_tbl")
+
+
+                    sa = New OleDb.OleDbDataAdapter(sup_tbl, OLEDBCONX)
+                    sa.Fill(dds, "sup_tbl")
+
+                    sa = New OleDb.OleDbDataAdapter(cust_tbl, OLEDBCONX)
+                    sa.Fill(dds, "cust_tbl")
+
+                    sa = New OleDb.OleDbDataAdapter(useraccounts1, OLEDBCONX)
+                    sa.Fill(dds, "useraccounts")
+
+                    sa = New OleDb.OleDbDataAdapter(useraccounts2, OLEDBCONX)
+                    sa.Fill(dds, "useraccounts_1")
+
+                    sa = New OleDb.OleDbDataAdapter(compnyProf, OLEDBCONX)
+                    sa.Fill(dds, "CompanyProfile")
+                End If
+            End With
+
+
+            RR.SetDataSource(dds)
+
+            RR.Refresh()
+            crviewer.ReportSource = RR
+            'If IsNothing(sqlQuery) = False Then
+            '    crviewer.SelectionFormula = sqlQuery
+            'End If
+            crviewer.Refresh()
+
+
+
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub ViewReport_Old(ByVal crviewer As CrystalDecisions.Windows.Forms.CrystalReportViewer,
                           ByVal ReportFile As String, ByVal SelectionFormula As String,
                           ByVal RR As CrystalDecisions.CrystalReports.Engine.ReportDocument, ByVal DTFrom As String,
                           ByVal DTTO As String, ByVal PreparedBy As String,
@@ -349,6 +457,7 @@ Module MOD_REPORTING
             Throw New Exception(ex.Message)
         End Try
     End Sub
+
 
 
     Private Sub SetConnectionString(ByRef Rp As CrystalDecisions.CrystalReports.Engine.ReportDocument)

@@ -1,5 +1,7 @@
-﻿Public Class FrmSystemSettings
-   
+﻿Imports WeightDev.Enums
+
+Public Class FrmSystemSettings
+
     Private Sub FrmSystemSettings_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.Enter Then
             If TypeOf Me.ActiveControl Is MykeCtrlEx.PushButton Then Exit Sub
@@ -45,7 +47,19 @@
                 Rdo_InOutWeighing.Checked = True
             Case "M"
         End Select
- 
+
+
+        Dim wm = WeighingModeEnum.STANDARD
+        [Enum].TryParse(Of WeighingModeEnum)(SysSettings.WeighingMode, wm)
+
+        Select Case wm
+            Case WeighingModeEnum.STANDARD
+                rdoWMStandard.Checked = True
+            Case WeighingModeEnum.AXLE
+                rdoWMAxle.Checked = True
+        End Select
+
+
         If SysSettings.UnitWeight = "KG" Then
             RdoUKg.Checked = True
             RdoUTons.Checked = False
@@ -112,6 +126,14 @@
                 SysSettings.WeighingType = "S"
             Case Rdo_InOutWeighing.Checked
                 SysSettings.WeighingType = "IO"
+        End Select
+
+
+        Select Case True
+            Case rdoWMStandard.Checked
+                SysSettings.WeighingMode = WeighingModeEnum.STANDARD.ToString()
+            Case rdoWMaxle.Checked
+                SysSettings.WeighingMode = WeighingModeEnum.AXLE.ToString()
         End Select
 
         If RdoUKg.Checked = True Then

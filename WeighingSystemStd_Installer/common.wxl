@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+	<String Id="Company">Terriniel Scales Incorporated</String>
+
+	<String Id="FolderName">Weighing System Standard</String>
+
+	<String Id="ProductName_x86">Weighing System Standard (32bit)</String>
+	<String Id="ProductName_x64">Weighing System Standard (64bit)</String>
+	<String Id="Language">1033</String>
+	
+	<String Id="Description">Weighing System Standard Software</String>
+	<String Id="Keywords">Truckscale Software</String>
+	<String Id="Comments">c--</String>
+
+</WixLocalization>

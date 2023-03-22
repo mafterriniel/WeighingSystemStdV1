@@ -1,4 +1,8 @@
-﻿Imports WeightDev
+﻿Imports System.Data.OleDb
+Imports System.Web.Services.Description
+Imports WeightDev
+Imports WeightDev.Enums
+Imports WeightDev.Events
 
 Public Class FrmTrans
 
@@ -31,6 +35,7 @@ Public Class FrmTrans
     Private UnitWeight As String = SysSettings.UnitWeight
     Private DeductUnit As String = SysSettings.DeductUnit
     Private EnableDeduction As Boolean = SysSettings.EnableDeduction
+    Private AxleResults As New List(Of AxleResult)
     Private Sub GrabSettings()
         'TxtOnline.WeighingDevice = SysSettings.WeighingType
 
@@ -59,7 +64,6 @@ Public Class FrmTrans
         Else
             PnlWeightStat.Enabled = False
         End If
-
     End Sub
 
     Private Sub SetPort(ByRef Txt As WeightDev.WeightIndicator)
@@ -76,8 +80,17 @@ Public Class FrmTrans
             Txt.ReadingInterval = 100
             Txt.CommReadTimeout = 3000
             Txt.WeighingDevice = SysSettings.device
+            Txt.WeighingInput = WeighingInputEnum.AUTO
+
+            TxtOnline.ResetAxle()
+            AxleResults.Clear()
+
+            Dim wm = WeighingModeEnum.STANDARD
+            [Enum].TryParse(Of WeighingModeEnum)(SysSettings.WeighingMode, wm)
+            Txt.WeighingMode = wm
             Txt.Start()
             LblError.Visible = False
+
         Catch ex As Exception
             TxtOnline.BackColor = Color.Red
             LblError.Text = "       " & ex.Message
@@ -169,18 +182,21 @@ Public Class FrmTrans
     End Sub
 
     Private Sub Change_WeightSource()
+
         If OnDevice = True Then
-            ' Pnl_indicator.Visible = True
+            'Pnl_indicator.Visible = True
             TxtOffline.Visible = False
             TxtOnline.Visible = True
             DTPicker.Visible = False
+            TxtOnline.WeighingInput = WeighingInputEnum.AUTO
             TxtOnline_TextChanged(Nothing, Nothing)
         Else
             'Pnl_indicator.Visible = False
             TxtOffline.Visible = True
             TxtOnline.Visible = False
             DTPicker.Visible = True
-            TxtOffline_TextChanged(Nothing, Nothing)
+            TxtOnline.WeighingInput = WeighingInputEnum.MANUAL
+            TxtOnline_TextChanged(Nothing, Nothing)
         End If
     End Sub
 
@@ -435,42 +451,27 @@ Public Class FrmTrans
             Exit Function
         End If
 
-        Select Case OnDevice
-            Case True
-                If IsNumeric(TxtOnline.Text) = False Then
-                    MessageBox.Show("Invalid Weight from device....", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-                    Return False
-                    Exit Function
-                End If
 
-                If Val(TxtOnline.Text) <= 0 Then
-                    MessageBox.Show("Invalid Weight from device....", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-                    Return False
-                    Exit Function
-                End If
-            Case False
-                If IsNumeric(TxtOffline.Text) = False Then
-                    MessageBox.Show("Invalid Weight from device....", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-                    Return False
-                    Exit Function
-                End If
-
-                If Val(TxtOffline.Text) <= 0 Then
+        If (SysSettings.WeighingType = "IO") Then
+            If (WeighIn) Then
+                If Val(TxtGross.Text) <= 0 Then
                     MessageBox.Show("Invalid Weight....", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-                    Return False
                     Exit Function
                 End If
-        End Select
+            Else
+                If Val(TxtGross.Text) <= 0 Or Val(TxtTare.Text) <= 0 Or Val(TxtNet.Text) <= 0 Then
+                    MessageBox.Show("Invalid Weight....", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                    Exit Function
 
-
-        If Weighout = True Then
-            If Val(TxtNet.Text) <= 0 Then
-                MessageBox.Show("Invalid Net Weight....", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-                Return False
+                End If
+            End If
+        Else
+            If Val(TxtGross.Text) <= 0 Then
+                MessageBox.Show("Invalid Weight....", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                 Exit Function
+
             End If
         End If
-
 
         Dim DataValue As String
         DataValue = Trim(TxtPlateNo.Text)
@@ -526,7 +527,7 @@ Public Class FrmTrans
         End If
 
         If SysSettings.EnablePricing = True Then
-            Pricing = _
+            Pricing =
     Replace(TxtPrice.Text, ",", "")
             If String.IsNullOrEmpty(Pricing) Then Pricing = 0.0
             If IsNumeric(Pricing) = False Then
@@ -539,7 +540,7 @@ Public Class FrmTrans
 
         If SysSettings.WeighingType = "S" Then
             If SysSettings.EnableDeduction = True Then
-                Mc = _
+                Mc =
         Replace(TxtDeduct.Text, ",", "")
                 If String.IsNullOrEmpty(Mc) Then Mc = 0.0
                 If IsNumeric(Mc) = False Then
@@ -581,7 +582,7 @@ Public Class FrmTrans
                     Errortext = Errortext & Environment.NewLine & "* Truck Tare Weight does not meet the required tolerance."
                 End If
             End If
-            End If
+        End If
 
         If IsNothing(Errortext) = False Then
             MessageBox.Show(Errortext, "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -595,64 +596,97 @@ Public Class FrmTrans
 
 #End Region
     Private Sub SaveSingleWeighingData()
-        Try
-            If Btnsave.Enabled = False Then Exit Sub
 
-            Dim FinalNet As Double = 0.0
-            If EnableDeduction = True Then FinalNet = TxtFINAL.Text
-            If EnableDeduction = False Then FinalNet = TxtNet.Text
+        If Btnsave.Enabled = False Then Exit Sub
 
-            Dim Saver
-            If SysSettings.ConnectionType = "OLEDB" Then
-                Saver = New CLS_OLE_DB
-                Saver.CONNECTION = OLEDBCONX
-            Else
-                Saver = New CLS_SQL_DB
-                Saver.CONNECTION = SQLCONX
-            End If
-            Saver.Table = "RefNo"
-            Saver.FieldName = "Outbound_Id"
-            INBOUND_REFNO = Saver.GeneratedId
+        Dim FinalNet As Double = 0.0
+        If EnableDeduction = True Then FinalNet = TxtFINAL.Text
+        If EnableDeduction = False Then FinalNet = TxtNet.Text
 
+        Dim Saver
+        If SysSettings.ConnectionType = "OLEDB" Then
+            Saver = New CLS_OLE_DB
+            Saver.CONNECTION = OLEDBCONX
+        Else
+            Saver = New CLS_SQL_DB
+            Saver.CONNECTION = SQLCONX
+        End If
+        Saver.Table = "RefNo"
+        Saver.FieldName = "Outbound_Id"
+        INBOUND_REFNO = Saver.GeneratedId
 
-            Dim DT As String = Now
+        Dim axleCount = AxleResults.Count
+        Dim axleTotWt = AxleResults.Sum(Function(a) a.Weight)
+        'For i = 1 To (8 - (AxleResults.Count))
+        '    AxleResults.Add(New AxleResult(AxleResults.Count + 1, 0, Nothing))
+        'Next
 
-            Dim Src As String = "INSERT INTO OUTBOUND_Tbl " &
-    "([RefNo],[DTIn],[DTOut],[PlateNo],[CustomerCode],[SupplierCode]" &
-    ",[CommodityCode],[Pricing],[UnitPerPrice],[DRNo],[TicketNo]" &
-    ",[UnitWeight],[Gross_Wt],[Gross_DT],[Tare_Wt],[Tare_Dt],[Net_Wt],[Final_wt]" &
-    ",[Inbound_Wt],[MC],[DedReason],[Remarks],[WeigherIn],[WeigherOut],[DriverName])" &
-     "VALUES " &
-    "('" & INBOUND_REFNO & "','" & DT & "','" & DT & "','" & TxtPlateNo.Text.Trim & "','" & CustCode & "','" & SupCode & "'" &
-    ",'" & CommCode & "','" & Pricing & "','" & UnitPerPrice & "','" & TxtDrNo.Text.Trim & "','" & TxtTicketNo.Text.Trim & "'" &
-",'" & UnitWeight & "','" & TxtGross.Text & "','" & DT & "','" & TxtTare.Text & "','" & DT & "','" & TxtNet.Text & "','" & TxtFINAL.Text & "'" &
- ",'" & TxtGross.Text & "','" & Mc & "','" & Trim(TxtReasons.Text) & "','" & TxtRemarks.Text.Trim & "','" & FrmLogin.UserId & "','" & FrmLogin.UserId & "','" & (TxtDriver.Text) & "')"
-            Saver.source = Src
-            ' MessageBox.Show(Src)
-            Saver.executecommand()
+        Dim DT As String = Now
 
-            Saver.Table = "RefNo"
-            Saver.FieldName = "Outbound_Id"
-            Saver.Text = INBOUND_REFNO
-            Saver.UpdateId()
+        Dim Src As String = "INSERT INTO OUTBOUND_Tbl" &
+                            "(" &
+                                "[RefNo]" & vbCrLf &
+                                ",[DTIn],[DTOut]" & vbCrLf &
+                                ",[PlateNo]" & vbCrLf &
+                                ",[CustomerCode],[SupplierCode]" & vbCrLf &
+                                ",[CommodityCode],[Pricing],[UnitPerPrice]" & vbCrLf &
+                                ",[DRNo],[TicketNo]" & vbCrLf &
+                                ",[UnitWeight]" & vbCrLf &
+                                ",[Gross_Wt],[Gross_DT]" & vbCrLf &
+                                ",[Tare_Wt],[Tare_Dt]" & vbCrLf &
+                                ",[Net_Wt],[Final_wt],[Inbound_Wt]" & vbCrLf &
+                                ",[MC],[DedReason]" & vbCrLf &
+                                ",[Remarks]" & vbCrLf &
+                                ",[WeigherIn],[WeigherOut],[DriverName]" & vbCrLf &
+                                "," & String.Join(",", AxleResults.OrderBy(Function(a) a.Num).Select(Function(a)
+                                                                                                         Return $"[Axle0{a.Num}Wt],[Axle0{a.Num}Dt]" & vbCrLf
+                                                                                                     End Function)) & vbCrLf &
+                                ",[AxleTotWt],[AxleCount]" & vbCrLf &
+                            ")" & vbCrLf &
+                            "VALUES " & vbCrLf &
+                            "(" & vbCrLf &
+                                $"'{INBOUND_REFNO}'" & vbCrLf &
+                                $",'{DT}','{DT}'" & vbCrLf &
+                                $",'{TxtPlateNo.Text.Trim()}'" & vbCrLf &
+                                $",'{CustCode}','{SupCode}'" & vbCrLf &
+                                $",'{CommCode}',{Pricing},'{UnitPerPrice}'" & vbCrLf &
+                                $",'{TxtDrNo.Text.Trim()}','{TxtTicketNo.Text.Trim()}'" & vbCrLf &
+                                $",'{UnitWeight}'" & vbCrLf &
+                                $",{Val(TxtGross.Text)},'{DT}'" & vbCrLf &
+                                $",{Val(TxtTare.Text)},'{DT}'" & vbCrLf &
+                                $",{Val(TxtNet.Text)},{TxtFINAL.Text},{TxtGross.Text}" & vbCrLf &
+                                $",{Mc},'{TxtReasons.Text.Trim()}'" & vbCrLf &
+                                $",'{TxtRemarks.Text}'" & vbCrLf &
+                                $",'{FrmLogin.UserId}','{FrmLogin.UserId}','{TxtDriver.Text}'" & vbCrLf &
+                                "," & String.Join(",", AxleResults.OrderBy(Function(a) a.Num).Select(Function(a)
+                                                                                                         Return $"{a.Weight},'{a.DateCaptured}'" & vbCrLf
+                                                                                                     End Function)) & vbCrLf &
+                                $",{axleTotWt},{axleCount}" & vbCrLf &
+                            ")"
+        Saver.source = Src
+        ' MessageBox.Show(Src)
+        Saver.executecommand()
 
-            SaveDriverName()
+        Saver.Table = "RefNo"
+        Saver.FieldName = "Outbound_Id"
+        Saver.Text = INBOUND_REFNO
+        Saver.UpdateId()
 
-            LastOutRefNo = INBOUND_REFNO
-            '  If My.Settings.EnablePrintIn = True Then _
-            'MOD_REPORTING.PrintToPrinter(Application.StartupPath & "\Reports\" & "TcktIn.rpt", "{OutBound_tbl.Refno} = '" & INBOUND_REFNO & "'", Nothing)
+        SaveDriverName()
 
-            MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketAll, LastOutRefNo)
+        LastOutRefNo = INBOUND_REFNO
+        '  If My.Settings.EnablePrintIn = True Then _
+        'MOD_REPORTING.PrintToPrinter(Application.StartupPath & "\Reports\" & "TcktIn.rpt", "{OutBound_tbl.Refno} = '" & INBOUND_REFNO & "'", Nothing)
 
-            Dim frm As New FrmTransOK
-            frm.MsgSTr = " Weighing Complete..." & vbNewLine & _
-         "Press Close to exit window."
-            frm.ShowDialog()
+        MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketAll, LastOutRefNo)
 
-            MessageBox.Show("Weighing Complete.", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+        Dim frm As New FrmTransOK
+        frm.MsgSTr = " Weighing Complete..." & vbNewLine &
+     "Press Close to exit window."
+        frm.ShowDialog()
+
+        MessageBox.Show("Weighing Complete.", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
 
         'UpdateList()
         'Dim Gd As New CLS_DATAGRID
@@ -712,7 +746,7 @@ Public Class FrmTrans
 
             Dim frm As New FrmTransOK
             frm.ReceiptNo = LastOutRefNo
-            frm.MsgSTr = "Inbound Weighing Complete..." & vbNewLine & _
+            frm.MsgSTr = "Inbound Weighing Complete..." & vbNewLine &
          "Press Close to exit window."
             frm.ShowDialog(MDIMAIN)
         Catch ex As Exception
@@ -838,6 +872,106 @@ Public Class FrmTrans
     End Sub
     Private lockWeighing As Boolean = False
 
+
+    ' Save Procedure For Recalled Tare
+    Private Sub SaveInboundData2()
+        Dim conn = New OleDbConnection(DBContextFactory.GetConnectionString())
+
+        Try
+            If Btnsave.Enabled = False Then Exit Sub
+
+            conn.Open()
+
+            Dim Cmd = New OleDbCommand("SELECT * FROM RefNo", conn)
+            Dim adapater = New OleDbDataAdapter(Cmd)
+            Dim ds As New DataSet()
+            adapater.Fill(ds, "RefNo")
+
+            INBOUND_REFNO = ds.Tables("RefNo").Rows(0).Field(Of String)("Outbound_Id")
+
+            Cmd.Dispose()
+
+            Dim qry = $"INSERT INTO OUTBOUND_TBL"
+            qry += "("
+            qry += "RefNo,DTIn,DtOut,PlateNo,CustomerCode,SupplierCode,CommodityCode,"
+            qry += "Pricing,UnitPerPrice,DRNo,TicketNo,UnitWeight,"
+            qry += "Inbound_Wt,Gross_Wt,Gross_DT,Tare_Wt,Tare_Dt,Net_Wt,Final_Wt,MC,"
+            qry += "DedReason,DriverName,Remarks,WeigherIn,WeigherOut"
+            qry += ")"
+            qry += " VALUES "
+            qry += "("
+            qry += "@RefNo,@DTIn,@DtOut,@PlateNo,@CustomerCode,@SupplierCode,@CommodityCode,"
+            qry += "@Pricing,@UnitPerPrice,@DRNo,@TicketNo,@UnitWeight,"
+            qry += "@Inbound_Wt,@Gross_Wt,@Gross_DT,@Tare_Wt,@Tare_Dt,@Net_Wt,@Final_Wt,@MC,"
+            qry += "@DedReason,@DriverName,@Remarks,@WeigherIn,@WeigherOut"
+            qry += ")"
+
+            Cmd = New OleDbCommand(qry, conn)
+            Cmd.Parameters.AddWithValue("@RefNo", INBOUND_REFNO)
+            Cmd.Parameters.AddWithValue("@DTIn", DT.ToString("yyyy-MM-dd hh:mm:ss tt"))
+            Cmd.Parameters.AddWithValue("@DTOut", DT.ToString("yyyy-MM-dd hh:mm:ss tt"))
+            Cmd.Parameters.AddWithValue("@PlateNo  ", TxtPlateNo.Text.Trim())
+            Cmd.Parameters.AddWithValue("@CustomerCode", CustCode)
+            Cmd.Parameters.AddWithValue("@SupplierCode", SupCode)
+            Cmd.Parameters.AddWithValue("@CommodityCode", CommCode)
+            Cmd.Parameters.AddWithValue("@Pricing", Val(Pricing))
+            Cmd.Parameters.AddWithValue("@UnitPerPrice", UnitPerPrice)
+            Cmd.Parameters.AddWithValue("@DRNo", TxtDrNo.Text.Trim())
+            Cmd.Parameters.AddWithValue("@TicketNo", TxtTicketNo.Text.Trim())
+            Cmd.Parameters.AddWithValue("@UnitWeight", UnitWeight)
+            Cmd.Parameters.AddWithValue("@Inbound_Wt", Val(INBOUNDWT_Tmp))
+            Cmd.Parameters.AddWithValue("@Gross_Wt", Val(TxtGross.Text.Trim()))
+            Cmd.Parameters.AddWithValue("@Gross_DT", DT.ToString("yyyy-MM-dd hh:mm:ss tt"))
+            Cmd.Parameters.AddWithValue("@Tare_Wt", Val(TxtTare.Text.Trim()))
+            Cmd.Parameters.AddWithValue("@Tare_Dt", DT.ToString("yyyy-MM-dd hh:mm:ss tt"))
+            Cmd.Parameters.AddWithValue("@Net_Wt", Val(TxtNet.Text.Trim()))
+            Cmd.Parameters.AddWithValue("@Final_Wt", Val(TxtFINAL.Text.Trim()))
+            Cmd.Parameters.AddWithValue("@MC", Val(Mc))
+            Cmd.Parameters.AddWithValue("@DedReason", TxtReasons.Text.Trim())
+            Cmd.Parameters.AddWithValue("@DriverName", TxtDriver.Text())
+            Cmd.Parameters.AddWithValue("@Remarks", TxtRemarks.Text.Trim())
+            Cmd.Parameters.AddWithValue("@WeigherIn", FrmLogin.UserId)
+            Cmd.Parameters.AddWithValue("@WeigherOut", FrmLogin.UserId)
+
+            Cmd.ExecuteNonQuery()
+            Cmd.Dispose()
+
+            Dim NewId = String.Format("{0:00000000}", Val(INBOUND_REFNO) + 1)
+
+            Cmd = New OleDbCommand($"UPDATE RefNo set Outbound_id = '{NewId}'", conn)
+            Cmd.ExecuteNonQuery()
+            conn.Close()
+
+            SaveDriverName()
+            SaveTrucks()
+
+            TxtRefNo.Text = INBOUND_REFNO
+            LastOutRefNo = TxtRefNo.Text
+            '  If My.Settings.EnablePrintIn = True Then _
+            'MOD_REPORTING.PrintToPrinter(Application.StartupPath & "\Reports\" & "TcktIn.rpt", "{OutBound_tbl.Refno} = '" & INBOUND_REFNO & "'", Nothing)
+            If SysSettings.EnablePrintOut = True Then
+                MOD_REPORTING.PrintToPrinter(TicketTypeEnum.TicketAll, INBOUND_REFNO)
+            End If
+
+            Dim frm As New FrmTransOK
+            frm.ReceiptNo = LastOutRefNo
+            frm.MsgSTr = "Inbound Weighing Complete..." & vbNewLine &
+         "Press Close to exit window."
+            frm.ShowDialog(MDIMAIN)
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conn.Close()
+        End Try
+
+        'UpdateList()
+        'Dim Gd As New CLS_DATAGRID
+        'Gd.SearchGrid(Dg, TxtPlateNo.Text, 2)
+
+        LblRecord.Text = Dg.Rows.Count
+        Btncancel_Click(Nothing, Nothing)
+    End Sub
+
     Private Sub SaveDriverName()
         Try
             Dim Saver
@@ -891,10 +1025,10 @@ Public Class FrmTrans
                 End If
 
                 vehicle.DriverName = Trim(TxtDriver.Text)
-                    vehicle.SupCode = SupCode
-                    vehicle.CustCode = CustCode
-                    VehicleService.Update(vehicle)
-                End If
+                vehicle.SupCode = SupCode
+                vehicle.CustCode = CustCode
+                VehicleService.Update(vehicle)
+            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "An error encountered while saving driver data", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -932,11 +1066,11 @@ Public Class FrmTrans
 
 
     Private Sub UpdateList()
-        Dim Src As String = _
-          "SELECT " & _
-          "(SELECT CUSTNAME FROM CUST_TBL WHERE CUSTCODE = CustomerCode)" & _
-",(SELECT SUPNAME FROM SUP_TBL WHERE SUPCODE =SupplierCode)" & _
-",(SELECT COMMDESC FROM COMM_TBL WHERE COMMCODE = CommodityCode)" & _
+        Dim Src As String =
+          "SELECT " &
+          "(SELECT CUSTNAME FROM CUST_TBL WHERE CUSTCODE = CustomerCode)" &
+",(SELECT SUPNAME FROM SUP_TBL WHERE SUPCODE =SupplierCode)" &
+",(SELECT COMMDESC FROM COMM_TBL WHERE COMMCODE = CommodityCode)" &
 ",(SELECT USER_DISPLAYNAME FROM USERACCOUNTS WHERE User_id = WeigherIn),* FROM OUTBOUND_TBL WHERE Refno = '" & INBOUND_REFNO & "'"
         Dim cls
         If SysSettings.ConnectionType = "OLEDB" Then
@@ -1015,7 +1149,8 @@ Public Class FrmTrans
             Weighout = True
         End If
 
-
+        TxtOnline.ResetAxle()
+        AxleResults.Clear()
         If OnDevice = True Then
             TxtOnline_TextChanged(sender, e)
         Else
@@ -1033,12 +1168,16 @@ Public Class FrmTrans
         If BtnOUt.Enabled = False Then Exit Sub
         If Dg.Rows.Count = 0 Then Exit Sub
 
+
         Dg_Click(sender, e)
 
         WeighIn = False
         Weighout = True
         ONProcess = True
         PnlWeightStat.Enabled = True
+
+        TxtOnline.ResetAxle()
+        AxleResults.Clear()
 
         If OnDevice = True Then
             TxtOnline_TextChanged(sender, e)
@@ -1072,12 +1211,15 @@ Public Class FrmTrans
                 Case "IO"
                     Select Case True
                         Case WeighIn
-                            SaveInboundData()
+                            If (RecalledTareWt > 0) Then
+                                SaveInboundData2()
+                            Else
+                                SaveInboundData()
+                            End If
                         Case Weighout
                             SaveOutboundData()
                     End Select
             End Select
-
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -1147,6 +1289,8 @@ Public Class FrmTrans
 
 
     Private Sub ClearData()
+        RecalledTareWt = 0
+
         Dim CLS_TOGGLES As New CLS_CONTROLTOGGLES
         CLS_TOGGLES.ClearDataControls(Me)
 
@@ -1166,6 +1310,7 @@ Public Class FrmTrans
         BtnAddCust.Enabled = True
         BtnAddComm.Enabled = True
         BtnAddComm.Enabled = True
+        btnRecall.Enabled = True
 
         Dg.Enabled = False
     End Sub
@@ -1183,6 +1328,7 @@ Public Class FrmTrans
         TxtSearch.Enabled = True
         BtnAddCust.Enabled = False
         BtnAddComm.Enabled = False
+        btnRecall.Enabled = False
 
         Dg.Enabled = True
     End Sub
@@ -1295,7 +1441,7 @@ Public Class FrmTrans
 
     Public Sub TxtOnline_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtOnline.TextChanged
         On Error Resume Next
-        If OnDevice = False Then Exit Sub
+        'If OnDevice = False Then Exit Sub
         '  GetDeviceVal(Val(FormatNumber((Val(TxtOnline.Text) / 1000), 2, TriState.False, TriState.False)))
         GetDeviceVal(Val(FormatNumber((Val(TxtOnline.Text)), 0, TriState.False, TriState.False, TriState.False)))
     End Sub
@@ -1319,7 +1465,14 @@ Public Class FrmTrans
     Public Sub GetDeviceVal(ByVal Weight As String)
         If ONProcess = False Then Exit Sub
 
-        Dim ReturnedInWeight As String = INBOUNDWT_Tmp
+        Dim ReturnedInWeight As String
+        If (RecalledTareWt > 0) Then
+            ReturnedInWeight = RecalledTareWt
+            INBOUNDWT_Tmp = RecalledTareWt
+        Else
+            ReturnedInWeight = INBOUNDWT_Tmp
+        End If
+
         Dim ReturnedDevWeight As String = Replace(Weight, ",", "")
 
         If String.IsNullOrEmpty(ReturnedDevWeight) Then ReturnedDevWeight = 0
@@ -1334,11 +1487,17 @@ Public Class FrmTrans
                 ReturnedDevWeight = FormatNumber(ReturnedDevWeight / 1000, 2, TriState.False, TriState.False, TriState.False)
         End Select
 
-        Select Case True
-            Case WeighIn
-                TxtGross.Text = ReturnedDevWeight
-                TxtWeightType.Text = "Gross"
-            Case Weighout
+
+        If (WeighIn And RecalledTareWt = 0) Then
+            TxtGross.Text = Val(FormatNumber(ReturnedDevWeight - Val(TxtTare.Text), 0, TriState.False, TriState.False, TriState.False))
+            TxtWeightType.Text = "Gross"
+            TxtTare.Text = "0"
+            TxtNet.Text = "0"
+            Return
+        End If
+
+        If (Weighout) Then
+            If (TxtOnline.WeighingMode = WeighingModeEnum.STANDARD) Then
                 Select Case Val(ReturnedInWeight)
                     Case Is >= Val(ReturnedDevWeight)
                         TxtGross.Text = ReturnedInWeight
@@ -1349,15 +1508,27 @@ Public Class FrmTrans
                         TxtTare.Text = ReturnedInWeight
                         TxtWeightType.Text = "Gross"
                 End Select
+            Else
+                TxtGross.Text = Val(FormatNumber(AxleResults.Sum(Function(a) a.Weight), 0, TriState.False, TriState.False, TriState.False))
+                'lblAxleCount.Text = AxleResults.Count()
+            End If
+        End If
 
-                Select Case UnitWeight
-                    Case "KG"
-                        TxtNet.Text = Val(FormatNumber((TxtGross.Text) - Val(TxtTare.Text), 0, TriState.False, TriState.False, TriState.False))
-                        TxtFINAL.Text = FormatNumber(DeductWeight(TxtDeduct.Text, TxtNet.Text), 0, TriState.False, TriState.False, TriState.False)
-                    Case "TONS"
-                        TxtNet.Text = (FormatNumber((TxtGross.Text) - Val(TxtTare.Text), 2, TriState.False, TriState.False, TriState.False))
-                        TxtFINAL.Text = FormatNumber(DeductWeight(TxtDeduct.Text, TxtNet.Text), 2, TriState.False, TriState.False, TriState.False)
-                End Select
+        If (WeighIn And RecalledTareWt > 0) Then
+            If (TxtOnline.WeighingMode = WeighingModeEnum.STANDARD) Then
+                TxtGross.Text = ReturnedDevWeight
+                TxtTare.Text = RecalledTareWt
+                TxtWeightType.Text = "Gross"
+            End If
+        End If
+
+        Select Case UnitWeight
+            Case "KG"
+                TxtNet.Text = Val(FormatNumber((TxtGross.Text) - Val(TxtTare.Text), 0, TriState.False, TriState.False, TriState.False))
+                TxtFINAL.Text = FormatNumber(DeductWeight(TxtDeduct.Text, TxtNet.Text), 0, TriState.False, TriState.False, TriState.False)
+            Case "TONS"
+                TxtNet.Text = (FormatNumber((TxtGross.Text) - Val(TxtTare.Text), 2, TriState.False, TriState.False, TriState.False))
+                TxtFINAL.Text = FormatNumber(DeductWeight(TxtDeduct.Text, TxtNet.Text), 2, TriState.False, TriState.False, TriState.False)
         End Select
 
     End Sub
@@ -1382,7 +1553,7 @@ Public Class FrmTrans
             If Dg.Rows.Count = 0 Then Exit Sub
             If Dg.Enabled = False Then Exit Sub
 
-            If MessageBox.Show("Are you sure you want to delete selected record\s?", "", MessageBoxButtons.YesNo, _
+            If MessageBox.Show("Are you sure you want to delete selected record\s?", "", MessageBoxButtons.YesNo,
                                MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
 
                 Dim Remover
@@ -1520,6 +1691,62 @@ Public Class FrmTrans
     End Sub
 
     Private Sub BtnPrintIN_Click_1(sender As Object, e As EventArgs) Handles BtnPrintIN.Click
+
+    End Sub
+
+    Private Sub PnlHeader_Paint(sender As Object, e As PaintEventArgs) Handles PnlHeader.Paint
+
+    End Sub
+
+
+
+
+    Private Sub TxtOnline_AxleWt_Added(sender As Object, e As Events.AxleWtAddedEventArgs) Handles TxtOnline.AxleWt_Added
+
+        AxleResults.Add(New AxleResult(e.AxleNum, e.Weight, e.DateCaptured))
+    End Sub
+
+    Private RecalledTareWt As Decimal
+    Private Sub btnRecall_Click(sender As Object, e As EventArgs) Handles btnRecall.Click
+
+
+        Dim vehicleNum = TxtPlateNo.Text.Trim()
+
+        If (vehicleNum.Contains("'")) Then
+            MessageBox.Show("", "Plate Number must not contain an invalid characters.", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            Return
+        End If
+
+
+        Dim qry = "SELECT * FROM Vehicle_tbl where PlateNo = '" & vehicleNum & "'"
+        Dim conn = New OleDbConnection(DBContextFactory.GetConnectionString())
+
+
+        Try
+            conn.Open()
+            Dim cmd = New OleDbCommand(qry, conn)
+            Dim adapter = New OleDbDataAdapter(cmd)
+            Dim ds = New DataSet()
+            adapter.Fill(ds, "Vehicle_Tbl")
+
+            RecalledTareWt = 0
+
+            If (ds.Tables("Vehicle_Tbl").Rows.Count > 0) Then
+                RecalledTareWt = ds.Tables("Vehicle_Tbl").Rows(0).Field(Of Double)("Prev_tareWt")
+            End If
+
+            TxtTare.Text = RecalledTareWt
+
+            If (OnDevice) Then
+                TxtOnline_TextChanged(Nothing, Nothing)
+            Else
+                TxtOffline_TextChanged(Nothing, Nothing)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            conn.Close()
+        End Try
 
     End Sub
 End Class

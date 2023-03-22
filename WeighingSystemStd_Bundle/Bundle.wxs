@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+	<Bundle Name="WeighingSystemStd_Bundle" Version="1.0.0.0" Manufacturer="My System Pvt Ltd"
+          UpgradeCode="e5262915-9847-495b-8be3-6c9624e0b65e">
+		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
+		<Chain>
+			<!-- TODO: Define the list of chained packages. -->
+			<!-- <MsiPackage SourceFile="path\to\your.msi" /> -->
+			<PackageGroupRef Id="CrystalReportRuntime"/>
+
+			<!--<MsiPackage Id="MainApplication" SourceFile="$(var.WeighingSystemStd_Installer.TargetPath)"/>-->
+		</Chain>
+	</Bundle>
+	<Fragment>
+		<?define RequiredCRVersion = "13.0.32"?>
+		<!-- Check for Crystal Report Runtime Installer -->
+		<util:RegistrySearch Root="HKLM"
+							 Key="HKEY_LOCAL_MACHINE\SOFTWARE\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Crystal Reports"
+							 Value="CR4VSVersion"
+							 Variable="CrVersion" />
+
+
+
+
+		<PackageGroup Id="CrystalReportRuntime">
+			<MsiPackage Id="CrystalReportRuntime"
+						DisplayName="Crystal Report Runtime version 13.0.4000.0"
+						DownloadUrl="http://download.microsoft.com/download/5/6/2/562A10F9-C9F4-4313-A044-9C94E0A8FAC8/dotNetFx40_Client_x86_x64.exe"
+						Compressed="no"
+						Cache="yes"
+						Permanent="yes"
+						Vital="yes"
+						SourceFile=".\prereqs\CR13SP32MSI32_0-80007712.msi"
+				>
+				<MsiProperty Name="UPGRADE" Value="[CRRUNTIMEUPGRADE]" />
+			</MsiPackage>
+		</PackageGroup>
+
+
+		<!-- Check for .NET 4.0 -->
+		<!--<util:RegistrySearch Root="HKLM"
+                         Key="SOFTWARE\Microsoft\Net Framework Setup\NDP\v4\Full"
+                         Value="Version"
+                         Variable="Netfx4FullVersion" />
+    <util:RegistrySearch Root="HKLM"
+                         Key="SOFTWARE\Microsoft\Net Framework Setup\NDP\v4\Full"
+                         Value="Version"
+                         Variable="Netfx4x64FullVersion"
+                         Win64="yes" />-->
+
+		<!--<PackageGroup Id="Netfx4Full">
+			<ExePackage Id="Netfx4Full"
+						DisplayName="Prolific"
+						DownloadUrl="http://download.microsoft.com/download/5/6/2/562A10F9-C9F4-4313-A044-9C94E0A8FAC8/dotNetFx40_Client_x86_x64.exe"
+						Compressed="no"
+						Cache="yes"
+						PerMachine="yes"
+						Permanent="yes"
+						Protocol="none"
+						Vital="yes"
+						SourceFile=".\PL2303_Prolific_DriverInstaller_v1.11.0.exe"
+        
+				  />
+		</PackageGroup>-->
+
+	</Fragment>
+</Wix>

@@ -5,10 +5,14 @@ End Class
 
 
 Public NotInheritable Class DBContextFactory
+    Public Sub New()
+
+    End Sub
+
     Public Shared Function Query(qry As String) As Boolean
         Try
 
-            Dim connString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & DBContextGlobalVariable.SysSettings.access_file_path & ";" &
+            Dim connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & DBContextGlobalVariable.SysSettings.access_file_path & ";" &
                             "Jet OLEDB:Database Password= " & DBContextGlobalVariable.SysSettings.access_pwd & ";"
 
             Using conn As OleDb.OleDbConnection = New OleDb.OleDbConnection(connectionString:=connString)
@@ -33,7 +37,7 @@ Public NotInheritable Class DBContextFactory
 
             DBContextGlobalVariable.SysSettings = New settings()
             DBContextGlobalVariable.SysSettings.Load()
-            Dim connString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & DBContextGlobalVariable.SysSettings.access_file_path & ";" &
+            Dim connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & DBContextGlobalVariable.SysSettings.access_file_path & ";" &
                             "Jet OLEDB:Database Password= " & DBContextGlobalVariable.SysSettings.access_pwd & ";"
 
             Using conn As OleDb.OleDbConnection = New OleDb.OleDbConnection(connectionString:=connString)
@@ -55,7 +59,7 @@ Public NotInheritable Class DBContextFactory
     Public Shared Function GetConnectionString()
         Dim settings As settings = New settings()
         settings.Load()
-        Dim connString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & settings.access_file_path & ";" &
+        Dim connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & settings.access_file_path & ";" &
                         "Jet OLEDB:Database Password= " & settings.access_pwd & ";"
         Return connString
     End Function

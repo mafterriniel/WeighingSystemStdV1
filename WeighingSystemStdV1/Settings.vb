@@ -115,6 +115,9 @@ Public Class settings
 
     Private settings_path As String = Application.StartupPath & "\sys.file"
 
+    <XmlElement(ElementName:="WeighingMode")>
+    Public Property WeighingMode As String
+
     <XmlIgnore>
     Public Property c As cryptor
 
@@ -143,6 +146,7 @@ Public Class settings
         OneTimeConnect = False
         TareWtTolerance = 0
         DefaultPrinter = String.Empty
+        WeighingMode = "STANDARD"
         Save()
         Load()
     End Sub
@@ -198,6 +202,7 @@ Public Class settings
             IPPort = settings.IPPort
             DeviceConnectionType = settings.DeviceConnectionType
             TareWtTolerance = settings.TareWtTolerance
+            WeighingMode = settings.WeighingMode
             If (String.IsNullOrEmpty(settings.DefaultPrinter)) Then
                 DefaultPrinter = MOD_REPORTING.GetDefaultPrinter2()
             Else

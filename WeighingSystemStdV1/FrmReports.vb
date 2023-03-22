@@ -2,7 +2,12 @@
 
 
     Private Sub BtnPreview_CLIck(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnPreview.Click
-        GenerateReport()
+        Try
+            GenerateReport()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
 
@@ -20,14 +25,21 @@
         dtt = dtt.Date + New TimeSpan(23, 59, 0)
 
         Dim SelectionFormula As String = ""
+        'Select Case True
+        '    Case RdoDateIn.Checked
+        '        SelectionFormula = "{outbound_Tbl.DTIn} = datetime('" & dtf.ToString("dd-MMM-yyyy hh:mm tt") & "') to datetime('" & dtt.ToString("dd-MMM-yyyy hh:mm tt") & "') "
+        '    Case RdoDateOut.Checked
+        '        SelectionFormula = "{outbound_Tbl.DTOut} = datetime('" & dtf.ToString("dd-MMM-yyyy hh:mm tt") & "') to datetime('" & dtt.ToString("dd-MMM-yyyy hh:mm tt") & "') "
+        'End Select
+
         Select Case True
             Case RdoDateIn.Checked
-                SelectionFormula = "{outbound_Tbl.DTIn} = datetime('" & dtf.ToString("dd-MMM-yyyy hh:mm tt") & "') to datetime('" & dtt.ToString("dd-MMM-yyyy hh:mm tt") & "') "
+                SelectionFormula = "SELECT * FROM outbound_tbl where outbound_Tbl.DTIn between #" & dtf.ToString("MM-dd-yyyy hh:mm tt") & "# and #" & dtt.ToString("MM-dd-yyyy hh:mm tt") & "# "
             Case RdoDateOut.Checked
-                SelectionFormula = "{outbound_Tbl.DTOut} = datetime('" & dtf.ToString("dd-MMM-yyyy hh:mm tt") & "') to datetime('" & dtt.ToString("dd-MMM-yyyy hh:mm tt") & "') "
+                SelectionFormula = "SELECT * FROM outbound_tbl where outbound_Tbl.DTOut between #" & dtf.ToString("MM-dd-yyyy hh:mm tt") & "# and #" & dtt.ToString("MM-dd-yyyy hh:mm tt") & "# "
         End Select
 
-        SelectionFormula = SelectionFormula & GeneratedSelection()
+        SelectionFormula = SelectionFormula & GeneratedSelectionQuery()
 
         Select Case CboReportType.SelectedIndex
             Case -1
@@ -79,14 +91,79 @@
                 SortOrder = CrystalDecisions.Shared.SortDirection.TopNOrder
         End Select
         'Clipboard.SetText(SelectionFormula)
-        ViewReport(CrViewer, ReportPath, SelectionFormula, Nothing, dtf, dtt, FrmLogin.UserDisplayName, _
-                   "Outbound_Tbl", SortField, SortOrder, _
+        ViewReport(CrViewer, ReportPath, SelectionFormula, Nothing, dtf, dtt, FrmLogin.UserDisplayName,
+                   "Outbound_Tbl", SortField, SortOrder,
                    "DTIn")
 
 
     End Sub
 
-    Private Function GeneratedSelection() As String
+    Private Function GeneratedSelectionQuery() As String
+        Dim Result As String = ""
+        If ChkNone.Checked = True Then Return Result
+
+        If ChkTrans.Checked = True Then
+            Select Case True
+                Case RdoInbound.Checked
+                    Result = " and OutBound_Tbl.Net_Wt = 0"
+                Case RdoOutBound.Checked
+                    Result = " and OutBound_Tbl.Net_Wt <> 0"
+                Case RdoTBoth.Checked
+            End Select
+        End If
+
+        If ChkPlateNo.Checked = True Then
+            Result = Result & " and OutBound_Tbl.PlateNo  = '" & Trim(TxtPlateNo.Text) & "'"
+        End If
+
+        If ChkClient.Checked = True Then
+            Dim ClientCode As String = ""
+            Select Case True
+                Case RdoCust.Checked
+                    If MOD_DATABASEPROC.ExistenceFound("Select CustCode From Cust_tbl where CustName = '" & Trim(CboClient.Text) & "'", Nothing, "CustCode", Nothing) Then
+                        Result = Result & " and OutBound_Tbl.CustomerCode = '" & ReturnedData & "'"
+                    Else
+                        MessageBox.Show("Client Wasn't found", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                    End If
+                Case RdoSup.Checked
+                    If MOD_DATABASEPROC.ExistenceFound("Select SupCode From Sup_tbl where SupName = '" & Trim(CboClient.Text) & "'", Nothing, "SupCode", Nothing) Then
+                        Result = Result & " and OutBound_Tbl.SupplierCode = '" & ReturnedData & "'"
+                    Else
+                        MessageBox.Show("Client Wasn't found", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                    End If
+            End Select
+        End If
+
+        If ChkMaterial.Checked = True Then
+            If MOD_DATABASEPROC.ExistenceFound("Select CommCode From Comm_tbl where CommDesc = '" & Trim(CboMaterial.Text) & "'", Nothing, "CommCode", Nothing) Then
+                Result = Result & " and OutBound_Tbl.CommodityCode = '" & ReturnedData & "'"
+            Else
+                MessageBox.Show("Commodity Wasn't found", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            End If
+        End If
+
+        If ChkDriver.Checked = True Then
+            Result = Result & " and OutBound_Tbl.DriverName = '" & Trim(TxtDriver.Text) & "'"
+        End If
+
+        If chkByWeigher.Checked = True Then
+            Dim weigher = Trim(cboWeigher.Text)
+            If MOD_DATABASEPROC.ExistenceFound("Select User_Id from UserAccounts where User_DisplayName = '" & weigher & "'", Nothing, "User_Id", Nothing) Then
+                Result = Result & " and (Outbound_Tbl.WeigherIn = '" & ReturnedData & "' or Outbound_Tbl.WeigherOut = '" & ReturnedData & "')"
+            Else
+                MessageBox.Show("Weigher Wasn't found", "", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            End If
+        End If
+
+        If ChkNone.Checked = True Then
+            Result = ""
+        End If
+
+        Return Result
+    End Function
+
+
+    Private Function GeneratedSelection_Old() As String
         Dim Result As String = ""
         If ChkNone.Checked = True Then Return Result
 
@@ -149,6 +226,7 @@
 
         Return Result
     End Function
+
 
     Private Sub FrmReports_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
         MDIMAIN.Pnl_MainBtn.Visible = True

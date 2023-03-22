@@ -54,6 +54,7 @@ Partial Class MDIMAIN
         Me.BtnCust = New MykeCtrlEx.PushButton()
         Me.BtnDatabase = New MykeCtrlEx.PushButton()
         Me.PnlOperation = New System.Windows.Forms.Panel()
+        Me.btnAxleTest = New MykeCtrlEx.PushButton()
         Me.BtnManagement = New MykeCtrlEx.PushButton()
         Me.BtnTrans = New MykeCtrlEx.PushButton()
         Me.BtnOperation = New MykeCtrlEx.PushButton()
@@ -84,11 +85,11 @@ Partial Class MDIMAIN
         Me.StatusStrip_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.StatusStrip_main.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip_main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.LblUserId, Me.ToolStripStatusLabel2, Me.LblName, Me.LblServer, Me.LblTimer})
-        Me.StatusStrip_main.Location = New System.Drawing.Point(0, 869)
+        Me.StatusStrip_main.Location = New System.Drawing.Point(0, 805)
         Me.StatusStrip_main.Name = "StatusStrip_main"
         Me.StatusStrip_main.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
         Me.StatusStrip_main.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.StatusStrip_main.Size = New System.Drawing.Size(1344, 29)
+        Me.StatusStrip_main.Size = New System.Drawing.Size(1344, 35)
         Me.StatusStrip_main.SizingGrip = False
         Me.StatusStrip_main.TabIndex = 15
         Me.StatusStrip_main.Text = "StatusStrip"
@@ -99,7 +100,7 @@ Partial Class MDIMAIN
         Me.ToolStripStatusLabel1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(66, 23)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(66, 29)
         Me.ToolStripStatusLabel1.Text = "User Id:"
         '
         'LblUserId
@@ -108,7 +109,7 @@ Partial Class MDIMAIN
         Me.LblUserId.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblUserId.Name = "LblUserId"
         Me.LblUserId.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.LblUserId.Size = New System.Drawing.Size(90, 23)
+        Me.LblUserId.Size = New System.Drawing.Size(90, 29)
         Me.LblUserId.Text = "00000001"
         '
         'ToolStripStatusLabel2
@@ -118,7 +119,7 @@ Partial Class MDIMAIN
         Me.ToolStripStatusLabel2.Margin = New System.Windows.Forms.Padding(30, 3, 0, 2)
         Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
         Me.ToolStripStatusLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(94, 24)
+        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(94, 30)
         Me.ToolStripStatusLabel2.Text = "User Name:"
         '
         'LblName
@@ -127,14 +128,14 @@ Partial Class MDIMAIN
         Me.LblName.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblName.Name = "LblName"
         Me.LblName.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.LblName.Size = New System.Drawing.Size(167, 23)
+        Me.LblName.Size = New System.Drawing.Size(167, 29)
         Me.LblName.Text = "MICHAEL A. FAINZA"
         '
         'LblServer
         '
         Me.LblServer.BackColor = System.Drawing.Color.Transparent
         Me.LblServer.Name = "LblServer"
-        Me.LblServer.Size = New System.Drawing.Size(677, 23)
+        Me.LblServer.Size = New System.Drawing.Size(677, 29)
         Me.LblServer.Spring = True
         Me.LblServer.Text = "  "
         '
@@ -145,7 +146,7 @@ Partial Class MDIMAIN
         Me.LblTimer.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblTimer.Name = "LblTimer"
         Me.LblTimer.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LblTimer.Size = New System.Drawing.Size(200, 23)
+        Me.LblTimer.Size = New System.Drawing.Size(200, 29)
         Me.LblTimer.Text = "Jan. 1, 2014    12:00:00 pm"
         Me.LblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -169,7 +170,7 @@ Partial Class MDIMAIN
         Me.Pnl_MainBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Pnl_MainBtn.Name = "Pnl_MainBtn"
         Me.Pnl_MainBtn.Padding = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.Pnl_MainBtn.Size = New System.Drawing.Size(363, 807)
+        Me.Pnl_MainBtn.Size = New System.Drawing.Size(363, 743)
         Me.Pnl_MainBtn.TabIndex = 17
         '
         'PnlUtilities
@@ -177,7 +178,7 @@ Partial Class MDIMAIN
         Me.PnlUtilities.BackColor = System.Drawing.Color.Transparent
         Me.PnlUtilities.Controls.Add(Me.BtnSystemSettings)
         Me.PnlUtilities.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PnlUtilities.Location = New System.Drawing.Point(7, 882)
+        Me.PnlUtilities.Location = New System.Drawing.Point(7, 929)
         Me.PnlUtilities.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PnlUtilities.Name = "PnlUtilities"
         Me.PnlUtilities.Size = New System.Drawing.Size(328, 129)
@@ -230,7 +231,7 @@ Partial Class MDIMAIN
         Me.BtnSettings.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnSettings.Image = CType(resources.GetObject("BtnSettings.Image"), System.Drawing.Image)
         Me.BtnSettings.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.BtnSettings.Location = New System.Drawing.Point(7, 827)
+        Me.BtnSettings.Location = New System.Drawing.Point(7, 874)
         Me.BtnSettings.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnSettings.Name = "BtnSettings"
         Me.BtnSettings.Size = New System.Drawing.Size(328, 55)
@@ -245,7 +246,7 @@ Partial Class MDIMAIN
         Me.PnlAdmin.Controls.Add(Me.BtnLogs)
         Me.PnlAdmin.Controls.Add(Me.BtnUser)
         Me.PnlAdmin.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PnlAdmin.Location = New System.Drawing.Point(7, 716)
+        Me.PnlAdmin.Location = New System.Drawing.Point(7, 763)
         Me.PnlAdmin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PnlAdmin.Name = "PnlAdmin"
         Me.PnlAdmin.Size = New System.Drawing.Size(328, 111)
@@ -325,7 +326,7 @@ Partial Class MDIMAIN
         Me.BtnAdmin.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnAdmin.Image = CType(resources.GetObject("BtnAdmin.Image"), System.Drawing.Image)
         Me.BtnAdmin.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.BtnAdmin.Location = New System.Drawing.Point(7, 661)
+        Me.BtnAdmin.Location = New System.Drawing.Point(7, 708)
         Me.BtnAdmin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnAdmin.Name = "BtnAdmin"
         Me.BtnAdmin.Size = New System.Drawing.Size(328, 55)
@@ -340,7 +341,7 @@ Partial Class MDIMAIN
         Me.PnlReports.Controls.Add(Me.Btnlog)
         Me.PnlReports.Controls.Add(Me.BtnTransReport)
         Me.PnlReports.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PnlReports.Location = New System.Drawing.Point(7, 559)
+        Me.PnlReports.Location = New System.Drawing.Point(7, 606)
         Me.PnlReports.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PnlReports.Name = "PnlReports"
         Me.PnlReports.Size = New System.Drawing.Size(328, 102)
@@ -421,7 +422,7 @@ Partial Class MDIMAIN
         Me.BtnReports.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnReports.Image = CType(resources.GetObject("BtnReports.Image"), System.Drawing.Image)
         Me.BtnReports.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.BtnReports.Location = New System.Drawing.Point(7, 504)
+        Me.BtnReports.Location = New System.Drawing.Point(7, 551)
         Me.BtnReports.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnReports.Name = "BtnReports"
         Me.BtnReports.Size = New System.Drawing.Size(328, 55)
@@ -440,7 +441,7 @@ Partial Class MDIMAIN
         Me.PnlDatabase.Controls.Add(Me.BtnSUp)
         Me.PnlDatabase.Controls.Add(Me.BtnCust)
         Me.PnlDatabase.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PnlDatabase.Location = New System.Drawing.Point(7, 222)
+        Me.PnlDatabase.Location = New System.Drawing.Point(7, 269)
         Me.PnlDatabase.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PnlDatabase.Name = "PnlDatabase"
         Me.PnlDatabase.Size = New System.Drawing.Size(328, 282)
@@ -629,7 +630,7 @@ Partial Class MDIMAIN
         Me.BtnDatabase.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
         Me.BtnDatabase.Image = CType(resources.GetObject("BtnDatabase.Image"), System.Drawing.Image)
         Me.BtnDatabase.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.BtnDatabase.Location = New System.Drawing.Point(7, 167)
+        Me.BtnDatabase.Location = New System.Drawing.Point(7, 214)
         Me.BtnDatabase.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnDatabase.Name = "BtnDatabase"
         Me.BtnDatabase.Size = New System.Drawing.Size(328, 55)
@@ -641,6 +642,7 @@ Partial Class MDIMAIN
         'PnlOperation
         '
         Me.PnlOperation.BackColor = System.Drawing.Color.Transparent
+        Me.PnlOperation.Controls.Add(Me.btnAxleTest)
         Me.PnlOperation.Controls.Add(Me.BtnManagement)
         Me.PnlOperation.Controls.Add(Me.BtnTrans)
         Me.PnlOperation.Dock = System.Windows.Forms.DockStyle.Top
@@ -648,8 +650,36 @@ Partial Class MDIMAIN
         Me.PnlOperation.Location = New System.Drawing.Point(7, 61)
         Me.PnlOperation.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PnlOperation.Name = "PnlOperation"
-        Me.PnlOperation.Size = New System.Drawing.Size(328, 106)
+        Me.PnlOperation.Size = New System.Drawing.Size(328, 153)
         Me.PnlOperation.TabIndex = 47
+        '
+        'btnAxleTest
+        '
+        Me.btnAxleTest.BackgroundImage = CType(resources.GetObject("btnAxleTest.BackgroundImage"), System.Drawing.Image)
+        Me.btnAxleTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnAxleTest.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAxleTest.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnAxleTest.FlatAppearance.BorderSize = 0
+        Me.btnAxleTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAxleTest.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAxleTest.ForeColor = System.Drawing.Color.Black
+        Me.btnAxleTest.GUI_ACCSS = "JMoiakne122208"
+        Me.btnAxleTest.GUI_ENABLE_HOVER = True
+        Me.btnAxleTest.GUI_ENABLED = True
+        Me.btnAxleTest.GUI_FORECOLOR_HOVER = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnAxleTest.GUI_ICONS = MykeCtrlEx.PushButton.Icons.None
+        Me.btnAxleTest.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
+        Me.btnAxleTest.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
+        Me.btnAxleTest.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
+        Me.btnAxleTest.Location = New System.Drawing.Point(0, 64)
+        Me.btnAxleTest.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAxleTest.Name = "btnAxleTest"
+        Me.btnAxleTest.Size = New System.Drawing.Size(328, 32)
+        Me.btnAxleTest.TabIndex = 9
+        Me.btnAxleTest.Text = "Axle Weighing Test"
+        Me.btnAxleTest.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnAxleTest.UseVisualStyleBackColor = True
+        Me.btnAxleTest.Visible = False
         '
         'BtnManagement
         '
@@ -806,7 +836,7 @@ Partial Class MDIMAIN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1344, 898)
+        Me.ClientSize = New System.Drawing.Size(1344, 840)
         Me.Controls.Add(Me.Pnl_MainBtn)
         Me.Controls.Add(Me.StatusStrip_main)
         Me.Controls.Add(Me.Panel4)
@@ -870,5 +900,5 @@ Partial Class MDIMAIN
     Friend WithEvents BtnTrans As MykeCtrlEx.PushButton
     Friend WithEvents BtnOperation As MykeCtrlEx.PushButton
     Friend WithEvents LblH As System.Windows.Forms.Label
-
+    Friend WithEvents btnAxleTest As MykeCtrlEx.PushButton
 End Class

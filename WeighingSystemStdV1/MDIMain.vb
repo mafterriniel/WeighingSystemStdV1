@@ -263,4 +263,8 @@ Public Class MDIMAIN
         Me.Close()
     End Sub
 
+    Private Sub btnAxleTest_Click(sender As Object, e As EventArgs) Handles btnAxleTest.Click
+        OpenMainBUtton(True, frmAxle, sender, Me)
+
+    End Sub
 End Class

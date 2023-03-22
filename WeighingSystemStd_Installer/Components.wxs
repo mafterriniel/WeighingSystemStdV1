@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+
+	
+	<Fragment>
+
+		<?if $(var.Platform) = 'x64' ?>
+		<?define SrcFolder="..\WeighingSystemStdV1\bin\x64\Release" ?>
+		<?else?>
+		<?define SrcFolder="..\WeighingSystemStdV1\bin\Release" ?>
+		<?endif?>
+		
+		
+		<!-- Product Components-->
+		<ComponentGroup Id="ProductComponents" >
+			<!-- Shortcut File-->
+			<ComponentRef Id="MainAppShortcut"/>
+		</ComponentGroup>
+
+		
+		<!-- Installed Files -->
+		<DirectoryRef Id="INSTALLFOLDER" FileSource="$(var.SrcFolder)">
+			<Component Id="MainAppShortcut" Guid="{E6B9D508-1C52-41A1-8AA5-06A664CED0EC}" >
+				<!--<File Id="FileMainAppShortcut" Name="Weighing System v1.1.exe" KeyPath="yes"></File>-->
+
+				<Shortcut Id="MainAppShortcut"
+					Name="Weighing System v1.1.exe"		 
+					Target="[INSTALLFOLDER]\Weighing System v1.1.exe"
+					Directory="InstallProgramMenuFolder"
+					WorkingDirectory="INSTALLFOLDER"
+					Icon="icon.ico"
+				></Shortcut>
+
+				<!--Unique key for this component/shortcut-->
+				<RegistryValue Id="RegShortcutKey" Root="HKCU" Key="SOFTWARE\!(loc.FolderName)" Name="Shortcut" Value="1" Type="integer" KeyPath="yes"></RegistryValue>
+				
+				<!--Remove  Start Menu Items-->
+				<RemoveFolder Id="RemoveStartMenu" Directory="InstallProgramMenuFolder" On="uninstall"/>
+			</Component>
+			
+
+		</DirectoryRef>
+		
+		
+	</Fragment>
+</Wix>

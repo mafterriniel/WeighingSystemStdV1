@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmTrans
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrmTrans
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTrans))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -33,6 +33,7 @@ Partial Class FrmTrans
         Me.Col_Desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PnlMain = New System.Windows.Forms.Panel()
         Me.PnlDetails = New System.Windows.Forms.Panel()
+        Me.btnRecall = New MykeCtrlEx.PushButton()
         Me.PnlWeightStat = New System.Windows.Forms.Panel()
         Me.TxtReasons = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -100,6 +101,7 @@ Partial Class FrmTrans
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DTPicker = New System.Windows.Forms.DateTimePicker()
         Me.Pnl_indicator = New System.Windows.Forms.Panel()
+        Me.TxtOnline = New WeightDev.WeightIndicator()
         Me.TxtUnit = New System.Windows.Forms.TextBox()
         Me.TxtWeightType = New System.Windows.Forms.TextBox()
         Me.TxtOffline = New System.Windows.Forms.TextBox()
@@ -115,7 +117,6 @@ Partial Class FrmTrans
         Me.Label19 = New System.Windows.Forms.Label()
         Me.TxtNet = New System.Windows.Forms.TextBox()
         Me.TxtTare = New System.Windows.Forms.TextBox()
-        Me.TxtOnline = New WeightDev.WeightIndicator()
         Me.PnlMain.SuspendLayout()
         Me.PnlDetails.SuspendLayout()
         Me.PnlWeightStat.SuspendLayout()
@@ -159,8 +160,7 @@ Partial Class FrmTrans
         '
         'PnlMain
         '
-        Me.PnlMain.BackColor = System.Drawing.Color.White
-        Me.PnlMain.BackgroundImage = CType(resources.GetObject("PnlMain.BackgroundImage"), System.Drawing.Image)
+        Me.PnlMain.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(201, Byte), Integer))
         Me.PnlMain.Controls.Add(Me.PnlDetails)
         Me.PnlMain.Controls.Add(Me.Panel1)
         Me.PnlMain.Dock = System.Windows.Forms.DockStyle.Fill
@@ -168,7 +168,7 @@ Partial Class FrmTrans
         Me.PnlMain.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlMain.Name = "PnlMain"
         Me.PnlMain.Padding = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.PnlMain.Size = New System.Drawing.Size(1821, 728)
+        Me.PnlMain.Size = New System.Drawing.Size(1726, 716)
         Me.PnlMain.TabIndex = 0
         '
         'PnlDetails
@@ -176,6 +176,7 @@ Partial Class FrmTrans
         Me.PnlDetails.AutoScroll = True
         Me.PnlDetails.BackColor = System.Drawing.Color.Transparent
         Me.PnlDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PnlDetails.Controls.Add(Me.btnRecall)
         Me.PnlDetails.Controls.Add(Me.PnlWeightStat)
         Me.PnlDetails.Controls.Add(Me.TxtRefNo)
         Me.PnlDetails.Controls.Add(Me.Label9)
@@ -195,8 +196,37 @@ Partial Class FrmTrans
         Me.PnlDetails.Location = New System.Drawing.Point(748, 6)
         Me.PnlDetails.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlDetails.Name = "PnlDetails"
-        Me.PnlDetails.Size = New System.Drawing.Size(774, 716)
+        Me.PnlDetails.Size = New System.Drawing.Size(774, 704)
         Me.PnlDetails.TabIndex = 0
+        '
+        'btnRecall
+        '
+        Me.btnRecall.BackgroundImage = CType(resources.GetObject("btnRecall.BackgroundImage"), System.Drawing.Image)
+        Me.btnRecall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnRecall.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRecall.FlatAppearance.BorderSize = 0
+        Me.btnRecall.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRecall.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRecall.ForeColor = System.Drawing.Color.Black
+        Me.btnRecall.GUI_ACCSS = "JMoiakne122208"
+        Me.btnRecall.GUI_ENABLE_HOVER = True
+        Me.btnRecall.GUI_ENABLED = True
+        Me.btnRecall.GUI_FORECOLOR_HOVER = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnRecall.GUI_ICONS = MykeCtrlEx.PushButton.Icons.None
+        Me.btnRecall.GUI_IMAGE_TEMPLATE = MykeCtrlEx.PushButton.ButtonTemplates.SlickBlue
+        Me.btnRecall.GUI_MOUSELEAVE_FORECOLOR = System.Drawing.Color.Black
+        Me.btnRecall.GUI_ORIENTATION = MykeCtrlEx.PushButton.Orientations.Horizontal
+        Me.btnRecall.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnRecall.Location = New System.Drawing.Point(442, 75)
+        Me.btnRecall.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnRecall.Name = "btnRecall"
+        Me.btnRecall.Padding = New System.Windows.Forms.Padding(0, 6, 0, 6)
+        Me.btnRecall.Size = New System.Drawing.Size(160, 44)
+        Me.btnRecall.TabIndex = 176
+        Me.btnRecall.Text = "RECALL TARE"
+        Me.btnRecall.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnRecall.UseVisualStyleBackColor = True
+        Me.btnRecall.Visible = False
         '
         'PnlWeightStat
         '
@@ -209,7 +239,7 @@ Partial Class FrmTrans
         Me.PnlWeightStat.Controls.Add(Me.TxtFINAL)
         Me.PnlWeightStat.Controls.Add(Me.Label15)
         Me.PnlWeightStat.Controls.Add(Me.Label16)
-        Me.PnlWeightStat.Location = New System.Drawing.Point(9, 304)
+        Me.PnlWeightStat.Location = New System.Drawing.Point(9, 329)
         Me.PnlWeightStat.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlWeightStat.Name = "PnlWeightStat"
         Me.PnlWeightStat.Size = New System.Drawing.Size(750, 147)
@@ -327,7 +357,7 @@ Partial Class FrmTrans
         Me.TxtRefNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtRefNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtRefNo.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtRefNo.Location = New System.Drawing.Point(535, 11)
+        Me.TxtRefNo.Location = New System.Drawing.Point(535, 10)
         Me.TxtRefNo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRefNo.Name = "TxtRefNo"
         Me.TxtRefNo.ReadOnly = True
@@ -340,7 +370,7 @@ Partial Class FrmTrans
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(393, 11)
+        Me.Label9.Location = New System.Drawing.Point(393, 10)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(149, 33)
@@ -354,7 +384,7 @@ Partial Class FrmTrans
         Me.TxtRemarks.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtRemarks.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtRemarks.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtRemarks.Location = New System.Drawing.Point(132, 530)
+        Me.TxtRemarks.Location = New System.Drawing.Point(132, 555)
         Me.TxtRemarks.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRemarks.Multiline = True
         Me.TxtRemarks.Name = "TxtRemarks"
@@ -367,7 +397,7 @@ Partial Class FrmTrans
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(20, 532)
+        Me.Label12.Location = New System.Drawing.Point(20, 557)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(103, 33)
@@ -381,7 +411,7 @@ Partial Class FrmTrans
         Me.TxtDriver.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtDriver.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtDriver.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDriver.Location = New System.Drawing.Point(132, 495)
+        Me.TxtDriver.Location = New System.Drawing.Point(132, 520)
         Me.TxtDriver.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDriver.Name = "TxtDriver"
         Me.TxtDriver.Size = New System.Drawing.Size(433, 32)
@@ -392,7 +422,7 @@ Partial Class FrmTrans
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(20, 497)
+        Me.Label11.Location = New System.Drawing.Point(20, 522)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(103, 33)
@@ -406,7 +436,7 @@ Partial Class FrmTrans
         Me.TxtPlateNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtPlateNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtPlateNo.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtPlateNo.Location = New System.Drawing.Point(128, 52)
+        Me.TxtPlateNo.Location = New System.Drawing.Point(127, 75)
         Me.TxtPlateNo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPlateNo.Name = "TxtPlateNo"
         Me.TxtPlateNo.Size = New System.Drawing.Size(296, 44)
@@ -418,7 +448,7 @@ Partial Class FrmTrans
         Me.TxtTicketNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtTicketNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtTicketNo.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtTicketNo.Location = New System.Drawing.Point(485, 460)
+        Me.TxtTicketNo.Location = New System.Drawing.Point(485, 485)
         Me.TxtTicketNo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTicketNo.Name = "TxtTicketNo"
         Me.TxtTicketNo.Size = New System.Drawing.Size(252, 32)
@@ -429,7 +459,7 @@ Partial Class FrmTrans
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(387, 460)
+        Me.Label8.Location = New System.Drawing.Point(387, 485)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(111, 33)
@@ -442,7 +472,7 @@ Partial Class FrmTrans
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(20, 460)
+        Me.Label7.Location = New System.Drawing.Point(20, 485)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(103, 33)
@@ -456,7 +486,7 @@ Partial Class FrmTrans
         Me.TxtDrNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtDrNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtDrNo.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDrNo.Location = New System.Drawing.Point(132, 459)
+        Me.TxtDrNo.Location = New System.Drawing.Point(132, 484)
         Me.TxtDrNo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDrNo.Name = "TxtDrNo"
         Me.TxtDrNo.Size = New System.Drawing.Size(247, 32)
@@ -467,10 +497,10 @@ Partial Class FrmTrans
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(16, 52)
+        Me.Label4.Location = New System.Drawing.Point(15, 75)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(111, 49)
+        Me.Label4.Size = New System.Drawing.Size(111, 41)
         Me.Label4.TabIndex = 160
         Me.Label4.Text = "Plate Number:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -486,7 +516,7 @@ Partial Class FrmTrans
         Me.PnlClient.Controls.Add(Me.CboClient)
         Me.PnlClient.Controls.Add(Me.Label1)
         Me.PnlClient.Controls.Add(Me.RdoCust)
-        Me.PnlClient.Location = New System.Drawing.Point(8, 102)
+        Me.PnlClient.Location = New System.Drawing.Point(8, 127)
         Me.PnlClient.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlClient.Name = "PnlClient"
         Me.PnlClient.Size = New System.Drawing.Size(751, 113)
@@ -628,7 +658,7 @@ Partial Class FrmTrans
         Me.PnlCommodity.Controls.Add(Me.BtnAddComm)
         Me.PnlCommodity.Controls.Add(Me.TxtPrice)
         Me.PnlCommodity.Controls.Add(Me.LblPriceLabel)
-        Me.PnlCommodity.Location = New System.Drawing.Point(8, 219)
+        Me.PnlCommodity.Location = New System.Drawing.Point(8, 244)
         Me.PnlCommodity.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlCommodity.Name = "PnlCommodity"
         Me.PnlCommodity.Size = New System.Drawing.Size(751, 81)
@@ -743,7 +773,7 @@ Partial Class FrmTrans
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Padding = New System.Windows.Forms.Padding(0, 0, 13, 0)
-        Me.Panel1.Size = New System.Drawing.Size(741, 716)
+        Me.Panel1.Size = New System.Drawing.Size(741, 704)
         Me.Panel1.TabIndex = 0
         '
         'PnlList
@@ -756,7 +786,7 @@ Partial Class FrmTrans
         Me.PnlList.Location = New System.Drawing.Point(0, 0)
         Me.PnlList.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlList.Name = "PnlList"
-        Me.PnlList.Size = New System.Drawing.Size(728, 716)
+        Me.PnlList.Size = New System.Drawing.Size(728, 704)
         Me.PnlList.TabIndex = 0
         '
         'Dg
@@ -812,7 +842,7 @@ Partial Class FrmTrans
         Me.Dg.RowTemplate.ReadOnly = True
         Me.Dg.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Dg.Size = New System.Drawing.Size(726, 635)
+        Me.Dg.Size = New System.Drawing.Size(726, 623)
         Me.Dg.StandardTab = True
         Me.Dg.TabIndex = 0
         '
@@ -1003,7 +1033,7 @@ Partial Class FrmTrans
         Me.PnlHeader.Location = New System.Drawing.Point(0, 0)
         Me.PnlHeader.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlHeader.Name = "PnlHeader"
-        Me.PnlHeader.Size = New System.Drawing.Size(1821, 166)
+        Me.PnlHeader.Size = New System.Drawing.Size(1726, 166)
         Me.PnlHeader.TabIndex = 1
         '
         'LblError
@@ -1127,11 +1157,11 @@ Partial Class FrmTrans
         Me.DTPicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.DTPicker.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DTPicker.Location = New System.Drawing.Point(7, 103)
+        Me.DTPicker.Location = New System.Drawing.Point(89, 103)
         Me.DTPicker.Margin = New System.Windows.Forms.Padding(4)
         Me.DTPicker.Name = "DTPicker"
         Me.DTPicker.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.DTPicker.Size = New System.Drawing.Size(480, 40)
+        Me.DTPicker.Size = New System.Drawing.Size(399, 40)
         Me.DTPicker.TabIndex = 150
         Me.DTPicker.Visible = False
         '
@@ -1148,6 +1178,58 @@ Partial Class FrmTrans
         Me.Pnl_indicator.Name = "Pnl_indicator"
         Me.Pnl_indicator.Size = New System.Drawing.Size(480, 91)
         Me.Pnl_indicator.TabIndex = 148
+        '
+        'TxtOnline
+        '
+        Me.TxtOnline.AccessPwd = "mijochanel09041990"
+        Me.TxtOnline.AxleTriggerWt = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.TxtOnline.BackColor = System.Drawing.Color.Black
+        Me.TxtOnline.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtOnline.CommBaudRate = 9600
+        Me.TxtOnline.CommDataBits = 8
+        Me.TxtOnline.CommDTREnable = True
+        Me.TxtOnline.COMMEncoding = Nothing
+        Me.TxtOnline.CommNewLine = "" & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.TxtOnline.CommParity = "None"
+        Me.TxtOnline.CommParityReplace = Nothing
+        Me.TxtOnline.CommPortName = "COM1"
+        Me.TxtOnline.CommReadBufferSize = 4
+        Me.TxtOnline.CommReadTimeout = 0
+        Me.TxtOnline.COMMReadType = Nothing
+        Me.TxtOnline.CommReceivedBytesThreshold = 1
+        Me.TxtOnline.CommRTSEnable = False
+        Me.TxtOnline.CommStopBits = "1"
+        Me.TxtOnline.CommWriteTimeout = 1000
+        Me.TxtOnline.ConnectionType = Nothing
+        Me.TxtOnline.DataLength = 0
+        Me.TxtOnline.DataSent = 0
+        Me.TxtOnline.DiscardInBuffer = False
+        Me.TxtOnline.DiscardOutBuffer = False
+        Me.TxtOnline.EndCharacter = Nothing
+        Me.TxtOnline.ExtStartIndex = 0
+        Me.TxtOnline.Font = New System.Drawing.Font("DS-Digital", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtOnline.ForeColor = System.Drawing.Color.YellowGreen
+        Me.TxtOnline.IP = Nothing
+        Me.TxtOnline.IPAddress = "192.168.1.41"
+        Me.TxtOnline.IPPort = "1"
+        Me.TxtOnline.IPReadTimeOut = 1000
+        Me.TxtOnline.LengthViewer = Nothing
+        Me.TxtOnline.Location = New System.Drawing.Point(7, 5)
+        Me.TxtOnline.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtOnline.Name = "TxtOnline"
+        Me.TxtOnline.ReadingInterval = 100
+        Me.TxtOnline.ReadOnly = True
+        Me.TxtOnline.Sensitivity = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.TxtOnline.SignalViewer = Nothing
+        Me.TxtOnline.SimulationIncrement = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.TxtOnline.SimulationSpeed = 100
+        Me.TxtOnline.Size = New System.Drawing.Size(337, 80)
+        Me.TxtOnline.StartCharacter = Nothing
+        Me.TxtOnline.TabIndex = 151
+        Me.TxtOnline.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.TxtOnline.WeighingDevice = Nothing
+        Me.TxtOnline.WeighingInput = WeightDev.Enums.WeighingInputEnum.[AUTO]
+        Me.TxtOnline.WeighingMode = WeightDev.Enums.WeighingModeEnum.STANDARD
         '
         'TxtUnit
         '
@@ -1468,58 +1550,13 @@ Partial Class FrmTrans
         Me.TxtTare.TabStop = False
         Me.TxtTare.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'TxtOnline
-        '
-        Me.TxtOnline.AccessPwd = "mijochanel09041990"
-        Me.TxtOnline.BackColor = System.Drawing.Color.Black
-        Me.TxtOnline.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxtOnline.CommBaudRate = 9600
-        Me.TxtOnline.CommDataBits = 8
-        Me.TxtOnline.CommDTREnable = True
-        Me.TxtOnline.CommNewLine = "" & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.TxtOnline.CommParity = "None"
-        Me.TxtOnline.CommPortName = "COM1"
-        Me.TxtOnline.CommReadBufferSize = 4
-        Me.TxtOnline.CommReadTimeout = 0
-        Me.TxtOnline.CommReceivedBytesThreshold = 1
-        Me.TxtOnline.CommRTSEnable = False
-        Me.TxtOnline.CommStopBits = "1"
-        Me.TxtOnline.CommWriteTimeout = 1000
-        Me.TxtOnline.ConnectionType = Nothing
-        Me.TxtOnline.DataLength = 0
-        Me.TxtOnline.DataSent = 0
-        Me.TxtOnline.DiscardInBuffer = False
-        Me.TxtOnline.DiscardOutBuffer = False
-        Me.TxtOnline.EndCharacter = Nothing
-        Me.TxtOnline.ExtStartIndex = 0
-        Me.TxtOnline.Font = New System.Drawing.Font("DS-Digital", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtOnline.ForeColor = System.Drawing.Color.YellowGreen
-        Me.TxtOnline.IP = Nothing
-        Me.TxtOnline.IPAddress = "192.168.1.41"
-        Me.TxtOnline.IPPort = "1"
-        Me.TxtOnline.IPReadTimeOut = 1000
-        Me.TxtOnline.LengthViewer = Nothing
-        Me.TxtOnline.Location = New System.Drawing.Point(7, 5)
-        Me.TxtOnline.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtOnline.Name = "TxtOnline"
-        Me.TxtOnline.ReadingInterval = 100
-        Me.TxtOnline.ReadOnly = True
-        Me.TxtOnline.Sensitivity = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.TxtOnline.SignalViewer = Nothing
-        Me.TxtOnline.SimulationIncrement = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.TxtOnline.SimulationSpeed = 100
-        Me.TxtOnline.Size = New System.Drawing.Size(337, 80)
-        Me.TxtOnline.TabIndex = 151
-        Me.TxtOnline.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.TxtOnline.WeighingDevice = Nothing
-        '
         'FrmTrans
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1821, 894)
+        Me.ClientSize = New System.Drawing.Size(1726, 882)
         Me.Controls.Add(Me.PnlMain)
         Me.Controls.Add(Me.PnlHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -1644,4 +1681,5 @@ Partial Class FrmTrans
     Friend WithEvents Col_Driver As DataGridViewTextBoxColumn
     Friend WithEvents Col_remarks As DataGridViewTextBoxColumn
     Friend WithEvents Col_Weigher As DataGridViewTextBoxColumn
+    Friend WithEvents btnRecall As MykeCtrlEx.PushButton
 End Class
